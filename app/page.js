@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import NavBar from './components/NavBar'
+import React from 'react';
+import NavBar from './components/NavBar';
 
 export default function Home() {
   return (
@@ -7,9 +7,22 @@ export default function Home() {
       <div className="navbar-container">
         <NavBar />
       </div>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        
-      </main>
+      <header className="relative flex items-center justify-center h-screen mb-12 overflow-hidden">
+        <div className="relative z-30 p-5 text-2xl  
+           text-white bg-orange-600 bg-opacity-50 
+           rounded-xl">
+            <h1 className="flex justify-center text-4xl font-bold mb-4">U 2 Can Que:</h1>
+            <h2 className="flex justify-center text-2xl">Where BBQ & Education Collide</h2>
+        </div>
+        <video
+          className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
+          autoPlay
+          loop
+          muted
+        >
+          <source src="/videos/brisketVideo.mp4" />
+        </video>
+      </header>
     </>
-  )
+  );
 }

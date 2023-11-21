@@ -5,7 +5,7 @@ import React from 'react'
 const NavBar = () => {
   return (
     <div className="navbar-container">
-      <nav className={"bg-slate-600 dar:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"}>
+      <nav className={"bg-slate-600 opacity-90 dar:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"}>
       
         <div className="max-w-7xl mx-auto py-5 px-3  text-white">
           <div className="flex items-center justify-between">

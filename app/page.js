@@ -1,14 +1,9 @@
 import React from 'react';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
 import EnterSiteButton from './components/EnterSiteButton';
 
 export default function Home() {
   return (
     <>
-      <div className="navbar-container">
-        <NavBar />
-      </div>
       <main>
         <div className="relative flex flex-col items-center justify-center h-screen mb-12 overflow-hidden">
           <div className="relative z-30 p-5 text-2xl  
@@ -28,7 +23,6 @@ export default function Home() {
             <source src="/videos/brisketVideo.mp4" />
           </video>
         </div>
-        <Footer />
       </main>
     </>
   );

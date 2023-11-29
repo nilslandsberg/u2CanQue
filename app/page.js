@@ -1,5 +1,6 @@
 import React from 'react';
 import EnterSiteButton from './components/EnterSiteButton';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -8,10 +9,9 @@ export default function Home() {
         <div className="relative flex flex-col items-center justify-center h-screen mb-12 overflow-hidden">
           <div className="relative z-30 p-5 text-2xl  
             text-white text-center">
-            <div className="text-4xl font-bold mb-4">U 2 Can Que</div>
-            <div className="text-2xl">Premium BBQ Supplies</div>
+            <Image src='/images/U2CanQueLogo.svg' alt="logo" width={400} height={400} />
           </div>
-          <div className="mt-4"> {/* Adjust the margin to your preference */}
+          <div className="mt-4"> 
             <EnterSiteButton />
           </div>
           <video

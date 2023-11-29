@@ -13,7 +13,7 @@ const NavBar = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-between space-x-4">
               <Image src='/images/U2CanQueLogo.svg' alt="logo" width={50} height={50} />
-              <a className="py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300" href="#">Order Online</a>
+              <a className="py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300" href="order">Order Online</a>
             </div>
             <NavBarLinks />
             <NavBarMobileMenuButton />

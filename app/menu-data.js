@@ -2,7 +2,7 @@ export const appetizerData = [
   {
     name: "Pork Belly Burnt Ends and Rice",
     image: "/images/PorkBellyBurntEnds.jpeg",
-    description: "Our succulent, melt-in-your-mouth pork belly is expertly seasoned and perfectly smoked, resulting in a deliciously smoky and tender sensation with every bite. It is served on a bed of fluffy white rice with your choice of sauce:\nMild\nMedium\nGhost Pepper Glazed HOT",
+    description: "Our succulent, melt-in-your-mouth pork belly is expertly seasoned and perfectly smoked, resulting in a deliciously smoky and tender sensation with every bite. It is served on a bed of fluffy white rice with your choice of sauce:<br><br>Mild<br>Medium<br>Ghost Pepper Glazed HOT",
     price: "8.50",
   },
   {
@@ -20,7 +20,7 @@ export const appetizerData = [
   {
     name: "10 Smoked Jumbo Chicken Wings",
     image: "/images/ChickenWings.jpeg",
-    description: "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite.Wings can be dry or sauced:\nSweet BBQ\nSpicy Apple Habanero\nAsian BBQ\nHot Squeezed",
+    description: "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite.Wings can be dry or sauced:<br><br>Sweet BBQ<br>Spicy Apple Habanero<br>Asian BBQ<br>Hot Squeezed",
     price: "12.50"
   }
 ]

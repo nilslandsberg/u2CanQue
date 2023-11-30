@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 
 function NavBarMobileLinks() {
   const showMenu = useSelector((state) => state.buttonToggle.navBarLinksShown)
+  
   return (
     <>
       {showMenu && (

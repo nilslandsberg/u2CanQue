@@ -1,5 +1,4 @@
 import React from 'react';
-import EnterSiteButton from './components/EnterSiteButton';
 import Image from 'next/image';
 import WelcomeComponent from './components/WelcomeComponent';
 

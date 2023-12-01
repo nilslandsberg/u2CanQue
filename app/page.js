@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <main>
-        <div className="relative flex flex-col items-center justify-center h-screen mb-12 overflow-hidden">
+        <div className="relative flex flex-col items-center justify-center h-screen overflow-hidden">
           <div className="relative z-30 p-5 text-2xl  
             text-white text-center">
             <Image src='/images/U2CanQueLogo.svg' alt="logo" width={400} height={400} />

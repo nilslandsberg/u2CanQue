@@ -21,9 +21,7 @@ export default function Home() {
             <source src="/videos/brisketVideo.mp4" />
           </video>
         </div>
-        <div className="flex items-center justify-center bg-black border-t  border-gray-200 dark:border-gray-600">
-          <WelcomeComponent />
-        </div>
+        <WelcomeComponent />
       </main>
     </>
   );

@@ -1,6 +1,7 @@
 import React from 'react';
 import EnterSiteButton from './components/EnterSiteButton';
 import Image from 'next/image';
+import WelcomeComponent from './components/WelcomeComponent';
 
 export default function Home() {
   return (
@@ -11,9 +12,6 @@ export default function Home() {
             text-white text-center">
             <Image src='/images/U2CanQueLogo.svg' alt="logo" width={400} height={400} />
           </div>
-          <div className="mt-4"> 
-            <EnterSiteButton />
-          </div>
           <video
             className="absolute z-10 w-auto min-w-full min-h-full max-w-none"
             autoPlay
@@ -22,6 +20,9 @@ export default function Home() {
           >
             <source src="/videos/brisketVideo.mp4" />
           </video>
+        </div>
+        <div className="flex items-center justify-center bg-black border-t  border-gray-200 dark:border-gray-600">
+          <WelcomeComponent />
         </div>
       </main>
     </>

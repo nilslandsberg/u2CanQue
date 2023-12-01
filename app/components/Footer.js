@@ -6,11 +6,16 @@ function Footer() {
   return (
     <div className="footer-container">
       <div className={"bg-slate-600 opacity-90 dar:bg-gray-900 w-full z-40 top-0 left-0 border-t border-gray-200 dark:border-gray-600 items-center"}>
-        <div className="flex items-center justify-center py-4">
+        <div className="flex items-center space-between justify-end py-4">
           <Image src='/images/U2CanQueLogo.svg' alt="logo" width={175} height={175} />
+          <div className="business-info-container px-6">
+            <div className="text-white text-start">212 3rd St b</div>
+            <div className="text-white text-start">Marietta, OH 45750</div>
+            <div className="text-white text-start">(740) 236-7269</div>
+            <div className="text-white text-center">u2canque@gmail.com</div>
+          </div>
+          <FacebookLink />
         </div>
-        <div className="text-white text-center">u2canque@gmail.com</div>
-        <FacebookLink />
       </div>
     </div>
   )

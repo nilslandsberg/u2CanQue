@@ -1,13 +1,19 @@
 import React from 'react';
+import AppetizerMenu from '../components/AppetizerMenu';
+import MenuLinks from '../components/MenuLinks';
+import LunchOptions from '../components/LunchOptions';
+import BulkBbq from '../components/BulkBbq';
 
-export default function Order() {
+export default function Menu() {
   return (
     <>
       <main>
-        <div className="relative flex flex-col items-center pt-[100px] h-screen overflow-hidden bg-black">
+        <MenuLinks />
+        <div className="relative flex flex-col items-center pt-[200px] min-h-screen bg-black">
           <div className="divide-y-2 divide-double divide-white w-full">
-            <div className="text-white z-30 py-5 text-center">Menu Carousel Navbar?</div>
-            <div className="z-30 p-5 text-2xl text-white text-center">Order</div>
+            <AppetizerMenu />
+            <LunchOptions />
+            <BulkBbq />
           </div>
         </div>
       </main>

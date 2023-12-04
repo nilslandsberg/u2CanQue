@@ -12,10 +12,8 @@ function NavBarMobileMenuButton() {
   const toggleMenu = () => {
     if (isToggled === false) {
       dispatch(showNavBarMobileLinks());
-      console.log("show")
     } else {
       dispatch(hideNavBarMobileLinks());
-      console.log("hide")
     }
   }
 

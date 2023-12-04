@@ -1,15 +1,15 @@
 import Image from 'next/image';
-import React from 'react';
-import { appetizerData } from '../menu-data';
+import { lunchOptions } from '../menu-data';
 import parse from 'html-react-parser';
 
 
-const AppetizerMenu = () => {
+const LunchOptions = () => {
+
   return (
     <>
-      <div className="z-30 p-5 text-2xl text-white text-center" id="appetizers">Appetizers</div>
+      <div className="z-30 p-5 text-2xl text-white text-center" id="lunch">Lunch Options</div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 overflow-auto">
-        {appetizerData.map((item) => (
+        {lunchOptions.map((item) => (
           <div key={item.title} className="bg-black p-4 text-white text-center rounded-md shadow-md">
             <div className="relative h-40 mb-2 rounded-md overflow-hidden">
               <Image
@@ -31,4 +31,4 @@ const AppetizerMenu = () => {
   );
 };
 
-export default AppetizerMenu;
+export default LunchOptions;

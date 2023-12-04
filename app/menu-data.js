@@ -8,7 +8,7 @@ export const appetizerData = [
   {
     name: "Beef Burnt Ends and Rice",
     image: "/images/BeefBurntEnds.jpeg",
-    description: "Indulge in the mouthwatering delight of our Brisket Burnt Ends – a barbecue masterpiece that showcases the caramelized, flavorful edges of slow-cooked brisket cubes. Each succulent piece boasts a perfect balance of smoky richness and tenderness, creating a heavenly combination that barbecue enthusiasts crave. Served generously over a bed of fluffy white rice, our Brisket Burnt Ends dish offers a delightful symphony of textures and tastes, making it a savory and satisfying addition to your barbecue experience.",
+    description: "Indulge in the mouthwatering delight of our Brisket Burnt Ends – a barbecue masterpiece that showcases the caramelized, flavorful edges of slow-cooked brisket cubes.  Served generously over a bed of fluffy white rice, our Brisket Burnt Ends dish offers a delightful symphony of textures and tastes, making it a savory and satisfying addition to your barbecue experience.",
     price: "8.50"
   },
   {
@@ -20,7 +20,16 @@ export const appetizerData = [
   {
     name: "10 Smoked Jumbo Chicken Wings",
     image: "/images/ChickenWings.jpeg",
-    description: "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite.Wings can be dry or sauced:<br><br>Sweet BBQ<br>Spicy Apple Habanero<br>Asian BBQ<br>Hot Squeezed",
+    description: "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite. Wings can be dry or sauced:<br><br>Sweet BBQ<br>Spicy Apple Habanero<br>Asian BBQ<br>Hot Squeezed",
     price: "12.50"
+  }
+]
+
+export const lunchOptions = [
+  {
+    name: "BBQ Chicken Meal",
+    image: "/images/BBQChicken.jpeg",
+    description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, 2 thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
+    price: "13.50"
   }
 ]

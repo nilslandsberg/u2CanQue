@@ -2,8 +2,9 @@ export const appetizerData = [
   {
     name: "Pork Belly Burnt Ends and Rice",
     image: "/images/PorkBellyBurntEnds.jpeg",
-    description: "Our succulent, melt-in-your-mouth pork belly is expertly seasoned and perfectly smoked, resulting in a deliciously smoky and tender sensation with every bite. It is served on a bed of fluffy white rice with your choice of sauce:<br><br>Mild<br>Medium<br>Ghost Pepper Glazed HOT",
+    description: "Our succulent, melt-in-your-mouth pork belly is expertly seasoned and perfectly smoked, resulting in a deliciously smoky and tender sensation with every bite. It is served on a bed of fluffy white rice with your choice of sauce.",
     price: "8.50",
+    options: ["Mild", "Medium", "Ghost Pepper Glazed"]
   },
   {
     name: "Beef Burnt Ends and Rice",
@@ -20,8 +21,9 @@ export const appetizerData = [
   {
     name: "10 Smoked Jumbo Chicken Wings",
     image: "/images/ChickenWings.jpeg",
-    description: "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite. Wings can be dry or sauced:<br><br>Sweet BBQ<br>Spicy Apple Habanero<br>Asian BBQ<br>Hot Squeezed",
-    price: "12.50"
+    description: "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite. Wings can be finished with your choice of dry rub or sauce.",
+    price: "12.50",
+    options: ["Sweet BBQ", "Spicy Apple Habanero", "Asian BBQ", "Hot Squeezed"]
   }
 ]
 
@@ -30,6 +32,63 @@ export const lunchOptions = [
     name: "BBQ Chicken Meal",
     image: "/images/BBQChicken.jpeg",
     description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, 2 thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
+    price: "13.50"
+  },
+  {
+    name: "Baby Back Ribs - 1/2 Rack",
+    image: "/images/1:2RackBabyBack.jpeg",
+    description: "A half-rack of our slow smoked BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. Our ribs have earned prestigious awards at renowned barbecue competitions around the Country, earning the respect and admiration of judges who have recognized the unmatched quality and flavor we deliver.",
+    price: "18.00"
+  },
+  {
+    name: "Baby Back Ribs - Full Rack",
+    image: "/images/FullRackBabyBack.jpeg",
+    description: "A full rack of our slow smoked Baby Back BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. When your appetite, now or later on, demands more step on up for the full rack, and no more regrets on not having enough.",
+    price: "24.00"
+  },
+  {
+    name: "Pulled Pork Sandwich",
+    image: "/images/PulledPork.jpeg",
+    description: "Each bite is a symphony of flavors, as our expertly chosen seasonings and marinades infuse the meat with a harmonious blend of smokiness, sweetness, and tang.",
+    price: "13.00"
+  },
+  {
+    name: "BBQ Pork Loin",
+    image: "/images/PorkLoin.jpeg",
+    description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
+    price: "13.50"
+  }
+]
+
+export const bulkBbq = [
+  {
+    name: "BBQ Chicken Meal",
+    image: "/images/BBQChicken.jpeg",
+    description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, 2 thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
+    price: "13.50"
+  },
+  {
+    name: "Baby Back Ribs - 1/2 Rack",
+    image: "/images/1:2RackBabyBack.jpeg",
+    description: "A half-rack of our slow smoked BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. Our ribs have earned prestigious awards at renowned barbecue competitions around the Country, earning the respect and admiration of judges who have recognized the unmatched quality and flavor we deliver.",
+    price: "18.00"
+  },
+  {
+    name: "Baby Back Ribs - Full Rack",
+    image: "/images/FullRackBabyBack.jpeg",
+    description: "A full rack of our slow smoked Baby Back BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. When your appetite, now or later on, demands more step on up for the full rack, and no more regrets on not having enough.",
+    price: "24.00"
+  },
+  {
+    name: "Pulled Pork Sandwich",
+    image: "/images/PulledPork.jpeg",
+    description: "Each bite is a symphony of flavors, as our expertly chosen seasonings and marinades infuse the meat with a harmonious blend of smokiness, sweetness, and tang.",
+    price: "13.00"
+  },
+  {
+    name: "BBQ Pork Loin",
+    image: "/images/PorkLoin.jpeg",
+    description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
     price: "13.50"
   }
 ]

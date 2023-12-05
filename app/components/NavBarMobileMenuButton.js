@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 function NavBarMobileMenuButton() {
   const isToggled = useSelector((state) => state.buttonToggle.navBarLinksShown);
   const dispatch = useDispatch();
-  console.log(isToggled);
+
   const toggleMenu = () => {
     if (isToggled === false) {
       dispatch(showNavBarMobileLinks());

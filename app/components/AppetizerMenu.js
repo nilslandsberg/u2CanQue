@@ -6,14 +6,14 @@ import parse from 'html-react-parser';
 const AppetizerMenu = () => {
   return (
     <>
-      <div className="z-30 p-5 text-2xl text-white text-center" id="appetizers">
+      <div className="z-30 p-5 text-2xl bg-slate-600 text-white text-center">
         Appetizers
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 overflow-auto py-5 px-2">
         {appetizerData.map((item) => (
           <div
             key={item.title}
-            className="card bg-black p-4 text-white text-center rounded-md shadow-md border border-white flex flex-col justify-between"
+            className="card bg-slate-600 p-4 text-white text-center rounded-md shadow-md border border-white flex flex-col justify-between"
           >
             <div className="relative h-40 mb-2 rounded-md overflow-hidden">
               <Image 

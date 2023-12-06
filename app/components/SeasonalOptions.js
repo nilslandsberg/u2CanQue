@@ -2,8 +2,19 @@ import Image from 'next/image';
 import React from 'react';
 import { lunchOptions } from '../menu-data';
 import parse from 'html-react-parser';
+import { christmasDateCheck, easterDateCheck } from '../utils/dateCheck';
 
 const SeasonalOptions = () => {
+  const currentDate = new Date()
+  const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
+
+
+  const hamsForSale = christmasDateCheck(currentDate);
+  
+
+  const easterDate = easterDateCheck(currentYear, currentDate);
+  console.log("easter is on this date: ", easterDate)
+ 
   return (
     <>
       <div className="z-30  bg-slate-600 p-5 text-2xl text-white text-center">

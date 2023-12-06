@@ -29,6 +29,20 @@ const Contact = () => {
       </div>
       <div className='mb-5'>
         <label
+          htmlFor='phone number'
+          className='mb-3 block text-base font-medium text-black'
+        >
+          Email Address
+        </label>
+        <input
+          type='tel'
+          placeholder='Phone Number'
+          className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
+          {...register('phone', { required: true, minLength: 6, maxLength: 12 })}
+        />
+      </div>
+      <div className='mb-5'>
+        <label
           htmlFor='email'
           className='mb-3 block text-base font-medium text-black'
         >

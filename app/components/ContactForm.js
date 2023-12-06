@@ -4,7 +4,7 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '../utils/send-email';
 
-const Contact = () => {
+const ContactForm = () => {
   const { register, handleSubmit } = useForm();
 
   function onSubmit(data) {
@@ -96,7 +96,7 @@ const Contact = () => {
           {...register('message', { required: true })}
         ></textarea>
       </div>
-      <div className="flex">
+      <div className="flex pb-4">
         <button className='py-2 px-3 hover:shadow-form bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300'>
           Submit
         </button>
@@ -105,4 +105,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;

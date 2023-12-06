@@ -1,4 +1,4 @@
-const { NextRequest, NextResponse } = require('next/server');
+const { NextResponse } = require('next/server');
 const nodemailer = require('nodemailer');
 const Mail = require('nodemailer/lib/mailer');
 
@@ -8,15 +8,6 @@ async function POST(request) {
 
   const transport = nodemailer.createTransport({
     service: 'gmail',
-    /* 
-      setting service as 'gmail' is same as providing these setings:
-      host: "smtp.gmail.com",
-      port: 465,
-      secure: true
-      If you want to use a different email provider other than gmail, you need to provide these manually.
-      Or you can go use these well-known services and their settings at
-      https://github.com/nodemailer/nodemailer/blob/master/lib/well-known/services.json
-    */
     auth: {
       user: process.env.MY_EMAIL,
       pass: process.env.MY_PASSWORD,
@@ -45,7 +36,7 @@ async function POST(request) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Email sent' });
+    return NextResponse.json({ message: 'Request Received!\nA Member of our team will contact you soon.' });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }

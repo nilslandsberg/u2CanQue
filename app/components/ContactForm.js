@@ -16,9 +16,9 @@ const ContactForm = () => {
       <div className='mb-5'>
         <label
           htmlFor='name'
-          className='mb-3 block text-base font-medium text-black'
+          className='mb-3 text-base justify-start flex font-medium text-white'
         >
-          Full Name
+          Name
         </label>
         <input
           type='text'
@@ -30,13 +30,13 @@ const ContactForm = () => {
       <div className='mb-5'>
         <label
           htmlFor='phone number'
-          className='mb-3 block text-base font-medium text-black'
+          className='mb-3 text-base justify-start flex font-medium text-white'
         >
-          Email Address
+          Phone Number
         </label>
         <input
           type='tel'
-          placeholder='Phone Number'
+          placeholder='***-***-****'
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('phone', { required: true, minLength: 6, maxLength: 12 })}
         />
@@ -44,7 +44,7 @@ const ContactForm = () => {
       <div className='mb-5'>
         <label
           htmlFor='email'
-          className='mb-3 block text-base font-medium text-black'
+          className='mb-3 text-base justify-start flex font-medium text-white'
         >
           Email Address
         </label>
@@ -58,7 +58,7 @@ const ContactForm = () => {
       <div className='mb-5'>
         <label
           htmlFor='eventDate'
-          className='mb-3 block text-base font-medium text-black'
+          className='mb-3 text-base justify-start flex font-medium text-white'
         >
           Event Date
         </label>
@@ -72,13 +72,13 @@ const ContactForm = () => {
       <div className='mb-5'>
         <label
           htmlFor='attendees'
-          className='mb-3 block text-base font-medium text-black'
+          className='mb-3 text-base justify-start flex font-medium text-white'
         >
           Number of Attendees
         </label>
         <input
           type='number'
-          placeholder='Number of Attendees'
+          placeholder='0'
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('attendees', { required: true })}
         />
@@ -86,9 +86,9 @@ const ContactForm = () => {
       <div className='mb-5'>
         <label
           htmlFor='message'
-          className='mb-3 block text-base font-medium text-black'
+          className='mb-3 text-base justify-start flex font-medium text-white'
         >
-          Message
+          Event Details/Other Information
         </label>
         <textarea
           rows={4}

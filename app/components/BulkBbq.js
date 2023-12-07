@@ -30,7 +30,7 @@ const BulkBbq = () => {
             <div className="flex-grow mb-2">{parse(item.description)}</div>
             <div className="flex flex-row items-center justify-between">
               <div className="flex items-center">
-                <p className="text-orange-600 font-semibold pt-4">Price: ${item.price}</p>
+                <p className="text-orange-600 font-semibold pt-4">Price: ${item.price} per pound</p>
               </div>
               <AddToOrderButton item={item} />
             </div>

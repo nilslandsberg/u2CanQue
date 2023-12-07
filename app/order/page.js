@@ -7,9 +7,11 @@ export default function Menu() {
     <>
       <main>
         <MenuLinks />
-        <div className="relative flex flex-col items-center pt-[175px] h-screen bg-black overflow-hidden">
+        <div className="relative flex flex-col items-center pt-[190px] h-screen bg-black overflow-hidden">
           <div className="w-1/2 md:w-1/3 z-20 pb-12 text-white text-center overflow-auto">
             <br />
+            <br />
+            <p className="text-2xl font-bold italic">"Ordering Tomorrow's Lunch Today"</p>
             <br />
             <p>At U 2 Can Que, we believe in the magic of low and slow-smoked meats, and we want you to experience the peak of flavor in every bite. That's why we encourage you to plan ahead and order tomorrow's lunch today. Our meticulous smoking process demands time and patience, ensuring that each dish reaches its full potential in flavor and tenderness.</p>
             <br />

@@ -11,8 +11,9 @@ function NavBarMobileLinks() {
       {showMenu && (
         <div className="text-white">
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/#about">About Us</a>
-          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="services">Services</a>
-          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="order">Order Online</a>
+          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/services">Services</a>
+          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/catering">Catering</a>
+          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/order">Order Online</a>
         </div>
       )}
     </>

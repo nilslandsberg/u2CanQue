@@ -27,3 +27,15 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.menu-link {
+  min-width: 100px; /* Adjust the minimum width as needed */
+  padding: 0 15px; /* Add padding to create space between links */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+@media (max-width: 768px) {
+  .menu-link {
+    min-width: auto; /* Allow links to shrink to content width on smaller screens */
+  }
+}

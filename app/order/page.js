@@ -19,7 +19,7 @@ export default function Menu() {
             <p>By ordering in advance, you guarantee that your lunch will be prepared with the utmost care, delivering a smoky symphony of taste that will leave your taste buds dancing. Explore our mouthwatering menu and click one of the links above to view our menus. From succulent pork belly burnt ends to award-winning baby back ribs, our offerings are crafted to perfection.</p>
             <br />
             <br />
-            <p>Don&#39;t miss out on the opportunity to savor the true essence of barbecue. Order in advance, and let the anticipation build as you look forward to a lunchtime experience that transcends the ordinary. U 2 Can Que – where today's selection becomes tomorrow&#39;s delight!</p>
+            <p>Don&#39;t miss out on the opportunity to savor the true essence of barbecue. Order in advance, and let the anticipation build as you look forward to a lunchtime experience that transcends the ordinary. U 2 Can Que – where today&#39;s selection becomes tomorrow&#39;s delight!</p>
           </div>
           <video
             className="absolute z-10 w-full h-full object-cover"

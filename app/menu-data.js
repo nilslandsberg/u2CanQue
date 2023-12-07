@@ -57,6 +57,31 @@ export const lunchOptions = [
     image: "/images/PorkLoin.jpeg",
     description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
     price: "13.50"
+  },
+  {
+    name: "Smoked Meatloaf",
+    image: "/images/Meatloaf.jpeg",
+    description: 'A twist on the classic comfort food with our mouthwatering BBQ meatloaf. Savory, subtle heat, and our wonderful, caramelized BBQ sauce topping of this meal that screams that it is "not just Grandmas" meatloaf.',
+    price: "13.50"
+  },
+  {
+    name: "Brisket",
+    image: "/images/Brisket.jpeg",
+    description: "Smoked to juicy perfection, your tastebuds will love the moist and tender texture inside a caramelized exterior seasoned the Texas way, SPG. Grab a couple of sides to complete your lunch.",
+    price: "18.50"
+  },
+  {
+    name: "Woodfired Lasagna",
+    image: "/images/Lasagna.jpeg",
+    description: "Savor the irresistible layers of our Smoked Lasagna. Tender pasta sheets embrace a delightful blend of smoked meats, infused with the rich flavors of fire-roasted tomatoes, grilled bell peppers, and caramelized onions. Our unique touch extends to the smoked provolone, mozzarella, and even freshly shaved parmesan. Slow-cooked to perfection, this hearty dish will leave you craving more, setting it apart from the rest.",
+    price: "18.00"
+  },
+  {
+    name: "Texas Bold (and beanless) Chili",
+    image: "/images/Chili.jpeg",
+    description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
+    price: "12.50",
+    options: []
   }
 ]
 

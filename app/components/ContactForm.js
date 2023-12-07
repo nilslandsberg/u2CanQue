@@ -64,6 +64,7 @@ const ContactForm = () => {
         </label>
         <input
           type='date'
+          placeholder='Date of Event'
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('eventDate', { required: true })}
         />

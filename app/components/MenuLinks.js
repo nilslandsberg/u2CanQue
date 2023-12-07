@@ -6,7 +6,7 @@ const MenuLinks = () => {
       <div className='text-2xl font-bold italic text-center py-2'>
         <p>Menu</p>
       </div>
-      <nav className="text-lg font-semibold pb-2 flex flex-row text-center items-center border-b border-white overflow-x-auto">
+      <nav className="text-lg font-semibold pb-2 flex flex-row text-center justify-center items-center border-b border-white overflow-x-auto">
         <a href="/order/appetizers" className="menu-link hover:text-slate-300 px-4">Appetizers</a>
         <a href="/order/lunch" className="menu-link hover:text-slate-300 px-4">Lunch Options</a>
         <a href="/order/bulkbbq" className="menu-link hover:text-slate-300 px-4">Bulk BBQ</a>

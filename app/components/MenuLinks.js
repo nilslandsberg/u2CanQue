@@ -9,7 +9,7 @@ const MenuLinks = () => {
       <nav className="text-lg font-semibold pb-2 flex flex-row text-center md:justify-center sm:justify-start items-center border-b border-white overflow-x-auto">
         <a href="/order/appetizers" className="menu-link hover:text-slate-300 px-4">Appetizers</a>
         <a href="/order/lunch" className="menu-link hover:text-slate-300 px-4">Lunch Options</a>
-        <a href="/order/bulkbbq" className="menu-link hover:text-slate-300 px-4">Bulk BBQ</a>
+        <a href="/order/bulkbbq" className="menu-link hover:text-slate-300 px-4">Bulk BBQ | Sides</a>
         <a href="/order/seasonal" className="menu-link hover:text-slate-300 px-4">Seasonal</a>
       </nav>
     </div>

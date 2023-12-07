@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { bulkBbq } from '../menu-data';
 import parse from 'html-react-parser';
+import AddToOrderButton from './AddToOrderButton';
 
 const BulkBbq = () => {
   return (
@@ -31,9 +32,7 @@ const BulkBbq = () => {
               <div className="flex items-center">
                 <p className="text-orange-600 font-semibold pt-4">Price: ${item.price}</p>
               </div>
-              <button className="py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300">
-                Add to Order
-              </button>
+              <AddToOrderButton item={item} />
             </div>
           </div>
         ))}

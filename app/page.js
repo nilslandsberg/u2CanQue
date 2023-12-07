@@ -16,6 +16,7 @@ export default function Home() {
             autoPlay
             loop
             muted
+            playsInline
           >
             <source src="/videos/brisketVideo.mp4" />
           </video>

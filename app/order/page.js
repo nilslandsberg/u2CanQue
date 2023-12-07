@@ -26,6 +26,7 @@ export default function Menu() {
             autoPlay
             loop
             muted
+            playsInline
           >
             <source src="/videos/fireBackground.mp4" />
           </video>

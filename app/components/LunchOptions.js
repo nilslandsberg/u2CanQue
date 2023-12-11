@@ -1,10 +1,22 @@
+"use client";
+
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { lunchOptions } from '../menu-data';
 import parse from 'html-react-parser';
 import AddToOrderButton from './AddToOrderButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSidesModifiers } from '@/redux/features/clover-api-call-slice';
 
 const LunchOptions = () => {
+  const modifiers = useSelector((state) => state.modifierDetails);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getSidesModifiers()); // Dispatch action when component mounts
+  }, []);
+
   return (
     <>
       <div className="z-30 p-5 text-2xl text-white  bg-slate-600 text-center">
@@ -13,7 +25,7 @@ const LunchOptions = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 overflow-auto py-5 px-2">
         {lunchOptions.map((item) => (
           <div
-            key={item.title}
+            key={item.id}
             className="card bg-slate-600 p-4 text-white text-center rounded-md shadow-md border border-white flex flex-col justify-between"
           >
             <div className="relative h-40 mb-2 rounded-md overflow-hidden">

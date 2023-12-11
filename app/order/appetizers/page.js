@@ -1,3 +1,5 @@
+"use client";
+
 import AppetizerMenu from '@/app/components/AppetizerMenu'
 import MenuLinks from '@/app/components/MenuLinks'
 import React from 'react'

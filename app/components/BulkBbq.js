@@ -13,7 +13,7 @@ const BulkBbq = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 overflow-auto py-5 px-2">
         {bulkBbq.map((item) => (
           <div
-            key={item.title}
+            key={item.id}
             className="card bg-slate-600 p-4 text-white text-center rounded-md shadow-md border border-white flex flex-col justify-between mx-auto"
           >
             <div className="relative h-40 mb-2 rounded-md overflow-hidden">
@@ -43,7 +43,7 @@ const BulkBbq = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 overflow-auto py-5 px-2">
         {sides.map((item) => (
           <div
-            key={item.title}
+            key={item.id}
             className="card bg-slate-600 p-4 text-white text-center rounded-md shadow-md border border-white flex flex-col justify-between"
           >
             <div className="relative h-40 mb-2 rounded-md overflow-hidden">

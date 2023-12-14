@@ -238,5 +238,31 @@ export const modifiers = {
       name: "Chicken Thigh"
     }
   ],
-  
 }
+
+export const christmasItems = [
+  {
+    name: "Smoked Prime Rib"
+  },
+  {
+    name: "Double Smoked Ham"
+  },
+  {
+    name: "Smoked Turkey"
+  }
+]
+
+export const thanksgivingItems = [
+  {
+    name: "Smoked Turkey"
+  },
+  {
+    name: "Double Smoked Ham"
+  }
+]
+
+export const easterItems = [
+  {
+    name: "Double Smoked Ham"
+  }
+]

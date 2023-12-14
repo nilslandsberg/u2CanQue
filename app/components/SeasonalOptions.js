@@ -11,6 +11,17 @@ const SeasonalOptions = () => {
 
 
   const hamsForSale = christmasDateCheck(currentDate);
+
+  if (hamsForSale) {
+    return (
+      <>
+      <div className="z-30  bg-slate-600 p-5 text-2xl text-white text-center">
+        Seasonal Options
+      </div>
+      <div className="text-white">Hams For Sale! Orders close on 12/20!</div>
+      </>
+    )
+  }
   
 
   const easterDate = easterDateCheck(currentYear, currentDate);

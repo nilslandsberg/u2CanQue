@@ -10,22 +10,32 @@ const SeasonalOptions = () => {
   const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
 
 
-  const hamsForSale = christmasDateCheck(currentDate);
+  const christmasSale = christmasDateCheck();
 
-  if (hamsForSale) {
+  // if (christmasSale) {
+  //   return (
+  //     <>
+  //     <div className="z-30  bg-slate-600 p-5 text-2xl text-white text-center">
+  //       Christmas Orders Available Through December 20th!
+  //     </div>
+  //     <div className="text-white">Hams For Sale! Orders close on 12/20!</div>
+  //     </>
+  //   )
+  // }
+
+  const easterTrialDate = new Date("2023-03-22T04:00:00.000")
+  const easterDate = easterDateCheck(currentYear, easterTrialDate);
+  
+  if (easterDate.isItEaster) {
     return (
       <>
       <div className="z-30  bg-slate-600 p-5 text-2xl text-white text-center">
-        Seasonal Options
+        Easter Orders Available Through {easterDate.easterSaleEnd.toLocaleDateString()}!
       </div>
-      <div className="text-white">Hams For Sale! Orders close on 12/20!</div>
+      <div className="text-white">Easter Sale!</div>
       </>
     )
   }
-  
-
-  const easterDate = easterDateCheck(currentYear, currentDate);
-  console.log("easter is on this date: ", easterDate)
  
   return (
     <>

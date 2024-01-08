@@ -48,12 +48,30 @@ export const easterDateCheck = (currentYear, currentDate) => {
   const foundHoliday = findHolidayByName(holiday, holidayNameToFind)
   const easterDate = new Date(foundHoliday.date);
   
-  const easterSaleStart = getOneMonthPrior(easterDate)
+  const easterSaleStart = getOneMonthPrior(easterDate);
   const easterSaleEnd = getFiveDaysPrior(easterDate);
 
   if (currentDate >= easterSaleStart && currentDate <= easterSaleEnd) {
     return { isItEaster: true, easterSaleEnd: easterSaleEnd }
   } else {
-    return { istItEaster: false }
+    return { isItEaster: false }
+  }
+}
+
+export const thanksgivingDateCheck = (currentYear, currentDate) => {
+  const hd = new holidays('US');
+  const holiday = hd.getHolidays(currentYear);
+  
+  const holidayNameToFind = "Thanksgiving Day"
+  const foundHoliday = findHolidayByName(holiday, holidayNameToFind);
+  const thanksgivingDate = new Date(foundHoliday.date);
+
+  const thanksgivingSaleStart = getOneMonthPrior(thanksgivingDate);
+  const thanksgivingSaleEnd = getFiveDaysPrior(thanksgivingDate);
+
+  if (currentDate >= thanksgivingSaleStart && currentDate <= thanksgivingSaleEnd) {
+    return { isItThanksgiving: true, thanksgivingSaleEnd: thanksgivingSaleEnd }
+  } else {
+    return { isItThankgiving: false }
   }
 }

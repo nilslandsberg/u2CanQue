@@ -75,3 +75,7 @@ export const thanksgivingDateCheck = (currentYear, currentDate) => {
     return { isItThankgiving: false }
   }
 }
+
+export const saleEndMessage = (saleEnd) => {
+  `Available Through ${saleEnd.toLocaleDateString()}!`
+}

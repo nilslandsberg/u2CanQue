@@ -1,16 +1,34 @@
 'use client';
 
-import React from "react";
+import React, { useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
 const OrderCalendar = () => {
-  const [selected, setSelected] = React.useState();
+  const [selected, setSelected] = useState();
   console.log(selected)
 
-  const isWeekend = (date) => {
-    const day = date.getDay();
-    return day === 0 || day === 6; // Sunday (0) and Saturday (6)
+  const isDisabled = (date) => {
+    const dayOfWeek = date.getDay();
+    const dayOfMonth = date.getDate();
+    const month = date.getMonth();
+
+    // Disable weekends
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      return true;
+    }
+
+    // Disable Thanksgiving (fourth Thursday of November)
+    if (month === 10 && dayOfWeek === 4 && dayOfMonth > 22 && dayOfMonth < 30) {
+      return true;
+    }
+
+    // Disable Christmas
+    if (month === 11 && dayOfMonth === 25) {
+      return true;
+    }
+
+    return false;
   };
 
   const modifiers = {
@@ -19,16 +37,14 @@ const OrderCalendar = () => {
 
   return (
     <>
-    <div className="calendar z-30 text-white">
-      <DayPicker
-        mode="single"
-        selected={selected}
-        onSelect={setSelected}
-        modifiers={modifiers}
-        disabled={isWeekend}
-      />
-    </div>
-
+      <div className="calendar z-30 text-white">
+        <DayPicker
+          mode="single"
+          selected={selected}
+          onSelect={setSelected}
+          modifiers={{ ...modifiers, disabled: isDisabled }}
+        />
+      </div>
     </>
   
   );

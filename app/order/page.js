@@ -1,5 +1,6 @@
 import React from 'react';
 import OrderCalendar from '../components/OrderCalendar';
+import StartOrderButton from '../components/StartOrderButton';
 
 export default function Menu() {
 
@@ -18,6 +19,7 @@ export default function Menu() {
             <p>Our menu changes daily.  Select a date on the calendar below to see our offerings for the day.</p>
           </div>
           <OrderCalendar />
+          <StartOrderButton />
           <video
             className="absolute z-10 w-full h-full object-cover"
             autoPlay

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import StartOrderButton from "./StartOrderButton";
 
 const OrderCalendar = () => {
   const [selected, setSelected] = useState();
@@ -45,6 +46,7 @@ const OrderCalendar = () => {
           modifiers={{ ...modifiers, disabled: isDisabled }}
         />
       </div>
+      <StartOrderButton selectedDate={selected}/>
     </>
   
   );

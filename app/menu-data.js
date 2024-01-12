@@ -34,15 +34,61 @@ export const appetizerData = [
   }
 ]
 
-export const lunchOptions = [
+const chickenPlate = {
+  id: "3T9ZFQ0A6WX2W",
+  name: "BBQ Chicken Meal",
+  image: "/images/BBQChicken.jpeg",
+  description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, 2 thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
+  price: "13.50",
+  options: ["Chicken Breast +$1.50"]
+}
+
+const texasChili = {
+    id: "GNYFEFD9J3WV6",
+    name: "Texas Bold (and beanless) Chili",
+    image: "/images/Chili.jpeg",
+    description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
+    price: "12.50",
+    options: {
+      toppings: ["Sour Cream", "Fresh Diced White Onion", "Shredded Smoked Cheddar Cheese"]
+  }
+}
+
+const pulledPorkSandwich = {
+  id: "ND919VXE4T4A0",
+  name: "Pulled Pork Sandwich",
+  image: "/images/PulledPork.jpeg",
+  description: "Each bite is a symphony of flavors, as our expertly chosen seasonings and marinades infuse the meat with a harmonious blend of smokiness, sweetness, and tang.",
+  price: "13.00",
+  options: {
+    sauce: ["KC Sweet Sauce", "Spicy Sauce", "Dry Rub Only (naked)"]
+  }
+}
+
+export const mondayLunch = [
+  chickenPlate,
   {
-    id: "3T9ZFQ0A6WX2W",
-    name: "BBQ Chicken Meal",
-    image: "/images/BBQChicken.jpeg",
-    description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, 2 thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
+    id: "7DYEWW3SQWJHC",
+    name: "BBQ Pork Loin",
+    image: "/images/PorkLoin.jpeg",
+    description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
     price: "13.50",
-    options: ["Chicken Breast +$1.50"]
+    options: {
+      sauce: ["Dry Rub", "With Sauce"]
+    }
   },
+  {
+    id: "7DYEWW3SQWJHC",
+    name: "BBQ Pork Steak",
+    image: "/images/porkSteak.jpeg",
+    description: "Meticulously seasoned and slow-cooked to tender perfection. Infused with the rich, smoky flavors of the South, this delectable dish pays homage to our traditional barbecue techniques. Each succulent cut is glazed with our BBQ sauce, boasting a harmonious blend of sweet molasses, tangy vinegar, and a hint of heat. Savor the taste of the South with every juicy bite of our BBQ pork steak.",
+    price: "13.50",
+  },
+  texasChili
+]
+
+export const tuesdayLunch = [
+  chickenPlate,
   {
     id: "00K9SY4DCH73T",
     name: "Baby Back Ribs - 1/2 Rack",
@@ -61,27 +107,11 @@ export const lunchOptions = [
       sauce: ["KC Sweet Sauce", "Spicy Sauce", "Dry Rub Only (naked)", "Smokey"]
     }
   },
-  {
-    id: "",
-    name: "Pulled Pork Sandwich",
-    image: "/images/PulledPork.jpeg",
-    description: "Each bite is a symphony of flavors, as our expertly chosen seasonings and marinades infuse the meat with a harmonious blend of smokiness, sweetness, and tang.",
-    price: "13.00",
-    options: {
-      sauce: ["KC Sweet Sauce", "Spicy Sauce", "Dry Rub Only (naked)"]
-    }
-    
-  },
-  {
-    id: "7DYEWW3SQWJHC",
-    name: "BBQ Pork Loin",
-    image: "/images/PorkLoin.jpeg",
-    description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
-    price: "13.50",
-    options: {
-      sauce: ["Dry Rub", "With Sauce"]
-    }
-  },
+  texasChili
+]
+
+export const wednesdayLunch = [
+  chickenPlate,
   {
     id: "G0SXBYAVDS670",
     name: "Smoked Meatloaf",
@@ -89,6 +119,28 @@ export const lunchOptions = [
     description: 'A twist on the classic comfort food with our mouthwatering BBQ meatloaf. Savory, subtle heat, and our wonderful, caramelized BBQ sauce topping of this meal that screams that it is "not just Grandmas" meatloaf.',
     price: "13.50"
   },
+  pulledPorkSandwich,
+  texasChili
+]
+
+export const thursdayLunch = [
+  chickenPlate,
+  pulledPorkSandwich,
+  {
+    id: "",
+    name: "Pulled Chicken Sandwich",
+    image: "/images/pulledChickenSandwich.jpeg",
+    description: "Experience the perfect harmony of smokiness, sweetness, and tang in our pulled chicken sandwich. Our expertly chosen seasonings and marinades infuse every bite with a symphony of flavors, making each mouthful a delightful journey for your taste buds.",
+    price: "13.00",
+    options: {
+      sauce: ["KC Sweet Sauce", "Spicy Sauce", "Dry Rub Only (naked)"]
+    }
+  },
+  texasChili
+]
+
+const fridayLunch = [
+  chickenPlate,
   {
     id: "BYGXQY9PVMVV6",
     name: "Brisket Plate",
@@ -106,16 +158,7 @@ export const lunchOptions = [
       bread: ["Texas Garlic Toast", "Garlic Parmesan French Bread", "Roll"]
     }
   },
-  {
-    id: "GNYFEFD9J3WV6",
-    name: "Texas Bold (and beanless) Chili",
-    image: "/images/Chili.jpeg",
-    description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
-    price: "12.50",
-    options: {
-      toppings: ["Sour Cream", "Fresh Diced White Onion", "Shredded Smoked Cheddar Cheese"]
-    }
-  }
+  texasChili
 ]
 
 export const bulkBbq = [

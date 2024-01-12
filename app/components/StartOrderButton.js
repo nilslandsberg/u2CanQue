@@ -1,3 +1,5 @@
+"use client";
+
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
@@ -12,7 +14,7 @@ const StartOrderButton = ({ selectedDate }) => {
 
     if (dayOfWeekNumber >= 1 && dayOfWeekNumber <= 5) {
       const dayOfWeek = daysOfWeek[dayOfWeekNumber];
-      
+
       // create shoppingCart
       const shoppingCart = {
         date: selectedDate,

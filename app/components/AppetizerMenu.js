@@ -1,8 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { appetizerData } from '../menu-data';
-import parse from 'html-react-parser';
-import AddToOrderButton from './AddToOrderButton';
+
 import { renderMenuItems } from '../utils/renderMenuItems';
 
 const AppetizerMenu = () => {

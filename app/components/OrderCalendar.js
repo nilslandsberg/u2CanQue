@@ -13,6 +13,7 @@ const OrderCalendar = () => {
     const dayOfWeek = date.getDay();
     const dayOfMonth = date.getDate();
     const month = date.getMonth();
+    const currentDateTime = new Date();
 
     // Disable weekends
     if (dayOfWeek === 0 || dayOfWeek === 6) {
@@ -26,6 +27,11 @@ const OrderCalendar = () => {
 
     // Disable Christmas
     if (month === 11 && dayOfMonth === 25) {
+      return true;
+    }
+
+    // Disable past dates and current date
+    if (date <= currentDateTime) {
       return true;
     }
 

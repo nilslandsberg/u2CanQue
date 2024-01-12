@@ -139,7 +139,7 @@ export const thursdayLunch = [
   texasChili
 ]
 
-const fridayLunch = [
+export const fridayLunch = [
   chickenPlate,
   {
     id: "BYGXQY9PVMVV6",

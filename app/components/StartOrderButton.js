@@ -11,7 +11,8 @@ const StartOrderButton = ({ selectedDate }) => {
     const date = new Date(selectedDate);
     const dayOfWeekNumber = date.getUTCDay();
     const daysOfWeek = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
-
+    
+    // Check if day of week is a Monday - Friday and create shopping cart in local storage
     if (dayOfWeekNumber >= 1 && dayOfWeekNumber <= 5) {
       const dayOfWeek = daysOfWeek[dayOfWeekNumber];
 

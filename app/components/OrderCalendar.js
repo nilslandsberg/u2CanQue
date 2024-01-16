@@ -44,7 +44,7 @@ const OrderCalendar = () => {
 
   return (
     <>
-      <div className="calendar z-30 text-white">
+      <div className="calendar z-30 flex flex-col items-center text-white">
         <DayPicker
           mode="single"
           selected={selected}

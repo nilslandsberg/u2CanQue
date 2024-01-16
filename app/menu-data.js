@@ -38,7 +38,7 @@ const chickenPlate = {
   id: "3T9ZFQ0A6WX2W",
   name: "BBQ Chicken Meal",
   image: "/images/BBQChicken.jpeg",
-  description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, 2 thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
+  description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
   price: "13.50",
   options: ["Chicken Breast +$1.50"]
 }

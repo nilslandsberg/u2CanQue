@@ -22,7 +22,7 @@ const LunchOptions = (day) => {
   
   return (
     <>
-      <div className="z-30 p-5 text-2xl text-white  bg-slate-600 text-center">
+      <div className="z-30 p-5 text-2xl text-white  bg-slate-600 text-center" id="lunch-options">
         Lunch Options
       </div>
       {renderMenuItems(lunchOptions)}

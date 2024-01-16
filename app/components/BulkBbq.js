@@ -5,7 +5,7 @@ import { renderBulkBbq, renderSides } from '../utils/renderMenuItems';
 const BulkBbq = () => {
   return (
     <>
-      <div className="z-30 bg-slate-600 p-5 text-2xl text-white text-center">
+      <div className="z-30 bg-slate-600 p-5 text-2xl text-white text-center" id="bulk-bbq">
         Bulk BBQ
       </div>
       {renderBulkBbq(bulkBbq)}

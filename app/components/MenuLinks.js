@@ -3,34 +3,12 @@
 import React from 'react';
 
 const MenuLinks = () => {
-  const scrollToAppetizers = () => {
-    const appetizersSection = document.getElementById('appetizers');
-    if (appetizersSection) {
-      let position = appetizersSection.getBoundingClientRect();
+  const scrollToMenuSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      let position = section.getBoundingClientRect();
       window.scrollTo({
-        top: position.top + window.scrollY -172,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const scrollToLunchOptions = () => {
-    const lunchOptionsSection = document.getElementById('lunch-options');
-    if (lunchOptionsSection) {
-      let position = lunchOptionsSection.getBoundingClientRect();
-      window.scrollTo({
-        top: position.top + window.scrollY -172,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const scrollToBulkBbq = () => {
-    const bulkBbqSection = document.getElementById('bulk-bbq');
-    if (bulkBbqSection) {
-      let position = bulkBbqSection.getBoundingClientRect();
-      window.scrollTo({
-        top: position.top + window.scrollY -172,
+        top: position.top + window.scrollY - 172,
         behavior: 'smooth',
       });
     }
@@ -42,9 +20,9 @@ const MenuLinks = () => {
         <p>Menu</p>
       </div>
       <nav className="text-lg font-semibold pb-2 flex flex-row text-center md:justify-center sm:justify-start items-center border-b border-white overflow-x-auto">
-        <a className="menu-link hover:text-slate-300 px-4 cursor-pointer" onClick={scrollToAppetizers}>Appetizers</a>
-        <a className="menu-link hover:text-slate-300 px-4 cursor-pointer" onClick={scrollToLunchOptions}>Lunch Options</a>
-        <a className="menu-link hover:text-slate-300 px-4 cursor-pointer" onClick={scrollToBulkBbq}>Bulk BBQ | Sides</a>
+        <a className="menu-link hover:text-slate-300 px-4 cursor-pointer" onClick={() => scrollToMenuSection('appetizers')}>Appetizers</a>
+        <a className="menu-link hover:text-slate-300 px-4 cursor-pointer" onClick={() => scrollToMenuSection('lunch-options')}>Lunch Options</a>
+        <a className="menu-link hover:text-slate-300 px-4 cursor-pointer" onClick={() => scrollToMenuSection('bulk-bbq')}>Bulk BBQ | Sides</a>
       </nav>
     </div>
   );

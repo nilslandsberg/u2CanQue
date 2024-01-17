@@ -3,10 +3,14 @@
 import React from 'react';
 
 const MenuLinks = () => {
+  // When user clicks a link, the id is sent to this function
   const scrollToMenuSection = (sectionId) => {
+    // get the element by id
     const section = document.getElementById(sectionId);
     if (section) {
+      // determine the position of the element
       let position = section.getBoundingClientRect();
+      // scroll to the position while maintaining the padding of 172
       window.scrollTo({
         top: position.top + window.scrollY - 172,
         behavior: 'smooth',

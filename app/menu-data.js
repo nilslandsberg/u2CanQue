@@ -5,7 +5,9 @@ export const appetizerData = [
     image: "/images/PorkBellyBurntEnds.jpeg",
     description: "Our succulent, melt-in-your-mouth pork belly is expertly seasoned and perfectly smoked, resulting in a deliciously smoky and tender sensation with every bite. It is served on a bed of fluffy white rice with your choice of sauce.",
     price: "8.50",
-    options: ["Mild", "Medium", "Ghost Pepper Glazed"]
+    options: {
+      sauce: ["Mild", "Medium", "Ghost Pepper Glazed"]
+    }
   },
   {
     id: "YST7QH1466SHM",
@@ -40,17 +42,19 @@ const chickenPlate = {
   image: "/images/BBQChicken.jpeg",
   description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
   price: "13.50",
-  options: ["Chicken Breast +$1.50"]
+  options: {
+    typeOfChicken: ["Thighs", "Breast +$1.50"]
+  }
 }
 
 const texasChili = {
-    id: "GNYFEFD9J3WV6",
-    name: "Texas Bold (and beanless) Chili",
-    image: "/images/Chili.jpeg",
-    description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
-    price: "12.50",
-    options: {
-      toppings: ["Sour Cream", "Fresh Diced White Onion", "Shredded Smoked Cheddar Cheese"]
+  id: "GNYFEFD9J3WV6",
+  name: "Texas Bold (and beanless) Chili",
+  image: "/images/Chili.jpeg",
+  description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
+  price: "12.50",
+  options: {
+    toppings: ["Sour Cream", "Fresh Diced White Onion", "Shredded Smoked Cheddar Cheese"]
   }
 }
 

@@ -3,6 +3,7 @@
 import React from 'react';
 import { useModal } from '../contexts/ModalContext';
 import Image from 'next/image';
+import ItemOrderOptions from './ItemOrderOptions';
 
 const OrderModal = () => {
   const { modalItem, closeModal } = useModal();
@@ -10,14 +11,10 @@ const OrderModal = () => {
   return (
     <div className="fixed inset-0 overflow-y-auto">
       <div className="flex items-center justify-center min-h-screen">
-        {/* Modal Overlay */}
         <div className="fixed inset-0 bg-black bg-opacity-10"></div>
-
-        {/* Modal Content */}
         <div className="bg-black border p-4 shadow-lg flex flex-col items-center">
-          {/* Your modal content goes here */}
-
           <p className="text-white text-2xl mt-4">{modalItem.name}</p>
+          {modalItem.options && (<ItemOrderOptions itemOptions={modalItem.options}/>)}
           <div className="flex flex-row mt-4">
             <button
               onClick={() => closeModal()}

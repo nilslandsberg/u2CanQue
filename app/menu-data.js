@@ -99,7 +99,9 @@ export const tuesdayLunch = [
     image: "/images/1:2RackBabyBack.jpeg",
     description: "A half-rack of our slow smoked BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. Our ribs have earned prestigious awards at renowned barbecue competitions around the Country, earning the respect and admiration of judges who have recognized the unmatched quality and flavor we deliver.",
     price: "18.00",
-    sauce: ["KC Sweet Sauce", "Spicy Sauce", "Dry Rub Only (naked)", "Smokey"]
+    options: {
+      sauce: ["KC Sweet Sauce", "Spicy Sauce", "Dry Rub Only (naked)", "Smokey"]
+    }
   },
   {
     id: "EWE3WY8QJGTGC",

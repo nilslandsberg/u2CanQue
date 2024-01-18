@@ -2,14 +2,22 @@
 
 import React, { useEffect } from 'react';
 import { mondayLunch, tuesdayLunch, wednesdayLunch, thursdayLunch, fridayLunch } from '../menu-data';
-import { useDispatch, useSelector } from 'react-redux';
 import { renderMenuItems } from '../utils/renderMenuItems';
+import { useRouter } from 'next/navigation';
 
 
 const LunchOptions = (day) => {
+  const router = useRouter()
   const { dayOfWeek } = day
-  const storedDayOfWeek = localStorage.getItem('shoppingCart') ? JSON.parse(localStorage.getItem('shoppingCart')).dayOfWeek : null;
 
+  useEffect(() => {
+    const storedDayOfWeek = typeof localStorage !== 'undefined' ?
+      JSON.parse(localStorage.getItem('shoppingCart'))?.dayOfWeek : null;
+    if (storedDayOfWeek !== dayOfWeek) {
+      router.push(`${storedDayOfWeek}`)
+    }
+  }, []);
+  
   const dayToLunchOptions = {
     monday: mondayLunch,
     tuesday: tuesdayLunch,

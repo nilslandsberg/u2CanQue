@@ -2,12 +2,14 @@
 
 import { useModal } from '../contexts/ModalContext';
 import ItemOrderOptions from './ItemOrderOptions';
+import LunchItemBreadOptions from './LunchItemBreadOptions';
 
 const OrderModal = () => {
-  const { modalItem, closeModal, isModalOpen, modalItemOptions } = useModal();
+  const { modalItem, closeModal, isModalOpen, modalItemOptions, modalItemBread } = useModal();
   console.log("Is Modal Open: ", isModalOpen);
   console.log("Modal Item: ", modalItem);
-  console.log("Modal Item Option Selected: ", modalItemOptions)
+  console.log("Modal Item Option Selected: ", modalItemOptions);
+  console.log("Bread Selected: ", modalItemBread)
 
   return (
     <>
@@ -36,11 +38,11 @@ const OrderModal = () => {
               </div>
               {modalItem.options && (
                 <>
-                  <div>    Select One of the Following Options:</div>
+                  <div>Select One of the Following Options:</div>
                   <ItemOrderOptions itemOptions={modalItem.options}/>
                 </>
               )}
-              
+              {modalItem.type && (<LunchItemBreadOptions />)}
               {/*footer*/}
               <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                 <div className="flex flex-row mt-4">

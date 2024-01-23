@@ -38,6 +38,7 @@ export const appetizerData = [
 
 const chickenPlate = {
   id: "3T9ZFQ0A6WX2W",
+  type: "Lunch Option",
   name: "BBQ Chicken Meal",
   image: "/images/BBQChicken.jpeg",
   description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
@@ -49,6 +50,7 @@ const chickenPlate = {
 
 const texasChili = {
   id: "GNYFEFD9J3WV6",
+  type: "Lunch Option",
   name: "Texas Bold (and beanless) Chili",
   image: "/images/Chili.jpeg",
   description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
@@ -60,6 +62,7 @@ const texasChili = {
 
 const pulledPorkSandwich = {
   id: "ND919VXE4T4A0",
+  type: "Lunch Option",
   name: "Pulled Pork Sandwich",
   image: "/images/PulledPork.jpeg",
   description: "Each bite is a symphony of flavors, as our expertly chosen seasonings and marinades infuse the meat with a harmonious blend of smokiness, sweetness, and tang.",
@@ -73,6 +76,7 @@ export const mondayLunch = [
   chickenPlate,
   {
     id: "7DYEWW3SQWJHC",
+    type: "Lunch Option",
     name: "BBQ Pork Loin",
     image: "/images/PorkLoin.jpeg",
     description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
@@ -83,6 +87,7 @@ export const mondayLunch = [
   },
   {
     id: "7DYEWW3SQWJHC",
+    type: "Lunch Option",
     name: "BBQ Pork Steak",
     image: "/images/porkSteak.jpeg",
     description: "Meticulously seasoned and slow-cooked to tender perfection. Infused with the rich, smoky flavors of the South, this delectable dish pays homage to our traditional barbecue techniques. Each succulent cut is glazed with our BBQ sauce, boasting a harmonious blend of sweet molasses, tangy vinegar, and a hint of heat. Savor the taste of the South with every juicy bite of our BBQ pork steak.",
@@ -95,6 +100,7 @@ export const tuesdayLunch = [
   chickenPlate,
   {
     id: "00K9SY4DCH73T",
+    type: "Lunch Option",
     name: "Baby Back Ribs - 1/2 Rack",
     image: "/images/1:2RackBabyBack.jpeg",
     description: "A half-rack of our slow smoked BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. Our ribs have earned prestigious awards at renowned barbecue competitions around the Country, earning the respect and admiration of judges who have recognized the unmatched quality and flavor we deliver.",
@@ -105,6 +111,7 @@ export const tuesdayLunch = [
   },
   {
     id: "EWE3WY8QJGTGC",
+    type: "Lunch Option",
     name: "Baby Back Ribs - Full Rack",
     image: "/images/FullRackBabyBack.jpeg",
     description: "A full rack of our slow smoked Baby Back BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. When your appetite, now or later on, demands more step on up for the full rack, and no more regrets on not having enough.",
@@ -120,6 +127,7 @@ export const wednesdayLunch = [
   chickenPlate,
   {
     id: "G0SXBYAVDS670",
+    type: "Lunch Option",
     name: "Smoked Meatloaf",
     image: "/images/Meatloaf.jpeg",
     description: 'A twist on the classic comfort food with our mouthwatering BBQ meatloaf. Savory, subtle heat, and our wonderful, caramelized BBQ sauce topping of this meal that screams that it is "not just Grandmas" meatloaf.',
@@ -134,6 +142,7 @@ export const thursdayLunch = [
   pulledPorkSandwich,
   {
     id: "",
+    type: "Lunch Option",
     name: "Pulled Chicken Sandwich",
     image: "/images/pulledChickenSandwich.jpeg",
     description: "Experience the perfect harmony of smokiness, sweetness, and tang in our pulled chicken sandwich. Our expertly chosen seasonings and marinades infuse every bite with a symphony of flavors, making each mouthful a delightful journey for your taste buds.",
@@ -149,6 +158,7 @@ export const fridayLunch = [
   chickenPlate,
   {
     id: "BYGXQY9PVMVV6",
+    type: "Lunch Option",
     name: "Brisket Plate",
     image: "/images/Brisket.jpeg",
     description: "Smoked to juicy perfection, your tastebuds will love the moist and tender texture inside a caramelized exterior seasoned the Texas way, SPG. Grab a couple of sides to complete your lunch.",
@@ -156,6 +166,7 @@ export const fridayLunch = [
   },
   {
     id: "KX50TKZNATXCP",
+    type: "Lunch Option",
     name: "Woodfired Lasagna",
     image: "/images/Lasagna.jpeg",
     description: "Savor the irresistible layers of our Smoked Lasagna. Tender pasta sheets embrace a delightful blend of smoked meats, infused with the rich flavors of fire-roasted tomatoes, grilled bell peppers, and caramelized onions. Our unique touch extends to the smoked provolone, mozzarella, and even freshly shaved parmesan. Slow-cooked to perfection, this hearty dish will leave you craving more, setting it apart from the rest.",
@@ -240,42 +251,8 @@ export const sides = [
 ]
 
 export const modifiers = {
-  sides: [
-    {
-      id: "GQGKREQ61NB9Y",
-      name: "Smoked Mac-N-Cheese"
-    },
-    {
-      id: "59JKQVWHS8NF2",
-      name: "Greek Pasta Salad"
-    },
-    {
-      id: "F5ZXN9CECHQPE",
-      name: "Creamy Sweet Southern Pasta Salad"
-    },
-    {
-      id: "8SNPYCHJH2S2Y",
-      name: "Smoked Cowboy Beans"
-    }
-  ],
-  bread: [
-    {
-      id: "1VGD69K8WCZPW",
-      name: "White Bread (2 slices)"
-    },
-    {
-      id: "YQY3KT28B9YR4",
-      name: "Roll"
-    },
-    {
-      id: "4XYJ61MHVFADP",
-      name: "No Bread"
-    },
-    {
-      id: "BXFFVZSCS10C0",
-      name: "Bun"
-    },
-  ],
+  sides: ["Smoked Mac-N-Cheese", "Greek Pasta Salad", "Creamy Sweet Southern Pasta Salad", "Smoked Cowboy Beans"],
+  bread: ["White Bread (2 slices)", "Roll", "Bun", "No Bread"],
   chickenChoice: [
     {
       id: "H7BQVPD14QZ4M",

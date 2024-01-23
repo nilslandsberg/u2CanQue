@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import WelcomeComponent from './components/WelcomeComponent';
 
+
 export default function Home() {
   return (
     <>

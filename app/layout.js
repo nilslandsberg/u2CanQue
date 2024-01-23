@@ -12,14 +12,15 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }) {
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ReduxProvider>
-          <NavBar />
-          {children}
-          <Footer />
-        </ReduxProvider>
+          <ReduxProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </ReduxProvider>
       </body>
     </html>
   )

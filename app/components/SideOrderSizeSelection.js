@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { useModal } from '../contexts/ModalContext';
-import { sides } from '../menu-data';
 
 const SideOrderSizeSelection = ({ index }) => {
   const { setModalItemSize, modalItem } = useModal();

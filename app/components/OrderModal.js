@@ -5,6 +5,7 @@ import ItemOrderOptions from './ItemOrderOptions';
 import BreadOptions from './BreadOptions';
 import SidesOptions from './SidesOptions';
 import SideOrderSizeSelection from './SideOrderSizeSelection';
+import ItemQuantity from './ItemQuantity';
 
 const OrderModal = () => {
   const { modalItem, closeModal, isModalOpen, modalItemToCart } = useModal();
@@ -48,6 +49,7 @@ const OrderModal = () => {
                   {modalItem.side && (<SideOrderSizeSelection sizeOptions={modalItem.size}/>)}
                 </div>
               </div>
+              <ItemQuantity />
               
               {/*footer*/}
               <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">

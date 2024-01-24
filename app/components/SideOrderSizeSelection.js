@@ -22,7 +22,7 @@ const SideOrderSizeSelection = ({ index }) => {
               onChange={(e) => handleSideSizeChange(e.target.value)}
               className="mt-2 mb-2 bg-slate-600 text-white"
             >
-              <option value="">Select Size</option>
+              <option value="null">Select Size</option>
               {sizeOptions.map((option) => (
                 <option key={option} value={option}>
                   {option}

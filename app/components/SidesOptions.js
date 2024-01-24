@@ -27,7 +27,7 @@ const SidesOptions = ({ index }) => {
               onChange={(e) => handleSideOneOptionChange(e.target.value)}
               className="mt-2 mb-2 bg-slate-600 text-white"
             >
-              <option value="">Select Side</option>
+              <option value="null">Select Side</option>
               {sides.map((option) => (
                 <option key={option} value={option}>
                   {option}

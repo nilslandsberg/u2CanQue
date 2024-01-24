@@ -23,7 +23,7 @@ const BreadOptions = ({ index }) => {
             onChange={(e) => handleOptionChange(e.target.value)}
             className="mt-2 mb-2 bg-slate-600 text-white"
           >
-            <option value="">Select Bread</option>
+            <option value="null">Select Bread</option>
             {bread.map((option) => (
               <option key={option} value={option}>
                 {option}

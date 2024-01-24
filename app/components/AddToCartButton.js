@@ -5,8 +5,13 @@ const AddToCartButton = () => {
   const { modalItemToCart, modalItem, setModalMessage } = useModal();
 
   const handleAddToCart = () => {
-    if (modalItem.options && modalItemToCart.options === null) {
+    if (modalItem.options && (modalItemToCart.options === null || Object.keys(modalItemToCart.options).length ===0)) {
       setModalMessage("Please select options before adding to the cart.");
+      return;
+    }
+
+    if ((modalItem.options && Object.keys(modalItem.options).length >= 2)  &&  Object.keys(modalItemToCart.options).length === 1) {
+      setModalMessage("Please select all options before adding to the cart.");
       return;
     }
 

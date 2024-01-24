@@ -8,10 +8,19 @@ const ItemOrderOptions = () => {
 
   // handler for selecting item options
   const handleOptionChange = (key, value) => {
-    setModalItemOptions((prevOptions) => ({
-      ...prevOptions,
-      [key]: value
-    }));
+    if (value === "") {
+      setModalItemOptions((prevOptions) => {
+        console.log(key)
+        const updatedOptions = { ...prevOptions };
+        delete updatedOptions[key];
+        return updatedOptions;
+      });
+    } else {
+      setModalItemOptions((prevOptions) => ({
+        ...prevOptions,
+        [key]: value
+      }));
+    }
   };
 
   // Function to capitalize the first letter of a string

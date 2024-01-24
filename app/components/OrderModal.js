@@ -9,8 +9,8 @@ import ItemQuantity from './ItemQuantity';
 import AddToCartButton from './AddToCartButton';
 
 const OrderModal = () => {
-  const { modalItem, closeModal, isModalOpen, modalMessage } = useModal();
- 
+  const { modalItem, closeModal, isModalOpen, modalMessage, modalItemToCart } = useModal();
+  console.log(modalItemToCart)
   return (
     <>
     {isModalOpen ? (

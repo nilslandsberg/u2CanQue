@@ -31,7 +31,7 @@ export const appetizerData = [
     price: "12.50",
     options: {
       sauce: ["Sweet BBQ", "Spicy Apple Habanero", "Asian BBQ", "Hot Squeezed"],
-      dressing: ["Ranch +$0.50", "Blue Cheese +$0.50", "Extra Sauce (2oz container) +$0.75"]
+      dressing: ["Ranch +$0.50", "Blue Cheese +$0.50", "Extra Sauce (2oz container) +$0.75", "No Dressing"]
     }
   }
 ]

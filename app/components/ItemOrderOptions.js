@@ -3,8 +3,8 @@
 import React from 'react'
 import { useModal } from '../contexts/ModalContext';
 
-const ItemOrderOptions = ({ itemOptions }) => {
-  const { setModalItemOptions, modalItemOptions } = useModal()
+const ItemOrderOptions = () => {
+  const { setModalItemOptions, modalItemOptions, modalItem } = useModal()
 
   // handler for selecting item options
   const handleOptionChange = (key, value) => {
@@ -19,6 +19,7 @@ const ItemOrderOptions = ({ itemOptions }) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
+  const itemOptions = modalItem.options;
   return (
     <div>
       {Object.keys(itemOptions).map((key) => (

@@ -6,10 +6,10 @@ import BreadOptions from './BreadOptions';
 import SidesOptions from './SidesOptions';
 import SideOrderSizeSelection from './SideOrderSizeSelection';
 import ItemQuantity from './ItemQuantity';
+import AddToCartButton from './AddToCartButton';
 
 const OrderModal = () => {
-  const { modalItem, closeModal, isModalOpen, modalItemToCart } = useModal();
-  console.log("Modal Item to Cart: ", modalItemToCart);
+  const { modalItem, closeModal, isModalOpen, modalMessage } = useModal();
  
   return (
     <>
@@ -46,13 +46,13 @@ const OrderModal = () => {
                   )}
                   {modalItem.bread && (<BreadOptions />)}
                   {(modalItem.twoSides || modalItem.oneSide) && (<SidesOptions />)}
-                  {modalItem.side && (<SideOrderSizeSelection sizeOptions={modalItem.size}/>)}
+                  {modalItem.side && (<SideOrderSizeSelection />)}
                 </div>
               </div>
               <ItemQuantity />
               
               {/*footer*/}
-              <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
+              <div className="flex flex-col items-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                 <div className="flex flex-row mt-4">
                   <button
                     onClick={() => closeModal()}
@@ -60,13 +60,9 @@ const OrderModal = () => {
                   >
                     Return to Menu
                   </button>
-                  <button 
-                    className="z-30 py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300"
-                    onClick={() => closeModal()}
-                  >
-                    Add To Cart
-                  </button>
+                  <AddToCartButton />
                 </div>
+                {modalMessage && <div className="text-red-500">{modalMessage}</div>}
               </div>
             </div>
           </div>

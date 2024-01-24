@@ -25,7 +25,8 @@ const StartOrderButton = ({ selectedDate }) => {
       // create shoppingCart
       const shoppingCart = {
         date: selectedDate,
-        dayOfWeek: dayOfWeek
+        dayOfWeek: dayOfWeek,
+        items: [],
       }
 
       // store shoppingCart in Local Storage

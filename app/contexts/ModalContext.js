@@ -11,6 +11,8 @@ export const ModalProvider = ({ children }) => {
   const [modalItemBread, setModalItemBread] = useState(null);
   const [modalItemSideOne, setModalItemSideOne] = useState(null);
   const [modalItemSideTwo, setModalItemSideTwo] = useState(null);
+  const [modalItemSize, setModalItemSize] = useState(null);
+  const [modalItemQuantity, setModalItemQuantity] = useState(1);
 
   const openModal = (item) => {
     setModalItem(item)
@@ -24,10 +26,21 @@ export const ModalProvider = ({ children }) => {
     setModalItemBread(null);
     setModalItemSideOne(null);
     setModalItemSideTwo(null);
+    setModalItemSize(null);
   };
 
+  const modalItemToCart = {
+    item: modalItem?.name || null,
+    options: modalItemOptions,
+    bread: modalItemBread,
+    sideOne: modalItemSideOne,
+    sideTwo: modalItemSideTwo,
+    size: modalItemSize,
+    quantity: modalItemQuantity
+  }
+
   return (
-    <ModalContext.Provider value={{ modalItem, isModalOpen, openModal, closeModal, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo, setModalItemOptions, setModalItemBread, setModalItemSideOne, setModalItemSideTwo }}>
+    <ModalContext.Provider value={{ modalItem, isModalOpen, openModal, closeModal, modalItemToCart, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo, modalItemSize, modalItemQuantity, setModalItemOptions, setModalItemBread, setModalItemSideOne, setModalItemSideTwo, setModalItemSize, setModalItemQuantity }}>
       {children}
     </ModalContext.Provider>
   );

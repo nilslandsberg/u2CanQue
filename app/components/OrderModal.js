@@ -4,15 +4,12 @@ import { useModal } from '../contexts/ModalContext';
 import ItemOrderOptions from './ItemOrderOptions';
 import BreadOptions from './BreadOptions';
 import SidesOptions from './SidesOptions';
+import SideOrderSizeSelection from './SideOrderSizeSelection';
 
 const OrderModal = () => {
-  const { modalItem, closeModal, isModalOpen, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo } = useModal();
-  console.log("Is Modal Open: ", isModalOpen);
-  console.log("Modal Item: ", modalItem);
-  console.log("Modal Item Option Selected: ", modalItemOptions);
-  console.log("Bread Selected: ", modalItemBread)
-  console.log("Side One Selected: ", modalItemSideOne)
-  console.log("Side Two Selected: ", modalItemSideTwo)
+  const { modalItem, closeModal, isModalOpen, modalItemToCart } = useModal();
+  console.log("Modal Item to Cart: ", modalItemToCart);
+ 
   return (
     <>
     {isModalOpen ? (
@@ -48,6 +45,7 @@ const OrderModal = () => {
                   )}
                   {modalItem.bread && (<BreadOptions />)}
                   {(modalItem.twoSides || modalItem.oneSide) && (<SidesOptions />)}
+                  {modalItem.side && (<SideOrderSizeSelection sizeOptions={modalItem.size}/>)}
                 </div>
               </div>
               

@@ -30,7 +30,7 @@ const ItemOrderOptions = ({ itemOptions }) => {
             onChange={(e) => handleOptionChange(key, e.target.value)}
             className="mt-2 mb-2 bg-slate-600 text-white"
           >
-            <option value="">Select {key}</option>
+            <option value="">Select {capitalizeFirstLetter(key)}</option>
             {itemOptions[key].map((option) => (
               <option key={option} value={option}>
                 {option}

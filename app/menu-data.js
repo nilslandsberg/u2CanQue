@@ -181,6 +181,7 @@ export const fridayLunch = [
 
 export const bulkBbq = [
   {
+    bulk: true,
     id: "9CG7CP2YC44MJ",
     name: "Pulled Pork",
     image: "/images/PulledPork.jpeg",
@@ -188,6 +189,7 @@ export const bulkBbq = [
     price: "11.50"
   },
   {
+    bulk: true,
     id: "JV8G84RMS5YFJ",
     name: "Beef Brisket",
     image: "/images/Brisket.jpeg",
@@ -198,21 +200,7 @@ export const bulkBbq = [
 
 export const sides = [
   {
-    id: "7CAXXHAESRJ08",
-    idBySize: [
-      {
-        pint: {id: "T4CRTZWZRSH6R"}
-      },
-      {
-        quart: {id: "GA9B9YBW1CZ4A"}
-      },
-      {
-        halfPan: {id: "1A7W5GNHJFG8W"}
-      },
-      {
-        fullPan: {id: "12YRVVV37XX42"}
-      }
-    ],
+    side: true,
     name: "Smoked Mac-n-Cheese",
     image: "/images/MacNCheese.jpeg",
     description: "Indulge in our irresistible smoked mac and cheese, where creamy macaroni meets a tantalizing smoky flavor. With a perfect balance of rich, gooey cheese and a subtle, lingering smokiness, it's a comforting classic elevated to new heights.",
@@ -221,24 +209,11 @@ export const sides = [
       quart: "22",
       halfPan: "45",
       fullPan: "75"
-    }
+    },
+    size: ["Pint (Serves 2-3): $13.00", "Quart (Serves 4-6): $22.00", "Half-Pan (Serves 12-14): $45.00", "Full-Pan (Serves 24-28): $75.00"]
   },
   {
-    id: "EJGRGVSYEB1G2",
-    idBySize: [
-      {
-        pint: {id: "A828YC6P4722E"}
-      },
-      {
-        quart: {id: "PJC6GS6V80DDR"}
-      },
-      {
-        halfPan: {id: "1DC144GFCJFH8"}
-      },
-      {
-        fullPan: {id: "VBX02Z8M7S8DR"}
-      }
-    ],
+    side: true,
     name: "Smoked Cowboy Beans",
     image: "/images/CowboyBeans.jpeg",
     description: "Savor the smoky essence of our slow-smoked cowboy beans, pork belly, brown sugar, and spices, then into the smoker for 3 hours, contributing to this mouthwatering experience. Perfect as a side or standalone comfort food.",
@@ -247,8 +222,34 @@ export const sides = [
       quart: "18",
       halfPan: "35",
       fullPan: "60"
-    }
-  }
+    },
+    size: ["Pint (Serves 2-3): $10.00", "Quart (Serves 4-6): $18.00", "Half-Pan (Serves 12-14): $35.00", "Full-Pan (Serves 24-28): $60.00"]
+  },
+  {
+    side: true,
+    image: "/images/GreenBeans.jpeg",
+    description: "Tender and seasoned, these perfectly smoked beans add a delightful twist to your barbecue spread. Their crispy texture and smoky flavor make for a mouthwatering side dish that perfectly complements any meal. Smoked pork belly and toasted fennel take these beans above and beyond your expectations.",
+    price: {
+      pint: "8",
+      quart: "14",
+      halfPan: "26",
+      fullPan: "40"
+    },
+    size: ["Pint (Serves 2-3): $8.00", "Quart (Serves 4-6): $14.00", "Half-Pan (Serves 12-14): $26.00", "Full-Pan (Serves 24-28): $40.00"]
+  },
+  {
+    side: true,
+    name: "Street Corn",
+    image: "/images/StreetCorn.jpeg",
+    description: "Tender and seasoned, these perfectly smoked beans add a delightful twist to your barbecue spread. Their crispy texture and smoky flavor make for a mouthwatering side dish that perfectly complements any meal. Smoked pork belly and toasted fennel take these beans above and beyond your expectations.",
+    price: {
+      pint: "8",
+      quart: "15",
+      halfPan: "25",
+      fullPan: "40"
+    },
+    size: ["Pint (Serves 2-3): $8.00", "Quart (Serves 4-6): $15.00", "Half-Pan (Serves 12-14): $25.00", "Full-Pan (Serves 24-28): $40.00"]
+  },
 ]
 
 export const modifiers = {

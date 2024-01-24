@@ -9,7 +9,8 @@ export const ModalProvider = ({ children }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalItemOptions, setModalItemOptions] = useState(null);
   const [modalItemBread, setModalItemBread] = useState(null);
-  const [modalItemSides, setModalItemSides] = useState(null);
+  const [modalItemSideOne, setModalItemSideOne] = useState(null);
+  const [modalItemSideTwo, setModalItemSideTwo] = useState(null);
 
   const openModal = (item) => {
     setModalItem(item)
@@ -21,11 +22,12 @@ export const ModalProvider = ({ children }) => {
     setIsModalOpen(false);
     setModalItemOptions(null);
     setModalItemBread(null);
-    setModalItemSides(null);
+    setModalItemSideOne(null);
+    setModalItemSideTwo(null);
   };
 
   return (
-    <ModalContext.Provider value={{ modalItem, isModalOpen, openModal, closeModal, modalItemOptions, modalItemBread, modalItemSides, setModalItemOptions, setModalItemBread, setModalItemSides }}>
+    <ModalContext.Provider value={{ modalItem, isModalOpen, openModal, closeModal, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo, setModalItemOptions, setModalItemBread, setModalItemSideOne, setModalItemSideTwo }}>
       {children}
     </ModalContext.Provider>
   );

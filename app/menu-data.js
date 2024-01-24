@@ -38,7 +38,7 @@ export const appetizerData = [
 
 const chickenPlate = {
   id: "3T9ZFQ0A6WX2W",
-  type: "Lunch Option",
+  twoSides: true,
   name: "BBQ Chicken Meal",
   image: "/images/BBQChicken.jpeg",
   description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
@@ -63,7 +63,7 @@ const texasChili = {
 
 const pulledPorkSandwich = {
   id: "ND919VXE4T4A0",
-  type: "Lunch Option",
+  twoSides: true,
   name: "Pulled Pork Sandwich",
   image: "/images/PulledPork.jpeg",
   description: "Each bite is a symphony of flavors, as our expertly chosen seasonings and marinades infuse the meat with a harmonious blend of smokiness, sweetness, and tang.",
@@ -77,7 +77,7 @@ export const mondayLunch = [
   chickenPlate,
   {
     id: "7DYEWW3SQWJHC",
-    type: "Lunch Option",
+    twoSides: true,
     name: "BBQ Pork Loin",
     image: "/images/PorkLoin.jpeg",
     description: "Generous slices of tender and juicy pork loin that is brined, lightly seasoned and smoked to perfection.",
@@ -88,7 +88,7 @@ export const mondayLunch = [
   },
   {
     id: "7DYEWW3SQWJHC",
-    type: "Lunch Option",
+    twoSides: true,
     name: "BBQ Pork Steak",
     image: "/images/porkSteak.jpeg",
     description: "Meticulously seasoned and slow-cooked to tender perfection. Infused with the rich, smoky flavors of the South, this delectable dish pays homage to our traditional barbecue techniques. Each succulent cut is glazed with our BBQ sauce, boasting a harmonious blend of sweet molasses, tangy vinegar, and a hint of heat. Savor the taste of the South with every juicy bite of our BBQ pork steak.",
@@ -101,7 +101,7 @@ export const tuesdayLunch = [
   chickenPlate,
   {
     id: "00K9SY4DCH73T",
-    type: "Lunch Option",
+    twoSides: true,
     name: "Baby Back Ribs - 1/2 Rack",
     image: "/images/1:2RackBabyBack.jpeg",
     description: "A half-rack of our slow smoked BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. Our ribs have earned prestigious awards at renowned barbecue competitions around the Country, earning the respect and admiration of judges who have recognized the unmatched quality and flavor we deliver.",
@@ -112,7 +112,7 @@ export const tuesdayLunch = [
   },
   {
     id: "EWE3WY8QJGTGC",
-    type: "Lunch Option",
+    twoSides: true,
     name: "Baby Back Ribs - Full Rack",
     image: "/images/FullRackBabyBack.jpeg",
     description: "A full rack of our slow smoked Baby Back BBQ ribs. We take pride in our commitment to excellence, and it shows in the accolades we've received. When your appetite, now or later on, demands more step on up for the full rack, and no more regrets on not having enough.",
@@ -144,7 +144,7 @@ export const thursdayLunch = [
   pulledPorkSandwich,
   {
     id: "",
-    type: "Lunch Option",
+    twoSides: true,
     name: "Pulled Chicken Sandwich",
     image: "/images/pulledChickenSandwich.jpeg",
     description: "Experience the perfect harmony of smokiness, sweetness, and tang in our pulled chicken sandwich. Our expertly chosen seasonings and marinades infuse every bite with a symphony of flavors, making each mouthful a delightful journey for your taste buds.",
@@ -160,7 +160,7 @@ export const fridayLunch = [
   chickenPlate,
   {
     id: "BYGXQY9PVMVV6",
-    type: "Lunch Option",
+    twoSides: true,
     bread: true,
     name: "Brisket Plate",
     image: "/images/Brisket.jpeg",

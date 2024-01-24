@@ -3,14 +3,16 @@
 import { useModal } from '../contexts/ModalContext';
 import ItemOrderOptions from './ItemOrderOptions';
 import BreadOptions from './BreadOptions';
+import SidesOptions from './SidesOptions';
 
 const OrderModal = () => {
-  const { modalItem, closeModal, isModalOpen, modalItemOptions, modalItemBread } = useModal();
+  const { modalItem, closeModal, isModalOpen, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo } = useModal();
   console.log("Is Modal Open: ", isModalOpen);
   console.log("Modal Item: ", modalItem);
   console.log("Modal Item Option Selected: ", modalItemOptions);
   console.log("Bread Selected: ", modalItemBread)
-
+  console.log("Side One Selected: ", modalItemSideOne)
+  console.log("Side Two Selected: ", modalItemSideTwo)
   return (
     <>
     {isModalOpen ? (
@@ -45,6 +47,7 @@ const OrderModal = () => {
                     </>
                   )}
                   {modalItem.bread && (<BreadOptions />)}
+                  {(modalItem.twoSides || modalItem.oneSide) && (<SidesOptions />)}
                 </div>
               </div>
               

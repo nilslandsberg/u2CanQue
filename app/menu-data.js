@@ -57,7 +57,7 @@ const texasChili = {
   description: "Experience the award-winning bold and smoky flavors of our Smoked Texas Chili. Tender smoked beef brisket combines with aromatic spices and fire-roasted tomatoes for a mouthwatering blend of taste. Served over a bed of rice that absorbs the complexity of flavors, it's a hearty and satisfying dish that will tantalize your taste buds.",
   price: "12.50",
   options: {
-    toppings: ["Sour Cream", "Fresh Diced White Onion", "Shredded Smoked Cheddar Cheese"]
+    toppings: ["Sour Cream", "Diced White Onion", "Shredded Smoked Cheddar Cheese", "Sour Cream & Diced White Onions", "Sour Cream & Smoked Cheddar Cheese", "Diced White Onions & Smoked Cheddar Cheese", "THE WORKS!"]
   }
 }
 
@@ -252,7 +252,7 @@ export const sides = [
 ]
 
 export const modifiers = {
-  sides: ["Smoked Mac-N-Cheese", "Greek Pasta Salad", "Creamy Sweet Southern Pasta Salad", "Smoked Cowboy Beans"],
+  sides: ["Smoked Mac-N-Cheese", "Greek Pasta Salad", "Creamy Sweet Southern Pasta Salad", "Smoked Cowboy Beans", "Smoked Green Beans", "Street Corn"],
   bread: ["Texas Toast", "No Bread"],
 }
 

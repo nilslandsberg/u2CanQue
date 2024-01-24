@@ -4,7 +4,7 @@ import React from 'react'
 import { useModal } from '../contexts/ModalContext';
 import { modifiers } from '../menu-data';
 
-const LunchItemBreadOptions = ({ index }) => {
+const BreadOptions = ({ index }) => {
   const { setModalItemBread } = useModal();
   const bread = modifiers.bread;
 
@@ -35,4 +35,4 @@ const LunchItemBreadOptions = ({ index }) => {
   );
 }
 
-export default LunchItemBreadOptions
+export default BreadOptions

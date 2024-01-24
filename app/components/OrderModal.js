@@ -2,7 +2,7 @@
 
 import { useModal } from '../contexts/ModalContext';
 import ItemOrderOptions from './ItemOrderOptions';
-import LunchItemBreadOptions from './LunchItemBreadOptions';
+import BreadOptions from './BreadOptions';
 
 const OrderModal = () => {
   const { modalItem, closeModal, isModalOpen, modalItemOptions, modalItemBread } = useModal();
@@ -36,13 +36,18 @@ const OrderModal = () => {
                   </span>
                 </button>
               </div>
-              {modalItem.options && (
-                <>
-                  <div>Select One of the Following Options:</div>
-                  <ItemOrderOptions itemOptions={modalItem.options}/>
-                </>
-              )}
-              {modalItem.type && (<LunchItemBreadOptions />)}
+              <div className="flex items-start justify-between p-5">
+                <div>
+                  {modalItem.options && (
+                    <>
+                      <div>Select One of the Following Options:</div>
+                      <ItemOrderOptions itemOptions={modalItem.options}/>
+                    </>
+                  )}
+                  {modalItem.bread && (<BreadOptions />)}
+                </div>
+              </div>
+              
               {/*footer*/}
               <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                 <div className="flex flex-row mt-4">

@@ -7,13 +7,19 @@ const AddToCartButton = () => {
   const handleAddToCart = () => {
     if (modalItem.options && modalItemToCart.options === null) {
       setModalMessage("Please select options before adding to the cart.");
-    } else {
-      // Update the shopping cart logic here
-      const currentCart = JSON.parse(localStorage.getItem('shoppingCart'));
-      console.log(currentCart);
-      setModalMessage(''); // Reset the message if conditions are met
+      return;
     }
-  };
+
+    if (modalItem.size && modalItemToCart.size === null) {
+      setModalMessage("Please select a size before adding to the cart.");
+      return;
+    }
+
+    // Update the shopping cart logic here
+    const currentCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    
+    setModalMessage(''); // Reset the message if conditions are met
+  }
 
   return (
     <div>

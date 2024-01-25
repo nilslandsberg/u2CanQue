@@ -1,19 +1,18 @@
 "use client";
 import { hideNavBarMobileLinks, showNavBarMobileLinks } from '@/redux/features/button-toggle-slice';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useNavBarContext } from '../contexts/NavBarContext';
 
 
 
 function NavBarMobileMenuButton() {
-  const isToggled = useSelector((state) => state.buttonToggle.navBarLinksShown);
-  const dispatch = useDispatch();
+  const { isToggled, setIsToggled } = useNavBarContext();
 
   const toggleMenu = () => {
     if (isToggled === false) {
-      dispatch(showNavBarMobileLinks());
+      setIsToggled(true);
     } else {
-      dispatch(hideNavBarMobileLinks());
+      setIsToggled(false);
     }
   }
 

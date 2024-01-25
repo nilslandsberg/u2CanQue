@@ -29,9 +29,10 @@ export const ModalProvider = ({ children }) => {
     setModalItemSideTwo(null);
     setModalItemSize(null);
     setModalMessage("");
+    setModalItemQuantity(1);
   };
 
-  const modalItemToCart = {
+  const modalItemOrdered = {
     item: modalItem?.name || null,
     options: modalItemOptions,
     bread: modalItemBread,
@@ -41,8 +42,13 @@ export const ModalProvider = ({ children }) => {
     quantity: modalItemQuantity
   }
 
+  const modalItemToCart = Object.fromEntries(
+    Object.entries(modalItemOrdered)
+      .filter(([key, value]) => value !== null)
+  );
+
   return (
-    <ModalContext.Provider value={{ modalItem, isModalOpen, openModal, closeModal, modalItemToCart, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo, modalItemSize, modalItemQuantity, modalMessage, setModalItemOptions, setModalItemBread, setModalItemSideOne, setModalItemSideTwo, setModalItemSize, setModalItemQuantity, setModalMessage }}>
+    <ModalContext.Provider value={{ modalItem, isModalOpen, openModal, closeModal, modalItemOrdered, modalItemToCart, modalItemOptions, modalItemBread, modalItemSideOne, modalItemSideTwo, modalItemSize, modalItemQuantity, modalMessage, setModalItemOptions, setModalItemBread, setModalItemSideOne, setModalItemSideTwo, setModalItemSize, setModalItemQuantity, setModalMessage }}>
       {children}
     </ModalContext.Provider>
   );

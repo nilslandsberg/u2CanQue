@@ -186,7 +186,10 @@ export const bulkBbq = [
     name: "Pulled Pork",
     image: "/images/PulledPork.jpeg",
     description: "Tender and juicy pulled pork.  Perfect for making sandwiches, nachos, or simply eating with your fingers.",
-    price: "11.50"
+    price: "11.50",
+    options: {
+      size: ["1lb - $11.50", "3lbs - $23.00", "5lbs - $57.50"]
+    }
   },
   {
     bulk: true,
@@ -194,7 +197,10 @@ export const bulkBbq = [
     name: "Beef Brisket",
     image: "/images/Brisket.jpeg",
     description: "Our brisket slices (or KC Burnt Ends) are meant to share more than the meat; it brings out the language of BBQ: LOVE.",
-    price: "18.50"
+    price: "18.50",
+    options: {
+      size: ["1lb - $18.50", "3lbs - $37.00", "5lbs - $92.50"]
+    }
   }
 ]
 

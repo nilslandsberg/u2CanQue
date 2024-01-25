@@ -2,7 +2,7 @@ import React from 'react';
 import { useModal } from '../contexts/ModalContext';
 
 const AddToCartButton = () => {
-  const { modalItemToCart, modalItem, setModalMessage } = useModal();
+  const { modalItemToCart, modalItem, setModalMessage, closeModal } = useModal();
 
   const handleAddToCart = () => {
     // Edge Cases to make sure user is not able to add item to cart without making selections in the dropdown menus
@@ -21,10 +21,21 @@ const AddToCartButton = () => {
       return;
     }
 
-    // Update the shopping cart logic here
+    // Access the shopping cart in local storage
     const currentCart = JSON.parse(localStorage.getItem('shoppingCart'));
-    
-    setModalMessage(''); // Reset the message if conditions are met
+
+    // Initialize "items" as an empty array if it doesn't exist
+    currentCart.items = currentCart.items || [];
+
+    // Add the item to the cart
+    currentCart.items.push(modalItemToCart);
+
+    // Save the updated cart to local storage
+    localStorage.setItem('shoppingCart', JSON.stringify(currentCart));
+
+    // Reset the message
+    setModalMessage(''); 
+    closeModal();
   }
 
   return (

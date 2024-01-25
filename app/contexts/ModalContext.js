@@ -39,7 +39,8 @@ export const ModalProvider = ({ children }) => {
     sideOne: modalItemSideOne,
     sideTwo: modalItemSideTwo,
     size: modalItemSize,
-    quantity: modalItemQuantity
+    price: modalItem?.price || 0,
+    quantity: modalItemQuantity,
   }
 
   const modalItemToCart = Object.fromEntries(

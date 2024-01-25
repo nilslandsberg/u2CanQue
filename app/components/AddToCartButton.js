@@ -3,10 +3,10 @@ import { useModal } from '../contexts/ModalContext';
 
 const AddToCartButton = () => {
   const { modalItemToCart, modalItem, setModalMessage, closeModal } = useModal();
-
+  console.log("modalItem: ", modalItem);
   const handleAddToCart = () => {
     // Edge Cases to make sure user is not able to add item to cart without making selections in the dropdown menus
-    if (modalItem.options && (modalItemToCart.options === null || Object.keys(modalItemToCart.options).length ===0)) {
+    if (modalItem.options && (!modalItemToCart.options || Object.keys(modalItemToCart.options).length ===0)) {
       setModalMessage("Please select options before adding to the cart.");
       return;
     }

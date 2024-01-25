@@ -5,6 +5,7 @@ const AddToCartButton = () => {
   const { modalItemToCart, modalItem, setModalMessage } = useModal();
 
   const handleAddToCart = () => {
+    // Edge Cases to make sure user is not able to add item to cart without making selections in the dropdown menus
     if (modalItem.options && (modalItemToCart.options === null || Object.keys(modalItemToCart.options).length ===0)) {
       setModalMessage("Please select options before adding to the cart.");
       return;

@@ -33,7 +33,7 @@ export const ModalProvider = ({ children }) => {
   };
 
   const modalItemOrdered = {
-    item: modalItem?.name || null,
+    name: modalItem?.name || null,
     options: modalItemOptions,
     bread: modalItemBread,
     sideOne: modalItemSideOne,

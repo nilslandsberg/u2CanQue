@@ -5,7 +5,7 @@ const ShoppingCartLink = ({ className }) => {
   const [ currentCart, setCurrentCart ] = useState("null");
 
   useEffect(() => {
-    const shoppingCart = localStorage.getItem('shoppingCart');
+    const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     if (shoppingCart) {
       setCurrentCart(shoppingCart)
     } else {

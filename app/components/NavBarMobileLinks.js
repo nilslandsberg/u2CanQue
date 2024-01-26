@@ -16,7 +16,7 @@ function NavBarMobileLinks() {
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/services">Services</a>
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/catering">Catering</a>
           <HolidayLink className="block py-2 px-4 text-sm hover:bg-slate-700"/>
-          <ShoppingCartLink className="blocblock py-2 px-4 text-sm hover:bg-slate-700" />
+          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/order/cart">Cart</a>
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/order">Order Online</a>
         </div>
       )}

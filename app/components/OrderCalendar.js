@@ -7,7 +7,6 @@ import StartOrderButton from "./StartOrderButton";
 
 const OrderCalendar = () => {
   const [selected, setSelected] = useState();
-  console.log(selected)
 
   const isDisabled = (date) => {
     const dayOfWeek = date.getDay();

@@ -1,13 +1,20 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ShoppingCartLink = ({ className }) => {
-  // Access the shopping cart in local storage
-  const shoppingCart = localStorage.getItem('shoppingCart');
-  const currentCart = shoppingCart ? JSON.parse(shoppingCart) : null;
+  const [ currentCart, setCurrentCart ] = useState("null");
+
+  useEffect(() => {
+    const shoppingCart = localStorage.getItem('shoppingCart');
+    if (shoppingCart) {
+      setCurrentCart(shoppingCart)
+    } else {
+      setCurrentCart("null");
+    }
+  }, [])
 
   return (
-    (currentCart ? <a className={className} href="/order/cart">Cart</a> : <></>)
+    ((currentCart !== "null") ? <a className={className} href="/order/cart">Cart</a> : <></>)
   );
 };
 export default ShoppingCartLink;

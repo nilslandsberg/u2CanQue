@@ -13,7 +13,7 @@ const NavBar = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center justify-between space-x-4">
               <a className=" hover:text-gray-400" href="/">
-                <Image src='/images/U2CanQueLogo.svg' alt="logo" width={50} height={50} />
+                <Image src='/images/U2CanQueLogo.svg' alt="logo" width={50} height={50} priority={true} />
               </a>
             </div>
             <NavBarLinks />

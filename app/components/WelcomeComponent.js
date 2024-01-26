@@ -11,7 +11,7 @@ const WelcomeComponent = () => {
       <div className="flex flex-col lg:flex-row space-around items-center justify-center bg-black border-t border-gray-200 dark:border-gray-600 py-12 px-12" id="about">
         <div className="md:w-2/3 lg:w-1/2 xl:w-1/3 px-8 flex-shrink-0">
           <div className="border-2 border-white overflow-hidden" style={{ width: '100%', position: 'relative' }}>
-            <Image src="/images/RobManion.jpeg" alt="Rob Manion Picture" width={900} height={900} className='p-2'/>
+            <Image src="/images/RobManion.jpeg" alt="Rob Manion Picture" width={900} height={900} className='p-2' priority={true}/>
           </div>
         </div>
         <div className="text-white text-left py-6 px-12 md:w-1/2">

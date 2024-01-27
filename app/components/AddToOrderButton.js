@@ -1,7 +1,6 @@
 "use client";
 
 import React from 'react';
-import OrderModal from './OrderModal';
 import { useModal } from '../contexts/ModalContext';
 
 const AddToOrderButton = ({ item }) => {

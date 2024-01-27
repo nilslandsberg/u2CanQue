@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from 'react';
+import RenderItemOptions from './RenderItemOptions';
+import ReturnToMenuButton from './ReturnToMenuButton';
 
 const ShoppingCartContents = () => {
   const [loading, setLoading] = useState(true);
@@ -10,8 +12,8 @@ const ShoppingCartContents = () => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     if (shoppingCart && shoppingCart.items && shoppingCart.items.length > 0) {
       setCurrentCart(shoppingCart);
+      setLoading(false); // Set loading to false once data is fetched
     }
-    setLoading(false); // Set loading to false once data is fetched
   }, []);
 
   if (loading) {
@@ -20,16 +22,21 @@ const ShoppingCartContents = () => {
   }
 
   return (
-    <div className="text-white">
+    <div className="text-white flex flex-col">
       {currentCart.items.length > 0 ? (
         currentCart.items.map((item, index) => (
-          <div key={index}>{item.item}</div>
+          <div key={index} className="flex flex-col text-white mb-4">
+            <div className="text-lg font-semibold">{item.name}</div>
+            {item.options ? <RenderItemOptions options={item.options} /> : <></>}
+            {item.bread ? <RenderBreadOptions bread={item.bread} /> : <></>}
+          </div>
         ))
       ) : (
         <div>There are no items in your cart.</div>
       )}
+      <ReturnToMenuButton dayOfWeek={currentCart.dayOfWeek} />
     </div>
   );
-};
-
-export default ShoppingCartContents;
+}
+  
+export default ShoppingCartContents

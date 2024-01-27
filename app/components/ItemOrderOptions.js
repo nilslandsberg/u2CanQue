@@ -2,6 +2,7 @@
 
 import React from 'react'
 import { useModal } from '../contexts/ModalContext';
+import { capitalizeFirstLetter } from '../utils/stringManipulation';
 
 const ItemOrderOptions = () => {
   const { setModalItemOptions, modalItemOptions, modalItem } = useModal()
@@ -23,10 +24,7 @@ const ItemOrderOptions = () => {
     }
   };
 
-  // Function to capitalize the first letter of a string
-  const capitalizeFirstLetter = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
+  
 
   const itemOptions = modalItem.options;
   return (

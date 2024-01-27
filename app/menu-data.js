@@ -44,7 +44,7 @@ const chickenPlate = {
   description: "To juicy perfection, we brine our free-range chicken, lightly seasoned and smoked. The meal comes with a large leg quarter, thighs or bone-in breast (can be substituted for an additional $1.50), and your choice of two sides.",
   price: "13.50",
   options: {
-    typeOfChicken: ["Thighs", "Breast +$1.50"]
+    chicken: ["Thighs", "Breast +$1.50"]
   }
 }
 

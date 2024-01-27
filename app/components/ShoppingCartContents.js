@@ -27,8 +27,11 @@ const ShoppingCartContents = () => {
         currentCart.items.map((item, index) => (
           <div key={index} className="flex flex-col text-white mb-4">
             <div className="text-lg font-semibold">{item.name}</div>
-            {item.options ? <RenderItemOptions options={item.options} /> : <></>}
-            {item.bread ? <RenderBreadOptions bread={item.bread} /> : <></>}
+            <div className="flex flex-col text-white pt-2">
+              {item.options ? <RenderItemOptions options={item.options} /> : <></>}
+              {item.bread ? <div className="ml-4">Bread: {item.bread}</div> : <></>}
+              <div className="flex justify-end">Price: {item.total}</div>
+            </div>
           </div>
         ))
       ) : (

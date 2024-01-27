@@ -11,7 +11,6 @@ const ItemOrderOptions = () => {
   const handleOptionChange = (key, value) => {
     if (value === "") {
       setModalItemOptions((prevOptions) => {
-        console.log(key)
         const updatedOptions = { ...prevOptions };
         delete updatedOptions[key];
         return updatedOptions;
@@ -23,8 +22,6 @@ const ItemOrderOptions = () => {
       }));
     }
   };
-
-  
 
   const itemOptions = modalItem.options;
   return (

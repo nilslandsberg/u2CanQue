@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from 'react';
+import { chickenPriceModifiers, chickenWingPriceModifiers } from '../utils/stringManipulation';
 
 const ModalContext = createContext();
 
@@ -39,10 +40,22 @@ export const ModalProvider = ({ children }) => {
     sideOne: modalItemSideOne,
     sideTwo: modalItemSideTwo,
     size: modalItemSize,
-    price: modalItem?.price || 0,
+    price: (() => {
+      // call price modifier functions if the item contains modifiers
+      if (modalItem?.name === "BBQ Chicken Meal") {
+        console.log("Chicken price calculation")
+        return chickenPriceModifiers(modalItemOptions);
+      } else if (modalItem?.name === "10 Smoked Jumbo Chicken Wings") {
+        return chickenWingPriceModifiers(modalItemOptions);
+      } else {
+        return modalItem?.price || 0; 
+      }
+    })(),
     quantity: modalItemQuantity,
   }
 
+  modalItemOrdered.total = modalItemOrdered.price * modalItemOrdered.quantity;
+  
   const modalItemToCart = Object.fromEntries(
     Object.entries(modalItemOrdered)
       .filter(([key, value]) => value !== null)

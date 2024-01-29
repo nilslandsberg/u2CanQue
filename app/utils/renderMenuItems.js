@@ -91,8 +91,8 @@ export const renderSides = (array) => {
             <p className="text-orange-600 font-semibold pt-4">Price:</p>
             <p className="text-orange-600 font-semibold pt-4 indent-2">Pint ${item.price.pint}.00</p>
             <p className="text-orange-600 font-semibold pt-4 indent-2">Quart ${item.price.quart}.00</p>
-            <p className="text-orange-600 font-semibold pt-4 indent-2">Half Pan ${item.price.halfPan}.00</p>
-            <p className="text-orange-600 font-semibold pt-4 indent-2">Full Pan ${item.price.fullPan}.00</p>
+            <p className="text-orange-600 font-semibold pt-4 indent-2">Half-Pan ${item.price.halfPan}.00</p>
+            <p className="text-orange-600 font-semibold pt-4 indent-2">Full-Pan ${item.price.fullPan}.00</p>
           </div>
           <AddToOrderButton item={item} />
         </div>

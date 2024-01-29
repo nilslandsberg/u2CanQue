@@ -5,7 +5,6 @@ export const capitalizeFirstLetter = (str) => {
 
 export const chickenPriceModifiers = (option) => {
   if (option && option.chicken === "Breast +$1.50") {
-    console.log("Chicken Breasts!!!")
     return "15.00"
   } else {
     return "13.50"
@@ -13,7 +12,6 @@ export const chickenPriceModifiers = (option) => {
 }
 
 export const chickenWingPriceModifiers = (option) => {
-  console.log("Chicken Wing Option: ", option)
   if (option && ((option.dressing === "Ranch +$0.50") || (option.dressing ==="Blue Cheese +$0.50"))) {
     return "13.00"
   } else if (option && option.dressing === "Extra Sauce (2oz container) +$0.75") {
@@ -21,4 +19,22 @@ export const chickenWingPriceModifiers = (option) => {
   } else {
     return "12.50"
   }
+}
+
+export const sizePriceCalculator = (selection, price) => {
+  // Isolate the size from the selection string
+  const isolatedSize = selection.split(" ")[0];
+  switch (isolatedSize) {
+    case "Pint":
+      return price.pint;
+    case "Quart":
+      return price.quart;
+    case "Half-Pan":
+      return price.halfPan;
+    case "Full-Pan":
+      return price.fullPan;
+    default:
+      return 0; // default to 0 is no size is found
+  }
+  
 }

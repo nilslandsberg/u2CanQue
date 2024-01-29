@@ -1,7 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState } from 'react';
-import { chickenPriceModifiers, chickenWingPriceModifiers } from '../utils/stringManipulation';
+import { chickenPriceModifiers, chickenWingPriceModifiers, sizePriceCalculator } from '../utils/stringManipulation';
 
 const ModalContext = createContext();
 
@@ -47,6 +47,8 @@ export const ModalProvider = ({ children }) => {
         return chickenPriceModifiers(modalItemOptions);
       } else if (modalItem?.name === "10 Smoked Jumbo Chicken Wings") {
         return chickenWingPriceModifiers(modalItemOptions);
+      } else if (modalItemSize) {
+        return sizePriceCalculator(modalItemSize, modalItem.price);
       } else {
         return modalItem?.price || 0; 
       }

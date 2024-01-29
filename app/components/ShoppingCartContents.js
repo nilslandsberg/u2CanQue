@@ -95,6 +95,7 @@ const ShoppingCartContents = () => {
                 }
                 {item.sideOne && !item.sideTwo ? <div className="ml-4">Side: {item.sideOne}</div> : <></>}
                 {item.bread ? <div className="ml-4">Bread: {item.bread}</div> : <></>}
+                {item.size ? <div className="ml-4"> Size: {item.size.split(":")[0]}</div> : <></>}
                 <div className="ml-4">Quantity: {item.quantity}</div>
                 {/* Display the item total with decimal point added */}
                 <div className="flex justify-end">Price: ${(item.total / 100).toFixed(2)}</div> 

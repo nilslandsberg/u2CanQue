@@ -42,13 +42,13 @@ const AddToCartButton = () => {
 
   return (
     <div>
-    <button
-      className="z-30 py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300"
-      onClick={handleAddToCart}
-    >
-      Add To Cart
-    </button>
-  </div>
+      <button
+        className="z-30 py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300"
+        onClick={handleAddToCart}
+      >
+        Add To Cart
+      </button>
+    </div>
   );
 };
 

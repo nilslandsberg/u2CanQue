@@ -8,7 +8,6 @@ function NavBarLinks() {
     <>
       <div className="items-center space-x-5 justify-between md:flex hidden">
         <a className=" hover:text-gray-400" href="/#about">About Us</a>
-        <a className=" hover:text-gray-400" href="/services">Services</a>
         <a className=" hover:text-gray-400" href="/catering">Catering</a>
         <HolidayLink className="hover:text-gray-400" />
         <a className="hover:text-gray-400" href="/order/cart">Cart</a>

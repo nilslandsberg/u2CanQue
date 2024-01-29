@@ -13,7 +13,6 @@ function NavBarMobileLinks() {
       {isToggled && (
         <div className="text-white">
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/#about">About Us</a>
-          <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/services">Services</a>
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/catering">Catering</a>
           <HolidayLink className="block py-2 px-4 text-sm hover:bg-slate-700"/>
           <a className="block py-2 px-4 text-sm hover:bg-slate-700" href="/order/cart">Cart</a>

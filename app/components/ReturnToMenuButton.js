@@ -12,10 +12,11 @@ const ReturnToMenuButton = ({ dayOfWeek }) => {
 
   return (
     <button
-      className="py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300"
+      className="py-2 px-3 bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300 inline-block"
+      style={{ width: 'auto', height: 'auto' }}
       onClick={handleClick}
     >
-      Return To Menu
+      Continue Shopping
     </button>
   )
 }

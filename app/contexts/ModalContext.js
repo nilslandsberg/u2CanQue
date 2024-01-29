@@ -54,8 +54,9 @@ export const ModalProvider = ({ children }) => {
     quantity: modalItemQuantity,
   }
 
-  modalItemOrdered.total = modalItemOrdered.price * modalItemOrdered.quantity;
-  
+  // Calculate total price and store it as a number w/o decimal
+  modalItemOrdered.total = modalItemOrdered.price * modalItemOrdered.quantity * 100;
+
   const modalItemToCart = Object.fromEntries(
     Object.entries(modalItemOrdered)
       .filter(([key, value]) => value !== null)

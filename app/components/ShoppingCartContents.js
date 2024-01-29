@@ -86,6 +86,14 @@ const ShoppingCartContents = () => {
               <div className="text-xl font-semibold">{item.name}</div>
               <div className="flex flex-col text-white pt-2">
                 {item.options ? <RenderItemOptions options={item.options} /> : <></>}
+                {item.sideTwo ? 
+                  <>
+                    <div className="ml-4">Sides:</div>
+                    <div className="ml-8">{item.sideOne}</div>
+                    <div className="ml-8">{item.sideTwo}</div>
+                  </> : <></>
+                }
+                {item.sideOne && !item.sideTwo ? <div className="ml-4">Side: {item.sideOne}</div> : <></>}
                 {item.bread ? <div className="ml-4">Bread: {item.bread}</div> : <></>}
                 <div className="ml-4">Quantity: {item.quantity}</div>
                 {/* Display the item total with decimal point added */}

@@ -15,7 +15,7 @@ const OrderCalendar = () => {
     const month = date.getMonth();
     const currentDateTime = DateTime.now();
     const tomorrow = currentDateTime.plus({ days: 1 });
-    console.log(date)
+
     // Disable weekends
     if (dayOfWeek === 0 || dayOfWeek === 6) {
       return true;

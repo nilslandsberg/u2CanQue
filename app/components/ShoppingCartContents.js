@@ -22,7 +22,7 @@ const ShoppingCartContents = () => {
       setCurrentCartDate(shoppingCart.date);
       setCurrentCartDayOfWeek(shoppingCart.dayOfWeek);
       setLoading(false); // Set loading to false once data is fetched
-    }
+    } 
   }, []);
 
   // Hook to update total price of order

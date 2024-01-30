@@ -6,9 +6,9 @@ const NavBarContext = createContext();
 
 export const NavBarContextProvider = ({ children }) => {
   const [isToggled, setIsToggled] = useState(false);
-
+  const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
   return (
-    <NavBarContext.Provider value={{ isToggled, setIsToggled }}>
+    <NavBarContext.Provider value={{ isToggled, setIsToggled, shoppingCart }}>
       {children}
     </NavBarContext.Provider>
   );

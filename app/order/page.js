@@ -6,7 +6,7 @@ export default function Menu() {
   return (
     <>
       <div className="relative flex flex-col items-center pt-[75px] bg-black pb-4">
-        <div className="w-1/2 md:w-1/3 z-20 items-center text-white text-center">
+        <div className="sm:w-1/4 lg:w-1/2 z-20 items-center text-white text-center">
           <br />
           <br />
           <p className="text-2xl font-bold italic">&quot;Ordering Tomorrow&#39;s Lunch Today&quot;</p>

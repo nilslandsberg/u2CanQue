@@ -1,8 +1,8 @@
 import React from 'react'
 
-const CheckOutButton = () => {
+const CheckOutButton = ({ selectedTime, setSelectTimeMessage }) => {
   const handleAddToCart = () => {
-    console.log('Click!')
+    (selectedTime && (selectedTime !== null)) ? console.log('We have a time selected') & setSelectTimeMessage("") : setSelectTimeMessage("You must select a pickup time to checkout.")
   }
   return (
     <button

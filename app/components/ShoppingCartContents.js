@@ -14,7 +14,9 @@ const ShoppingCartContents = () => {
   const [currentCartDayOfWeek, setCurrentCartDayOfWeek] = useState("");
   const [orderTotal, setOrderTotal] = useState(0);
   const [initialRender, setInitialRender] = useState(true);
-
+  const [selectedPickUpTime, setSelectedPickUpTime] = useState("");
+  const [selectTimeMessage, setSelectTimeMessage] = useState("");
+  
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
     if (shoppingCart && shoppingCart.items && shoppingCart.items.length >= 0) {
@@ -61,6 +63,8 @@ const ShoppingCartContents = () => {
   if (loading) {
     // Return a loading indicator
     return <div className="text-white">Loading...</div>;
+  } else {
+    console.log(currentCartItems)
   }
 
   // function to call toast message when item is removed from cart
@@ -80,27 +84,32 @@ const ShoppingCartContents = () => {
     }
   }
   
+  const handleTimeChange = (value) => {
+    setSelectedPickUpTime(value);
+  }
+
+  const times = ["10:00am", "10:15am", "10:30am", "10:45am", "11:00am", "11:15am", "11:30am", "11:45am", "12:00pm", "12:15pm", "12:30pm", "12:45pm", "1:00pm", "1:15pm", "1:30pm", "1:45pm", "2:00pm", "2:15pm", "2:30pm", "2:45pm"]
   return (
     <>
-      <div className="text-white flex flex-col md:w-1/2 sm:w-1/3">
+      <div className="text-white flex flex-col lg:w-1/2 md:w-1/3 px-2">
         <OrderDate orderDate={currentCartDate} dayOfWeek={currentCartDayOfWeek} />
         {currentCartItems.length > 0 ? (
           currentCartItems.map((item, index) => (
-            <div key={index} className="flex flex-col text-white mb-4">
+            <div key={index} className="flex flex-col text-white mb-4 px-2">
               <div className="text-xl font-semibold">{item.name}</div>
               <div className="flex flex-col text-white pt-2">
                 {item.options ? <RenderItemOptions options={item.options} /> : <></>}
                 {item.sideTwo ? 
                   <>
-                    <div className="ml-4">Sides:</div>
+                    <div className="ml-4 font-semibold">Sides:</div>
                     <div className="ml-8">{item.sideOne}</div>
                     <div className="ml-8">{item.sideTwo}</div>
                   </> : <></>
                 }
-                {item.sideOne && !item.sideTwo ? <div className="ml-4">Side: {item.sideOne}</div> : <></>}
-                {item.bread ? <div className="ml-4">Bread: {item.bread}</div> : <></>}
-                {item.size ? <div className="ml-4"> Size: {item.size.split(":")[0]}</div> : <></>}
-                <div className="ml-4">Quantity: {item.quantity}</div>
+                {item.sideOne && !item.sideTwo ? <div className="ml-4 font-semibold">Side: {item.sideOne}</div> : <></>}
+                {item.bread ? <div className="ml-4 font-semibold">Bread: {item.bread}</div> : <></>}
+                {item.size ? <div className="ml-4 font-semibold"> Size: {item.size.split(":")[0]}</div> : <></>}
+                <div className="ml-4 font-semibold">Quantity: {item.quantity}</div>
                 {/* Display the item total with decimal point added */}
                 <div className="flex justify-end">Price: ${(item.total / 100).toFixed(2)}</div> 
               </div>
@@ -117,8 +126,31 @@ const ShoppingCartContents = () => {
             <div className="text-2xl font-bold">Total: </div>
             <div className="text-lg ml-4"> ${orderTotal}</div>
           </div>
+          <div className="pick-up-time-container flex lg:flex-row md:flex-col sm:flex-col items-center md:w-1/2 sm:w-1/3 justify-end text-white mb-2 px-2">
+            <label className="mr-2">Time Order Will Be Ready:</label>
+            <select
+              value={selectedPickUpTime}
+              onChange={(e) => handleTimeChange(e.target.value)}
+              className="mt-2 mb-2 bg-slate-600 text-white"
+            >
+              <option value="">Select Pickup Time</option>
+              {times.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
           <div className="checkout-button-container flex flex-row md:w-1/2 sm:w-1/3 justify-end">
-            <CheckOutButton />  
+            <div className="flex flex-col justify-end">
+              {selectTimeMessage && <div className="text-red-500">{selectTimeMessage}</div>}
+              <div className="flex-grow-0">
+                <CheckOutButton 
+                  setSelectTimeMessage={setSelectTimeMessage} 
+                  selectedTime={selectedPickUpTime} 
+                />  
+              </div>
+            </div>
           </div>
         </> : <></>}
       <ReturnToMenuButton dayOfWeek={currentCartDayOfWeek} />

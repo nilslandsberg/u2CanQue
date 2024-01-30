@@ -21,7 +21,7 @@ const page = ({ params }) => {
           </div>
         </div>
         <OrderModal />
-        <ToastContainer autoClose={2000} />
+        <ToastContainer autoClose={2000} theme="dark" />
     </>
   )
 }

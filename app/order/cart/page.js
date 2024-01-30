@@ -13,7 +13,7 @@ const page = () => {
       </div>
       <div className="relative flex flex-col items-center pt-[175px] min-h-screen bg-black">
         <ShoppingCartContents />
-        <ToastContainer autoClose={2000} />
+        <ToastContainer autoClose={2000} theme="dark" />
       </div>
     </>
   )

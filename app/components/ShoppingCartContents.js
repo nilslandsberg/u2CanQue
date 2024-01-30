@@ -13,7 +13,6 @@ const ShoppingCartContents = () => {
   const [currentCartDayOfWeek, setCurrentCartDayOfWeek] = useState("");
   const [orderTotal, setOrderTotal] = useState(0);
   const [initialRender, setInitialRender] = useState(true);
-  console.log(currentCartItems);
 
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));

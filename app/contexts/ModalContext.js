@@ -48,6 +48,8 @@ export const ModalProvider = ({ children }) => {
       } else if (modalItem?.name === "10 Smoked Jumbo Chicken Wings") {
         return chickenWingPriceModifiers(modalItemOptions);
       } else if (modalItemSize) {
+        // if the item has a size property, calculate the price based on size selected
+        debugger;
         return sizePriceCalculator(modalItemSize, modalItem.price);
       } else {
         return modalItem?.price || 0; 
@@ -58,7 +60,7 @@ export const ModalProvider = ({ children }) => {
 
   // Calculate total price and store it as a number w/o decimal
   modalItemOrdered.total = modalItemOrdered.price * modalItemOrdered.quantity * 100;
-
+  console.log(modalItem)
   const modalItemToCart = Object.fromEntries(
     Object.entries(modalItemOrdered)
       .filter(([key, value]) => value !== null)

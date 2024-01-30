@@ -14,7 +14,7 @@ const SideOrderSizeSelection = ({ index }) => {
 
   return (
     <div className="flex flex-row items-center">
-        <label className="mr-2">Size for Order:</label>
+        <label className="mr-2">Size of Order:</label>
           <div>
             <select
               id={sizeOptions[index]}

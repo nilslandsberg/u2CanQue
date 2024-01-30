@@ -33,6 +33,12 @@ export const sizePriceCalculator = (selection, price) => {
       return price.halfPan;
     case "Full-Pan":
       return price.fullPan;
+    case "1lb":
+      return price.onePound;
+    case "3lbs":
+      return price.threePounds;
+    case "5lbs":
+      return price.fivePounds;
     default:
       return 0; // default to 0 is no size is found
   }

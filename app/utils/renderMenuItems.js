@@ -56,7 +56,7 @@ export const renderBulkBbq = (array) => {
           <div className="flex-grow mb-2">{item.description}</div>
           <div className="flex flex-row items-center justify-between">
             <div className="flex items-center">
-              <p className="text-orange-600 font-semibold pt-4">Price: ${item.price} per pound</p>
+              <p className="text-orange-600 font-semibold pt-4">Price: ${item.pricePerPound} per pound</p>
             </div>
             <AddToOrderButton item={item} />
           </div>

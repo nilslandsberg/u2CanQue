@@ -186,10 +186,13 @@ export const bulkBbq = [
     name: "Pulled Pork",
     image: "/images/PulledPork.jpeg",
     description: "Tender and juicy pulled pork.  Perfect for making sandwiches, nachos, or simply eating with your fingers.",
-    price: "11.50",
-    options: {
-      size: ["1lb - $11.50", "3lbs - $23.00", "5lbs - $57.50"]
-    }
+    pricePerPound: "11.50",
+    price: {
+      onePound: "11.50",
+      threePounds: "23.00",
+      fivePounds: "57.50"
+    },
+    size: ["1lb (serves 3-4): $11.50", "3lbs (serves 9-12): $23.00", "5lbs (serves 15-20): $57.50"]
   },
   {
     bulk: true,
@@ -197,10 +200,13 @@ export const bulkBbq = [
     name: "Beef Brisket",
     image: "/images/Brisket.jpeg",
     description: "Our brisket slices (or KC Burnt Ends) are meant to share more than the meat; it brings out the language of BBQ: LOVE.",
-    price: "18.50",
-    options: {
-      size: ["1lb - $18.50", "3lbs - $37.00", "5lbs - $92.50"]
-    }
+    pricePerPound: "18.50",
+    price: {
+      onePound: "18.50",
+      threePounds: "37.00",
+      fivePounds: "92.50"
+    },
+    size: ["1lb (serves 3-4): $18.50", "3lbs (serves 9-12): $37.00", "5lbs (serves 15-20): $92.50"]
   }
 ]
 

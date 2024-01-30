@@ -2,10 +2,13 @@
 
 import React from 'react';
 import { useModal } from '../contexts/ModalContext';
+import { toast } from 'react-toastify';
 
 const AddToCartButton = () => {
   const { modalItemToCart, modalItem, setModalMessage, closeModal } = useModal();
   
+  const successMessage = (item) => toast.success(`${item} Added to Cart`);
+
   const handleAddToCart = () => {
     // Edge Cases to make sure user is not able to add item to cart without making selections in the dropdown menus
     if (modalItem.options && (!modalItemToCart.options || Object.keys(modalItemToCart.options).length ===0)) {
@@ -38,6 +41,7 @@ const AddToCartButton = () => {
     // Reset the message
     setModalMessage(''); 
     closeModal();
+    successMessage(modalItem.name);
   }
 
   return (

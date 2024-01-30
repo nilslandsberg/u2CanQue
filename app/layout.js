@@ -4,6 +4,7 @@ import './globals.css'
 import Footer from './components/Footer'
 import { ModalProvider } from '@/app/contexts/ModalContext';
 import { NavBarContextProvider } from '@/app/contexts/NavBarContext';
+import { ToastContainer } from 'react-toastify';
 
 const inter = Inter({ subsets: ['latin'] })
 

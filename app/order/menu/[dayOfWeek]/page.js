@@ -3,8 +3,9 @@ import BulkBbq from '@/app/components/BulkBbq';
 import LunchOptions from '@/app/components/LunchOptions';
 import MenuLinks from '@/app/components/MenuLinks';
 import OrderModal from '@/app/components/OrderModal';
-
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const page = ({ params }) => {
   const { dayOfWeek } = params
@@ -20,6 +21,7 @@ const page = ({ params }) => {
           </div>
         </div>
         <OrderModal />
+        <ToastContainer autoClose={2000} />
     </>
   )
 }

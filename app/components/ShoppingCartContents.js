@@ -5,6 +5,7 @@ import RenderItemOptions from './RenderItemOptions';
 import ReturnToMenuButton from './ReturnToMenuButton';
 import CheckOutButton from './CheckOutButton';
 import OrderDate from './OrderDate';
+import { toast } from 'react-toastify';
 
 const ShoppingCartContents = () => {
   const [loading, setLoading] = useState(true);
@@ -62,7 +63,10 @@ const ShoppingCartContents = () => {
     return <div className="text-white">Loading...</div>;
   }
 
-  const handleClick = (index) => {
+  // function to call toast message when item is removed from cart
+  const itemRemovedFromCartMessage = (item) => toast.success(`${item} Removed From Cart`);
+
+  const handleClick = (index, name) => {
     // display confirmation dialog
     const confirmRemoval = window.confirm('Are you sure you want to remove this item from your cart?');
 
@@ -72,6 +76,7 @@ const ShoppingCartContents = () => {
       updatedItems.splice(index, 1);
       // update local state
       setCurrentCartItems(updatedItems);
+      itemRemovedFromCartMessage(name);
     }
   }
   
@@ -99,7 +104,7 @@ const ShoppingCartContents = () => {
                 {/* Display the item total with decimal point added */}
                 <div className="flex justify-end">Price: ${(item.total / 100).toFixed(2)}</div> 
               </div>
-              <button className="flex justify-end underline italic text-blue-500" onClick={() => handleClick(index)}>remove item</button>
+              <button className="flex justify-end underline italic text-blue-500" onClick={() => handleClick(index, item.name)}>remove item</button>
             </div>
           ))
         ) : (

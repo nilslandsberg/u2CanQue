@@ -1,5 +1,7 @@
 import ShoppingCartContents from '@/app/components/ShoppingCartContents'
 import React from 'react'
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const page = () => {
   return (
@@ -11,6 +13,7 @@ const page = () => {
       </div>
       <div className="relative flex flex-col items-center pt-[175px] min-h-screen bg-black">
         <ShoppingCartContents />
+        <ToastContainer autoClose={2000} />
       </div>
     </>
   )

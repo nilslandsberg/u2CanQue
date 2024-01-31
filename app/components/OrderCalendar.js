@@ -15,7 +15,12 @@ const OrderCalendar = () => {
     const month = date.getMonth();
     const currentDateTime = DateTime.now();
     const tomorrow = currentDateTime.plus({ days: 1 });
-
+  
+    // Convert date to Luxon DateTime object
+    const luxonDate = DateTime.fromJSDate(date);
+  
+    // Now you can use luxonDate for comparisons
+  
     // Disable weekends
     if (dayOfWeek === 0 || dayOfWeek === 6) {
       return true;
@@ -32,7 +37,7 @@ const OrderCalendar = () => {
     }
   
     // Disable past dates
-    if (date < currentDateTime) {
+    if (luxonDate < currentDateTime) {
       return true;
     }
   
@@ -41,13 +46,14 @@ const OrderCalendar = () => {
       currentDateTime.hour >= 17 &&
       (currentDateTime.hour > 17 || (currentDateTime.hour === 13 && currentDateTime.minute >= 30))
     ) {
-      if (currentDateTime.plus({ days: 1 }).toISODate() === tomorrow.toISODate()) {
+      if (luxonDate.toISODate() === tomorrow.toISODate()) {
         return true;
       }
     }
   
     return false;
   };
+  
 
   const modifiers = {
     weekends: { daysOfWeek: [0, 6] },

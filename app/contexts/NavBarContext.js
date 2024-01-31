@@ -17,20 +17,20 @@ export const NavBarContextProvider = ({ children }) => {
       return;
     }
  
-    if (cart && cart.date) {
-      const cartDate = DateTime.fromISO(cart.date);
-      const currentDateTime = DateTime.now();
+    // if (cart && cart.date) {
+    //   const cartDate = DateTime.fromISO(cart.date);
+    //   const currentDateTime = DateTime.now();
 
-      const isTomorrow = currentDateTime.plus({ days: 1 }).toISODate() === cartDate.toISODate();
+    //   const isTomorrow = currentDateTime.plus({ days: 1 }).toISODate() === cartDate.toISODate();
 
-      const isAfter530pm = currentDateTime.hour >= 17 && currentDateTime.minute >= 30;
+    //   const isAfter530pm = currentDateTime.hour >= 17 && currentDateTime.minute >= 30;
 
-      if (isTomorrow && isAfter530pm) {
-        localStorage.removeItem('shoppingCart');
-      }
-      return;
-    }
-    
+    //   if (isTomorrow && isAfter530pm) {
+    //     localStorage.removeItem('shoppingCart');
+    //   }
+    //   return;
+    // }
+
     setShoppingCart(cart);
   }, []);
 

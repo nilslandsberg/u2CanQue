@@ -3,12 +3,14 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '../utils/send-email';
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
   const { register, handleSubmit } = useForm();
 
-  function onSubmit(data) {
-    sendEmail(data);
+  const onSubmit = async (data) => {
+    const successMessage = await sendEmail(data);
+    toast.success(successMessage);
   }
 
   return (

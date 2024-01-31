@@ -8,7 +8,7 @@ export function sendEmail(data) {
     .then((res) => res.json())
     .then((response) => {
       console.log("Response: ", response); // Log the entire response object
-      alert(response.message);
+      return response.message;
     })
     .catch((err) => {
       alert(err);

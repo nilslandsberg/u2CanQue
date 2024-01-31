@@ -23,7 +23,7 @@ const ShoppingCartContents = () => {
       setCurrentCartItems(shoppingCart.items);
       setCurrentCartDate(shoppingCart.date);
       setCurrentCartDayOfWeek(shoppingCart.dayOfWeek);
-      setLoading(false); // Set loading to false once data is fetched
+      setLoading(false); // Set loading to false once localStorage is accessed and state is updated
     } 
   }, []);
 
@@ -63,8 +63,6 @@ const ShoppingCartContents = () => {
   if (loading) {
     // Return a loading indicator
     return <div className="text-white">Loading...</div>;
-  } else {
-    console.log(currentCartItems)
   }
 
   // function to call toast message when item is removed from cart
@@ -87,8 +85,9 @@ const ShoppingCartContents = () => {
   const handleTimeChange = (value) => {
     setSelectedPickUpTime(value);
   }
-
+  // times array for food pickup
   const times = ["10:00am", "10:15am", "10:30am", "10:45am", "11:00am", "11:15am", "11:30am", "11:45am", "12:00pm", "12:15pm", "12:30pm", "12:45pm", "1:00pm", "1:15pm", "1:30pm", "1:45pm", "2:00pm", "2:15pm", "2:30pm", "2:45pm"]
+
   return (
     <>
       <div className="text-white flex flex-col lg:w-1/2 md:w-1/3 px-2">
@@ -141,16 +140,16 @@ const ShoppingCartContents = () => {
               ))}
             </select>
           </div>
-          <div className="checkout-button-container flex flex-row md:w-1/2 sm:w-1/3 justify-end">
-            <div className="flex flex-col justify-end">
+          <div className="checkout-button-container flex flex-col md:w-1/2 sm:w-1/3 justify-end">
+            <div className="flex flex-row justify-end mb-2">
               {selectTimeMessage && <div className="text-red-500">{selectTimeMessage}</div>}
-              <div className="flex-grow-0">
-                <CheckOutButton 
-                  setSelectTimeMessage={setSelectTimeMessage} 
-                  selectedTime={selectedPickUpTime} 
-                />  
-              </div>
             </div>
+            <div className="flex flex-row justify-end">
+              <CheckOutButton 
+                setSelectTimeMessage={setSelectTimeMessage} 
+                selectedTime={selectedPickUpTime} 
+              /> 
+            </div> 
           </div>
         </> : <></>}
       <ReturnToMenuButton dayOfWeek={currentCartDayOfWeek} />

@@ -6,6 +6,7 @@ import ReturnToMenuButton from './ReturnToMenuButton';
 import CheckOutButton from './CheckOutButton';
 import OrderDate from './OrderDate';
 import { toast } from 'react-toastify';
+import OrderOnlineButton from './OrderOnlineButton';
 
 const ShoppingCartContents = () => {
   const [loading, setLoading] = useState(true);
@@ -19,13 +20,16 @@ const ShoppingCartContents = () => {
   
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+
     if (shoppingCart && shoppingCart.items && shoppingCart.items.length >= 0) {
       setCurrentCartItems(shoppingCart.items);
       setCurrentCartDate(shoppingCart.date);
       setCurrentCartDayOfWeek(shoppingCart.dayOfWeek);
       setSelectedPickUpTime(shoppingCart.pickUpTime);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
-    } 
+    } else {
+      setLoading(false)
+    }
   }, []);
 
   // Hook to update total price of order
@@ -93,7 +97,7 @@ const ShoppingCartContents = () => {
   return (
     <>
       <div className="text-white flex flex-col lg:w-1/2 md:w-1/3 px-2">
-        <OrderDate orderDate={currentCartDate} dayOfWeek={currentCartDayOfWeek} />
+        {currentCartDate === "" ? <></> : <OrderDate orderDate={currentCartDate} dayOfWeek={currentCartDayOfWeek} />}
         {currentCartItems.length > 0 ? (
           currentCartItems.map((item, index) => (
             <div key={index} className="flex flex-col text-white mb-4 px-2">
@@ -154,7 +158,7 @@ const ShoppingCartContents = () => {
             </div> 
           </div>
         </> : <></>}
-      <ReturnToMenuButton dayOfWeek={currentCartDayOfWeek} />
+      {currentCartDate === "" ? <OrderOnlineButton /> : <ReturnToMenuButton dayOfWeek={currentCartDayOfWeek} />}
     </>
   );
 }

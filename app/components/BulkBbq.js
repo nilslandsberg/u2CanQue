@@ -6,7 +6,7 @@ const BulkBbq = () => {
   return (
     <>
       <div className="z-30 bg-slate-600 p-5 text-2xl text-white text-center" id="bulk-bbq">
-        Bulk BBQ
+        Bulk BBQ (Frozen)
       </div>
       {renderBulkBbq(bulkBbq)}
       <div className="z-30 bg-slate-600 p-5 text-2xl text-white text-center" id="appetizers">

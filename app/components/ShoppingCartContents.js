@@ -23,6 +23,7 @@ const ShoppingCartContents = () => {
       setCurrentCartItems(shoppingCart.items);
       setCurrentCartDate(shoppingCart.date);
       setCurrentCartDayOfWeek(shoppingCart.dayOfWeek);
+      setSelectedPickUpTime(shoppingCart.pickUpTime);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
     } 
   }, []);
@@ -53,12 +54,13 @@ const ShoppingCartContents = () => {
         date: currentCartDate,
         dayOfWeek: currentCartDayOfWeek,
         items: currentCartItems,
+        pickUpTime: selectedPickUpTime
       }
 
       // update shoppingCart in localStorage if currentCart changes
       localStorage.setItem('shoppingCart', JSON.stringify(updatedCart));
     }
-  }, [currentCartItems, initialRender])
+  }, [currentCartItems, initialRender, selectedPickUpTime])
 
   if (loading) {
     // Return a loading indicator
@@ -126,7 +128,7 @@ const ShoppingCartContents = () => {
             <div className="text-lg ml-4"> ${orderTotal}</div>
           </div>
           <div className="pick-up-time-container flex lg:flex-row md:flex-col sm:flex-col items-center md:w-1/2 sm:w-1/3 justify-end text-white mb-2 px-2">
-            <label className="mr-2">Time Order Will Be Ready:</label>
+            <label className="mr-2">Pickup Time:</label>
             <select
               value={selectedPickUpTime}
               onChange={(e) => handleTimeChange(e.target.value)}

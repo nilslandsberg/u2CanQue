@@ -17,7 +17,6 @@ const ContactForm = () => {
       setIsSendingForm(true);
       const successMessage = await sendEmail(data);
       await toast.success(successMessage);
-      router.push('/');
     } catch (error) {
       console.error("Error sending email: ", error)
     }

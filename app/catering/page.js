@@ -1,9 +1,14 @@
+"use client";
+
 import React from 'react';
 import ContactForm from '../components/ContactForm';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import { useRouter } from 'next/navigation';
 
 export default function Catering() {
+  const router = useRouter();
+
   return (
     <>
       <main>
@@ -23,7 +28,7 @@ export default function Catering() {
             </div>
           </div>
         </div>
-        <ToastContainer autoClose={2000} />
+        <ToastContainer autoClose={2000} onClose={() => router.push('/')} />
       </main>
     </>
   );

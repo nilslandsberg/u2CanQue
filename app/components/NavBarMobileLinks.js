@@ -5,7 +5,7 @@ import HolidayLink from './HolidayLink';
 import { useNavBarContext } from '../contexts/NavBarContext';
 
 function NavBarMobileLinks() {
-  const { isToggled, shoppingCart } = useNavBarContext();
+  const { isToggled } = useNavBarContext();
 
   return (
     <>

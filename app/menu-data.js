@@ -253,7 +253,7 @@ export const sides = [
     side: true,
     name: "Street Corn",
     image: "/images/StreetCorn.jpeg",
-    description: "Tender and seasoned, these perfectly smoked beans add a delightful twist to your barbecue spread. Their crispy texture and smoky flavor make for a mouthwatering side dish that perfectly complements any meal. Smoked pork belly and toasted fennel take these beans above and beyond your expectations.",
+    description: "Smoked Buttered Corn with Tricolor Peppers: Enjoy the smoky goodness of fresh corn, sautéed tricolor peppers, with a mixture of lime and chilis, finished with creamy butter in this vibrant and flavorful dish. Perfect as a side or vegetarian option.",
     price: {
       pint: "8",
       quart: "15",

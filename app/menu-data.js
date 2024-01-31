@@ -189,10 +189,10 @@ export const bulkBbq = [
     pricePerPound: "11.50",
     price: {
       onePound: "11.50",
-      threePounds: "23.00",
+      threePounds: "34.50",
       fivePounds: "57.50"
     },
-    size: ["1lb (serves 3-4): $11.50", "3lbs (serves 9-12): $23.00", "5lbs (serves 15-20): $57.50"]
+    size: ["1lb (serves 3-4): $11.50", "3lbs (serves 9-12): $34.50", "5lbs (serves 15-20): $57.50"]
   },
   {
     bulk: true,
@@ -200,13 +200,13 @@ export const bulkBbq = [
     name: "Beef Brisket",
     image: "/images/Brisket.jpeg",
     description: "Our brisket slices (or KC Burnt Ends) are meant to share more than the meat; it brings out the language of BBQ: LOVE.",
-    pricePerPound: "18.50",
+    pricePerPound: "21.50",
     price: {
-      onePound: "18.50",
-      threePounds: "37.00",
-      fivePounds: "92.50"
+      onePound: "21.50",
+      threePounds: "55.50",
+      fivePounds: "107.50"
     },
-    size: ["1lb (serves 3-4): $18.50", "3lbs (serves 9-12): $37.00", "5lbs (serves 15-20): $92.50"]
+    size: ["1lb (serves 3-4): $21.50", "3lbs (serves 9-12): $55.50", "5lbs (serves 15-20): $107.50"]
   }
 ]
 

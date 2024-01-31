@@ -6,7 +6,7 @@ import { useNavBarContext } from '../contexts/NavBarContext';
 
 function NavBarLinks() {
   const { shoppingCart } = useNavBarContext();
-
+  
   return (
     <>
       <div className="items-center space-x-5 justify-between md:flex hidden">

@@ -8,20 +8,19 @@ const NavBarContext = createContext();
 export const NavBarContextProvider = ({ children }) => {
   const [isToggled, setIsToggled] = useState(false);
   const [shoppingCart, setShoppingCart] = useState(null);
-  const [secondRender, setSecondRender] = useState(false)
 
   useEffect(() => {
     // Access localStorage after component mounts
-    if (!secondRender) {
-      const cart = JSON.parse(localStorage.getItem('shoppingCart'));
-      
-      if (cart && cart.date === "") {
-        localStorage.removeItem('shoppingCart');
-        return;
-      }
-      setShoppingCart(cart);
-      setSecondRender(true);
+    const cart = JSON.parse(localStorage.getItem('shoppingCart'));
+
+    if (cart && cart.date === "") {
+      localStorage.removeItem('shoppingCart');
+      return;
     }
+
+    setShoppingCart(cart);
+    
+    
     
     
  
@@ -41,7 +40,7 @@ export const NavBarContextProvider = ({ children }) => {
 
     
   }, []);
-
+  
   return (
     <NavBarContext.Provider value={{ isToggled, setIsToggled, shoppingCart }}>
       {children}

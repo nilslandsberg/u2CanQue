@@ -13,6 +13,7 @@ export default function Menu() {
           <br />
           <p>At U 2 Can Que, we believe in the magic of low and slow-smoked meats, and we want you to experience the peak of flavor in every bite. That&#39;s why we encourage you to plan ahead and order tomorrow&#39;s lunch today. Our meticulous smoking process demands time and patience, ensuring that each dish reaches its full potential in flavor and tenderness.</p>
           <br />
+          <p className="font-semibold">Remember, to savor our delectable creations tomorrow, be sure to place your orders before 5:30 PM today.</p>
           <br />
           <p className="text-xl font-bold italic">Our menu changes daily.</p>
           <p className="text-xl font-bold italic"> Select a date on the calendar to explore our menu.</p>

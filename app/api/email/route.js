@@ -36,7 +36,7 @@ async function POST(request) {
 
   try {
     await sendMailPromise();
-    return NextResponse.json({ message: 'Request Received!\nA Member of our team will contact you soon.' });
+    return NextResponse.json({ message: 'Request Received! A Member of our team will contact you soon.' });
   } catch (err) {
     return NextResponse.json({ error: err }, { status: 500 });
   }

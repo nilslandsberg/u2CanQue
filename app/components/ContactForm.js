@@ -1,17 +1,26 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '../utils/send-email';
 import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 const ContactForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const [isSendingForm, setIsSendingForm] = useState(false);
+  const router = useRouter();
 
-  const onSubmit = (data) => {
-    console.log(data)
-    // const successMessage = await sendEmail(data);
-    // toast.success(successMessage);
+  const onSubmit = async (data) => {
+
+    try {
+      setIsSendingForm(true);
+      const successMessage = await sendEmail(data);
+      await toast.success(successMessage);
+      router.push('/');
+    } catch (error) {
+      console.error("Error sending email: ", error)
+    }
   }
 
   return (
@@ -108,7 +117,7 @@ const ContactForm = () => {
       </div>
       <div className="flex pb-4">
         <button className='py-2 px-3 hover:shadow-form bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300'>
-          Submit
+          {isSendingForm ? "Sending..." : "Submit"}
         </button>
       </div>
     </form>

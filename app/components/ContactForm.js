@@ -6,11 +6,12 @@ import { sendEmail } from '../utils/send-email';
 import { toast } from 'react-toastify';
 
 const ContactForm = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
 
-  const onSubmit = async (data) => {
-    const successMessage = await sendEmail(data);
-    toast.success(successMessage);
+  const onSubmit = (data) => {
+    console.log(data)
+    // const successMessage = await sendEmail(data);
+    // toast.success(successMessage);
   }
 
   return (
@@ -28,6 +29,7 @@ const ContactForm = () => {
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('name', { required: true })}
         />
+        {errors.name && <p className="text-red-500">Please enter your full name</p>}
       </div>
       <div className='mb-5'>
         <label
@@ -42,6 +44,7 @@ const ContactForm = () => {
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('phone', { required: true, minLength: 6, maxLength: 12 })}
         />
+        {errors.phone && <p className="text-red-500">Please enter your phone number</p>}
       </div>
       <div className='mb-5'>
         <label
@@ -56,6 +59,7 @@ const ContactForm = () => {
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('email', { required: true })}
         />
+        {errors.email && <p className="text-red-500">Please enter your email address</p>}
       </div>
       <div className='mb-5'>
         <label
@@ -70,6 +74,7 @@ const ContactForm = () => {
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('eventDate', { required: true })}
         />
+        {errors.eventDate && <p className="text-red-500">Please enter the date of your event</p>}
       </div>
       <div className='mb-5'>
         <label
@@ -84,6 +89,7 @@ const ContactForm = () => {
           className='w-full rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('attendees', { required: true })}
         />
+        {errors.attendees && <p className="text-red-500">Please enter the number of attendees for your event</p>}
       </div>
       <div className='mb-5'>
         <label
@@ -98,6 +104,7 @@ const ContactForm = () => {
           className='w-full resize-none rounded-md border border-orange-600 bg-white py-3 px-6 text-base font-medium text-gray-700 outline-none focus:border-slate-600 focus:shadow-md'
           {...register('message', { required: true })}
         ></textarea>
+        {errors.message && <p className="text-red-500">Please provide more details about your event</p>}
       </div>
       <div className="flex pb-4">
         <button className='py-2 px-3 hover:shadow-form bg-orange-600 rounded text-gray-900 hover:bg-orange-400 hover:text-white transition duration-300'>

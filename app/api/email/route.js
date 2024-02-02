@@ -15,6 +15,7 @@ async function POST(request) {
   });
 
   const cateringMessage = `Catering request from ${name}\n\nE-mail: ${email}\n\nPhone Number: ${phone}\n\nDate of Event: ${eventDate}\n\nNumber of Attendees: ${attendees}\n\nClient Message: ${message}`
+  
   const mailOptions = {
     from: process.env.MY_EMAIL,
     to: process.env.MY_EMAIL,

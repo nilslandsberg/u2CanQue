@@ -153,7 +153,10 @@ const ShoppingCartContents = () => {
             <div className="flex flex-row justify-end">
               <CheckOutButton 
                 setSelectTimeMessage={setSelectTimeMessage} 
-                selectedTime={selectedPickUpTime} 
+                selectedTime={selectedPickUpTime}
+                date={currentCartDate}
+                cartItems={currentCartItems} 
+                orderTotal={orderTotal}
               /> 
             </div> 
           </div>

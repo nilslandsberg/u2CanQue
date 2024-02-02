@@ -28,7 +28,7 @@ export default function Catering() {
             </div>
           </div>
         </div>
-        <ToastContainer autoClose={2000} onClose={() => router.push('/')} />
+        <ToastContainer autoClose={2000} onClose={() => router.push('/')} theme="dark" />
       </main>
     </>
   );

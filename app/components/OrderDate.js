@@ -29,7 +29,7 @@ const OrderDate = ({ orderDate, dayOfWeek }) => {
   const dateOfOrder = `${months[monthIndex]} ${getDayWithSuffix(day)}`
   
   return (
-    <div className="text-2xl italic font-bold text-center mb-6">Order Summary for {capitalizeFirstLetter(dayOfWeek)}, {dateOfOrder}</div>
+    <span>{capitalizeFirstLetter(dayOfWeek)}, {dateOfOrder}</span>
   )
 }
 

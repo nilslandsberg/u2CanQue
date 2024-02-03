@@ -97,7 +97,7 @@ const ShoppingCartContents = () => {
   return (
     <>
       <div className="text-white flex flex-col lg:w-1/2 md:w-1/3 px-2">
-        {currentCartDate === "" ? <></> : <OrderDate orderDate={currentCartDate} dayOfWeek={currentCartDayOfWeek} />}
+        {currentCartDate === "" ? <></> : <div className="text-2xl italic font-bold text-center mb-6">Order Summary for <OrderDate orderDate={currentCartDate} dayOfWeek={currentCartDayOfWeek} /></div>}
         {currentCartItems.length > 0 ? (
           currentCartItems.map((item, index) => (
             <div key={index} className="flex flex-col text-white mb-4 px-2">

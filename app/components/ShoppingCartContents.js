@@ -7,6 +7,7 @@ import CheckOutButton from './CheckOutButton';
 import OrderDate from './OrderDate';
 import { toast } from 'react-toastify';
 import OrderOnlineButton from './OrderOnlineButton';
+import CustomerInformation from './CustomerInformation';
 
 const ShoppingCartContents = () => {
   const [loading, setLoading] = useState(true);
@@ -17,7 +18,13 @@ const ShoppingCartContents = () => {
   const [initialRender, setInitialRender] = useState(true);
   const [selectedPickUpTime, setSelectedPickUpTime] = useState("");
   const [selectTimeMessage, setSelectTimeMessage] = useState("");
-  
+  const [customerInformation, setCustomerInformation] = useState({
+    firstName: '',
+    lastName: '',
+    phone: '',
+    email: ''
+  });
+
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
@@ -71,6 +78,7 @@ const ShoppingCartContents = () => {
     return <div className="text-white">Loading...</div>;
   }
 
+  
   // function to call toast message when item is removed from cart
   const itemRemovedFromCartMessage = (item) => toast.success(`${item} Removed From Cart`);
 
@@ -131,6 +139,7 @@ const ShoppingCartContents = () => {
             <div className="text-2xl font-bold">Total: </div>
             <div className="text-lg ml-4"> ${orderTotal}</div>
           </div>
+          <CustomerInformation setCustomerInformation={setCustomerInformation} customerInformation={customerInformation}/>
           <div className="pick-up-time-container flex lg:flex-row md:flex-col sm:flex-col items-center md:w-1/2 sm:w-1/3 justify-end text-white mb-2 px-2">
             <label className="mr-2">Pickup Time:</label>
             <select
@@ -157,6 +166,7 @@ const ShoppingCartContents = () => {
                 date={currentCartDate}
                 cartItems={currentCartItems} 
                 orderTotal={orderTotal}
+                customerInformation={customerInformation}
               /> 
             </div> 
           </div>

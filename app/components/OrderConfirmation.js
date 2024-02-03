@@ -8,6 +8,8 @@ const OrderConfirmation = () => {
   const [currentCartDate, setCurrentCartDate] = useState();
   const [selectedPickUpTime, setSelectedPickUpTime] = useState();
   const [dayOfWeek, setDayOfWeek] = useState();
+  const [customerName, setCustomerName] = useState();
+  
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
@@ -15,16 +17,23 @@ const OrderConfirmation = () => {
       setCurrentCartDate(shoppingCart.date);
       setSelectedPickUpTime(shoppingCart.pickUpTime);
       setDayOfWeek(shoppingCart.dayOfWeek);
+      setCustomerName(shoppingCart.customer.firstName);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
     } else {
       setLoading(false)
     }
+
+    // Cleanup function to clear localStorage
+    return () => {
+      localStorage.removeItem('shoppingCart');
+    };
   }, []);
 
   return (
     <>
       { loading ? <div>Loading...</div> : <>
-          <div>Thank you for your order</div>
+          <div>Thank you for your order, {customerName}!</div>
+          <br />
           <div>We look forward to seeing you at {selectedPickUpTime}</div>
           <div>on <OrderDate orderDate={currentCartDate} dayOfWeek={dayOfWeek}/></div>
           <br />

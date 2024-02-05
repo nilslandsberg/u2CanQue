@@ -37,14 +37,14 @@ const OrderCalendar = () => {
     }
   
     // Disable past dates
-    if (luxonDate < currentDateTime) {
+    if (luxonDate <= currentDateTime) {
       return true;
     }
   
     // Disable tomorrow's date if it's past 5:30pm today
     if (
-      currentDateTime.hour >= 17 &&
-      (currentDateTime.hour > 17 || (currentDateTime.hour === 13 && currentDateTime.minute >= 30))
+      currentDateTime.hour > 17 ||
+      (currentDateTime.hour === 17 && currentDateTime.minute >= 30)
     ) {
       if (luxonDate.toISODate() === tomorrow.toISODate()) {
         return true;

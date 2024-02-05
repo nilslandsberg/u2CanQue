@@ -9,6 +9,9 @@ const OrderConfirmation = () => {
   const [selectedPickUpTime, setSelectedPickUpTime] = useState();
   const [dayOfWeek, setDayOfWeek] = useState();
   const [customerName, setCustomerName] = useState();
+  const [customerInfo, setCustomerInfo] = useState();
+  const [currentCartItems, setCurrentCartItems] = useState();
+
 
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
@@ -18,7 +21,10 @@ const OrderConfirmation = () => {
       setSelectedPickUpTime(shoppingCart.pickUpTime);
       setDayOfWeek(shoppingCart.dayOfWeek);
       setCustomerName(shoppingCart.customer.firstName);
+      setCustomerInfo(shoppingCart.customer);
+      setCurrentCartItems(shoppingCart.items);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
+
     } else {
       setLoading(false)
     }
@@ -28,6 +34,31 @@ const OrderConfirmation = () => {
       localStorage.removeItem('shoppingCart');
     };
   }, []);
+
+  useEffect(() => {
+    if (!loading) {
+      const requestBody = {
+        date: currentCartDate,
+        pickUpTime: selectedPickUpTime,
+        customer: customerInfo,
+        items: currentCartItems
+      }
+      // Make a POST request to the server after the local state is updated
+      fetch('http://localhost:4000/api/order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  }, [loading]);
 
   return (
     <>

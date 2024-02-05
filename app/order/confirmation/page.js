@@ -10,7 +10,7 @@ const page = () => {
           <p>Order Confirmation</p>
         </div>
       </div>
-      <div className="relative flex flex-col items-center pt-[175px] min-h-screen bg-black">
+      <div className="relative flex flex-col text-white items-center pt-[175px] min-h-screen bg-black">
         <OrderConfirmation />
       </div>
     </>

@@ -9,7 +9,7 @@ const OrderConfirmation = () => {
   const [selectedPickUpTime, setSelectedPickUpTime] = useState();
   const [dayOfWeek, setDayOfWeek] = useState();
   const [customerName, setCustomerName] = useState();
-  
+
   useEffect(() => {
     const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
@@ -32,10 +32,10 @@ const OrderConfirmation = () => {
   return (
     <>
       { loading ? <div>Loading...</div> : <>
-          <div>Thank you for your order, {customerName}!</div>
+          <div className="text-white">Thank you for your order, {customerName}!</div>
           <br />
           <div>We look forward to seeing you at {selectedPickUpTime}</div>
-          <div>on <OrderDate orderDate={currentCartDate} dayOfWeek={dayOfWeek}/></div>
+          <div>on <OrderDate orderDate={currentCartDate} dayOfWeek={dayOfWeek}/>.</div>
           <br />
           <div>If you need to cancel or change your order, please contact the store:</div>
           <br />

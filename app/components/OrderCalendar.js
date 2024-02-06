@@ -13,7 +13,7 @@ const OrderCalendar = () => {
     const dayOfWeek = date.getDay();
     const dayOfMonth = date.getDate();
     const month = date.getMonth();
-    const currentDateTime = DateTime.now();
+    const currentDateTime = DateTime.now().setZone('America/New_York');
     const tomorrow = currentDateTime.plus({ days: 1 });
   
     // Convert date to Luxon DateTime object

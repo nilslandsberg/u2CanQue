@@ -49,8 +49,15 @@ const OrderCalendar = () => {
       currentDateTime.hour > 17 ||
       (currentDateTime.hour === 17 && currentDateTime.minute >= 30)
     ) {
-      if (luxonDate.toISODate() === tomorrow.toISODate()) {
-        return true;
+      // Extract day and month components from luxonDate and tomorrow
+      const luxonDateDay = luxonDate.day;
+      const luxonDateMonth = luxonDate.month;
+      const tomorrowDay = tomorrow.day;
+      const tomorrowMonth = tomorrow.month;
+  
+      // Check if the day and month of luxonDate match those of tomorrow
+      if (luxonDateDay === tomorrowDay && luxonDateMonth === tomorrowMonth) {
+          return true;
       }
     }
   

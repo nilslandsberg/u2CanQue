@@ -16,9 +16,12 @@ const OrderCalendar = () => {
     const currentDateTime = DateTime.now().setZone('America/New_York');
     const tomorrow = currentDateTime.plus({ days: 1 });
   
+    console.log("Current Date Time: ", currentDateTime);
+    
+    console.log("Tomorrow: ", tomorrow);
     // Convert date to Luxon DateTime object
     const luxonDate = DateTime.fromJSDate(date);
-  
+    console.log("Luxon Date: ", luxonDate);
     // Now you can use luxonDate for comparisons
   
     // Disable weekends

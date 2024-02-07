@@ -10,7 +10,7 @@ async function POST(request) {
     const merchantId = process.env.CLIENT_MID;
     const options = {
       method: 'POST',
-      url: 'https://sandbox.dev.clover.com/invoicingcheckoutservice/v1/checkouts',
+      url: 'https://www.clover.com/invoicingcheckoutservice/v1/checkouts',
       headers: {
         accept: 'application/json',
         'X-Clover-Merchant-Id': merchantId,

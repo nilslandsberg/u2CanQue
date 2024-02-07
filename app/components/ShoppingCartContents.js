@@ -78,7 +78,6 @@ const ShoppingCartContents = () => {
     return <div className="text-white">Loading...</div>;
   }
 
-  
   // function to call toast message when item is removed from cart
   const itemRemovedFromCartMessage = (item) => toast.success(`${item} Removed From Cart`);
 

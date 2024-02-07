@@ -21,6 +21,17 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
       lineItems.push(lineItem(item))
     })
 
+    // Check if any customer information is missing
+    if (
+      !customerInformation.firstName ||
+      !customerInformation.lastName ||
+      !customerInformation.phone ||
+      !customerInformation.email
+    ) {
+      setSelectTimeMessage("Please provide all customer information.");
+      return;
+    }
+
     const order = {
       customer: customerInformation,
       shoppingCart: {

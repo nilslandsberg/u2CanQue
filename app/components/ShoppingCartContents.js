@@ -159,14 +159,14 @@ const ShoppingCartContents = () => {
               {selectTimeMessage && <div className="text-red-500">{selectTimeMessage}</div>}
             </div>
             <div className="flex flex-row justify-end">
-              {/* <CheckOutButton 
+              <CheckOutButton 
                 setSelectTimeMessage={setSelectTimeMessage} 
                 selectedTime={selectedPickUpTime}
                 date={currentCartDate}
                 cartItems={currentCartItems} 
                 orderTotal={orderTotal}
                 customerInformation={customerInformation}
-              />  */}
+              /> 
             </div> 
           </div>
         </> : <></>}

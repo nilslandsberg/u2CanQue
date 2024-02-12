@@ -2,7 +2,7 @@ import React from 'react'
 import { sendOrder } from '../utils/send-order'
 import { useRouter } from 'next/navigation'
 
-const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, customerInformation }) => {
+const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, customerInformation, orderTotal }) => {
   const router = useRouter();
 
   const handleCheckOut = async () => {
@@ -43,8 +43,9 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
       // Retrieve existing shoppingCart from localStorage
       const existingCart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
 
-      // Update shoppingCart with customer information
+      // Update shoppingCart with customer information and order total
       existingCart.customer = customerInformation;
+      existingCart.orderTotal = orderTotal;
 
       // Save the updated shoppingCart back to localStorage
       localStorage.setItem('shoppingCart', JSON.stringify(existingCart));

@@ -11,6 +11,7 @@ const OrderConfirmation = () => {
   const [customerName, setCustomerName] = useState();
   const [customerInfo, setCustomerInfo] = useState();
   const [currentCartItems, setCurrentCartItems] = useState();
+  const [orderTotal, setOrderTotal] = useState();
 
 
   useEffect(() => {
@@ -23,6 +24,7 @@ const OrderConfirmation = () => {
       setCustomerName(shoppingCart.customer.firstName);
       setCustomerInfo(shoppingCart.customer);
       setCurrentCartItems(shoppingCart.items);
+      setOrderTotal(shoppingCart.orderTotal);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
 
     } else {
@@ -41,10 +43,11 @@ const OrderConfirmation = () => {
         date: currentCartDate,
         pickUpTime: selectedPickUpTime,
         customer: customerInfo,
-        items: currentCartItems
+        items: currentCartItems,
+        orderTotal: orderTotal
       }
       // Make a POST request to the server after the local state is updated
-      fetch('https://u2canque-server.onrender.com/api/order/', {
+      fetch('http://u2canque-server.onrender.com/api/order/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

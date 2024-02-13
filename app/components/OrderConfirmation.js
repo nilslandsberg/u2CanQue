@@ -47,7 +47,7 @@ const OrderConfirmation = () => {
         orderTotal: orderTotal
       }
       // Make a POST request to the server after the local state is updated
-      fetch('http://u2canque-server.onrender.com/api/order/', {
+      fetch('https://u2canque-server.onrender.com/api/order/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

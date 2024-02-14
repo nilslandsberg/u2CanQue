@@ -239,6 +239,7 @@ export const sides = [
   },
   {
     side: true,
+    name: "Smoked Green Beans",
     image: "/images/GreenBeans.jpeg",
     description: "Tender and seasoned, these perfectly smoked beans add a delightful twist to your barbecue spread. Their crispy texture and smoky flavor make for a mouthwatering side dish that perfectly complements any meal. Smoked pork belly and toasted fennel take these beans above and beyond your expectations.",
     price: {

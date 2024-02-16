@@ -24,8 +24,6 @@ async function POST(request) {
     
     const { href } = response.data; // Extract the href from the response object
 
-    console.log("response object:", response.data); // Log the response data
-
     // Return the href to the client
     return NextResponse.json({ href, message: 'Checkout created successfully' });
   } catch (error) {

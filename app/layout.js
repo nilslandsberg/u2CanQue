@@ -16,10 +16,10 @@ export const metadata = {
     url: "https://www.u2canque-takeout.com",
     image: 
       {
-        url: "https://www.u2canque-takeout.com/images/U2CanQueLogo.svg",
+        url: "https://www.u2canque-takeout.com/_next/image?url=%2Fimages%2FMeatloaf.jpeg&w=640&q=75",
         width: 800,
         height: 800,
-        alt: "U 2 Can Que Logo"
+        alt: "Smoked Meatloaf"
       },
     siteName: 'U 2 Can Que',
     locale: 'en_US',

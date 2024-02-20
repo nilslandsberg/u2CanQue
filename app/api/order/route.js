@@ -7,6 +7,7 @@ async function POST(request) {
   try {
     
     const bearerToken = process.env.BEARER_TOKEN;
+    console.log(bearerToken);
     const merchantId = process.env.CLIENT_MID;
     const options = {
       method: 'POST',

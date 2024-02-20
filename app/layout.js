@@ -10,6 +10,14 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'U 2 Can Que',
   description: 'BBQ Catering and Education',
+  openGraph: {
+    title: "U 2 Can Que Premium BBQ",
+    description: "BBQ Takeout, Catering, and Education",
+    url: "https://www.u2canque-takeout.com",
+    siteName: 'U 2 Can Que',
+    locale: 'en_US',
+    type: "website"
+  }
 }
 
 export default function RootLayout({ children }) {

@@ -14,14 +14,13 @@ export const metadata = {
     title: "U 2 Can Que Premium BBQ",
     description: "BBQ Takeout, Catering, and Education",
     url: "https://www.u2canque-takeout.com",
-    images: [
+    image: 
       {
         url: "https://www.u2canque-takeout.com/images/U2CanQueLogo.svg",
         width: 800,
         height: 800,
         alt: "U 2 Can Que Logo"
-      }
-    ],
+      },
     siteName: 'U 2 Can Que',
     locale: 'en_US',
     type: "website"

@@ -16,7 +16,10 @@ export const metadata = {
     url: "https://www.u2canque-takeout.com",
     images: [
       {
-        url: "https://www.u2canque-takeout.com/_next/image?url=%2Fimages%2FRobManion.jpeg&w=1920&q=75"
+        url: "https://www.u2canque-takeout.com/images/U2CanQueLogo.svg",
+        width: 800,
+        height: 800,
+        alt: "U 2 Can Que Logo"
       }
     ],
     siteName: 'U 2 Can Que',

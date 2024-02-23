@@ -37,10 +37,21 @@ export const sizePriceCalculator = (selection, price) => {
       return price.onePound;
     case "3lbs":
       return price.threePounds;
+    case "4lbs":
+      return price.fourPounds;
     case "5lbs":
       return price.fivePounds;
+    case "6lbs":
+      return price.sixPounds;
+    case "7lbs":
+      return price.sevenPounds;
+    case "8lbs":
+      return price.eightPounds;
+    case "9lbs":
+      return price.ninePounds;
+    case "10lbs":
+      return price.tenPounds;
     default:
       return 0; // default to 0 is no size is found
   }
-  
 }

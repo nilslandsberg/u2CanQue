@@ -56,6 +56,9 @@ const OrderConfirmation = () => {
       })
       .then(response => {
         console.log(response);
+        if (response.ok) {
+          localStorage.removeItem('shoppingCart');
+        }
       })
       .catch(error => {
         console.error('Error:', error);

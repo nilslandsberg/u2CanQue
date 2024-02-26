@@ -10,7 +10,10 @@ const HolidayLink = ({ className }) => {
   
   if (christmasSale) {
     return (
-      <a className={className} href="/order/christmas">Christmas Specials</a>
+      <>
+        <a className={className} href="/order/christmas">Christmas Specials</a>
+        <a className={className} href="/order/christmas/cart">View Christmas Cart</a>
+      </>
     )
   } 
   
@@ -20,6 +23,7 @@ const HolidayLink = ({ className }) => {
     return (
       <>
         <a className={className} href="/order/easter">Easter Specials</a>
+        <a className={className} href="/order/easter/cart">View Easter Cart</a>
       </>
     )
   }
@@ -30,6 +34,7 @@ const HolidayLink = ({ className }) => {
     return (
       <>
         <a className={className} href="/order/thanksgiving">Thanksgiving Specials</a>
+        <a className={className} href="/order/thanksgiving/cart">View Thanksgiving Cart</a>
       </>
     )
   }

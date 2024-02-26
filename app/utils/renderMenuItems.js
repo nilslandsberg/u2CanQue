@@ -7,7 +7,7 @@ export const renderMenuItems = (array) => {
     <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-4 overflow-auto py-5 px-2">
     {array.map((item) => (
       <div
-        key={item.id}
+        key={item.name}
         className="max-w-md mx-auto card bg-black p-4 text-white text-center  shadow-md flex flex-col justify-between"
       >
         <div className="relative h-40 mb-2 rounded-md overflow-hidden">

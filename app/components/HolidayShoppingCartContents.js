@@ -7,11 +7,12 @@ import { toast } from 'react-toastify';
 import CustomerInformation from './CustomerInformation';
 import HolidayReturnToMenuButton from './HolidayReturnToMenuButton';
 import { capitalizeFirstLetter } from '../utils/stringManipulation';
+import HolidayPickUpDay from './HoidayPickUpDay';
 
 const HolidayholidayShoppingCartContents = ({ holiday }) => {
   const [loading, setLoading] = useState(true);
   const [currentCartItems, setCurrentCartItems] = useState([]);
-  const [currentCartPickUpDate, setCurrentCartPickUpDate] = useState("");
+  const [selectedPickUpDate, setSelectedPickUpDate] = useState("");
   const [currentCartHoliday, setCurrentCartHoliday] = useState("");
   const [orderTotal, setOrderTotal] = useState(0);
   const [initialRender, setInitialRender] = useState(true);
@@ -31,7 +32,7 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
 
     if (holidayShoppingCart && holidayShoppingCart.items && holidayShoppingCart.items.length >= 0) {
       setCurrentCartItems(holidayShoppingCart.items);
-      setCurrentCartPickUpDate(holidayShoppingCart.pickUpDate);
+      setSelectedPickUpDate(holidayShoppingCart.pickUpDate);
       setCurrentCartHoliday(holiday);
       setSelectedPickUpTime(holidayShoppingCart.pickUpTime);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
@@ -63,7 +64,7 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
 
     if (currentCartItems.length >= 0) {
       const updatedCart = {
-        date: currentCartPickUpDate,
+        date: selectedPickUpDate,
         holiday: currentCartHoliday,
         items: currentCartItems,
         pickUpTime: selectedPickUpTime
@@ -72,7 +73,7 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
       // update holidayShoppingCart in localStorage if currentCart changes
       localStorage.setItem('holidayShoppingCart', JSON.stringify(updatedCart));
     }
-  }, [currentCartItems, initialRender, selectedPickUpTime])
+  }, [currentCartItems, initialRender, selectedPickUpTime, selectedPickUpDate])
 
   if (loading) {
     // Return a loading indicator
@@ -105,7 +106,7 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
   return (
     <>
       <div className="text-white flex flex-col lg:w-1/2 md:w-1/3 px-2">
-        {currentCartPickUpDate === "" ? <></> : <div className="text-2xl italic font-bold text-center mb-6">Order Summary for {capitalizedHoliday}</div>}
+        {selectedPickUpDate === "" ? <></> : <div className="text-2xl italic font-bold text-center mb-6">Order Summary for {capitalizedHoliday}</div>}
         {currentCartItems.length > 0 ? (
           currentCartItems.map((item, index) => (
             <div key={index} className="flex flex-col text-white mb-4 px-2">
@@ -141,6 +142,12 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
           </div>
           <CustomerInformation setCustomerInformation={setCustomerInformation} customerInformation={customerInformation}/>
           <div className="pick-up-time-container flex lg:flex-row md:flex-col sm:flex-col items-center md:w-1/2 sm:w-1/3 justify-end text-white mb-2 px-2">
+            <HolidayPickUpDay 
+              holiday={capitalizedHoliday} 
+              setSelectedPickUpDate={setSelectedPickUpDate}
+              selectedPickUpDate={selectedPickUpDate} />
+          </div>
+          <div className="pick-up-time-container flex lg:flex-row md:flex-col sm:flex-col items-center md:w-1/2 sm:w-1/3 justify-end text-white mb-2 px-2">
             <label className="mr-2">Pickup Time:</label>
             <select
               value={selectedPickUpTime}
@@ -163,7 +170,7 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
               <CheckOutButton 
                 setSelectTimeMessage={setSelectTimeMessage} 
                 selectedTime={selectedPickUpTime}
-                date={currentCartPickUpDate}
+                date={selectedPickUpDate}
                 cartItems={currentCartItems} 
                 orderTotal={orderTotal}
                 customerInformation={customerInformation}

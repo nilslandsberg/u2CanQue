@@ -26,17 +26,28 @@ const AddToCartButton = () => {
       return;
     }
 
-    // Access the shopping cart in local storage
-    const currentCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    if (modalItem.holiday) {
+      const currentCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
 
-    // Initialize "items" as an empty array if it doesn't exist
-    currentCart.items = currentCart.items || [];
+      currentCart.items = currentCart.items || [];
 
-    // Add the item to the cart
-    currentCart.items.push(modalItemToCart);
+      currentCart.items.push(modalItemToCart);
 
-    // Save the updated cart to local storage
-    localStorage.setItem('shoppingCart', JSON.stringify(currentCart));
+      localStorage.setItem('holidayShoppingCart', JSON.stringify(currentCart));
+    } else {
+      // Access the shopping cart in local storage
+      const currentCart = JSON.parse(localStorage.getItem('shoppingCart'));
+
+      // Initialize "items" as an empty array if it doesn't exist
+      currentCart.items = currentCart.items || [];
+
+      // Add the item to the cart
+      currentCart.items.push(modalItemToCart);
+
+      // Save the updated cart to local storage
+      localStorage.setItem('shoppingCart', JSON.stringify(currentCart));
+    }
+    
 
     // Reset the message
     setModalMessage(''); 

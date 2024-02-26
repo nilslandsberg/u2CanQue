@@ -8,7 +8,7 @@ const page = () => {
     <>
       <div className="bg-black text-white fixed top-0 left-0 right-0 z-30 pt-[90px]">
         <div className="text-2xl font-bold pb-2 flex flex-row text-center justify-center items-center border-b border-white overflow-x-auto">
-          <p>Cart</p>
+          <p>Easter Holiday Cart</p>
         </div>
       </div>
       <div className="relative flex flex-col items-center pt-[175px] min-h-screen bg-black">

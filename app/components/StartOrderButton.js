@@ -8,7 +8,7 @@ const StartOrderButton = ({ selectedDate }) => {
   const [ errorMessage, setErrorMessage ] = useState()
 
   const handleClick = () => {
-    console.log(selectedDate)
+
     if (selectedDate === undefined) {
       setErrorMessage("You must select a date to start your order");
       return;

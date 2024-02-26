@@ -293,13 +293,15 @@ export const thanksgivingItems = [
 
 export const easterItems = [
   {
-    name: "Double Smoked Ham",
+    holiday: true,
+    name: "Double Smoked Spiral Sliced Ham",
     type: "Easter",
     price: "50.00",
     description: "Indulge in the rich and savory flavors of our double smoked ham, the perfect centerpiece for your holiday feast. Crafted with care, our double smoked ham undergoes a meticulous smoking process that infuses it with layers of robust smokiness, complemented by delicate notes of sweetness.",
     image: "/images/Double_Smoked_Ham.jpeg"
   },
   {
+    holiday: true,
     name: "Smoked Turkey",
     price: "75.00",
     description: "Celebrate the season with the savory aroma and delectable taste of our smoked turkey, a quintessential holiday favorite that brings warmth and cheer to every gathering. Carefully prepared and smoked to perfection, our turkey embodies the essence of festive feasting and culinary delight.",
@@ -307,6 +309,7 @@ export const easterItems = [
     image: "/images/Smoked_Turkey.jpeg"
   },
   {
+    holiday: true,
     name: "Smoked Prime Rib",
     bulk: true,
     type: "Easter",

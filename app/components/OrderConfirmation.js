@@ -12,10 +12,13 @@ const OrderConfirmation = () => {
   const [customerInfo, setCustomerInfo] = useState();
   const [currentCartItems, setCurrentCartItems] = useState();
   const [orderTotal, setOrderTotal] = useState();
+  const [holidayOrder, setHolidayOrder] = useState(false);
 
-
+  const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+  const holidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
+  
   useEffect(() => {
-    const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    
 
     if (shoppingCart && shoppingCart.items && shoppingCart.items.length >= 0) {
       setCurrentCartDate(shoppingCart.date);
@@ -27,6 +30,16 @@ const OrderConfirmation = () => {
       setOrderTotal(shoppingCart.orderTotal);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
 
+    } else if (holidayShoppingCart && holidayShoppingCart.items && holidayShoppingCart.items.length >= 0) {
+      setHolidayOrder(true);
+      setCurrentCartDate(holidayShoppingCart.date)
+      setSelectedPickUpTime(holidayShoppingCart.pickUpTime);
+      setCustomerName(holidayShoppingCart.customer.firstName);
+      setCustomerInfo(holidayShoppingCart.customer);
+      setCurrentCartItems(holidayShoppingCart.items);
+      setOrderTotal(holidayShoppingCart.orderTotal);
+      setLoading(false);
+      console.log(currentCartDate)
     } else {
       setLoading(false)
     }
@@ -39,30 +52,37 @@ const OrderConfirmation = () => {
 
   useEffect(() => {
     if (!loading) {
-      const requestBody = {
-        date: currentCartDate,
-        pickUpTime: selectedPickUpTime,
-        customer: customerInfo,
-        items: currentCartItems,
-        orderTotal: orderTotal
-      }
-      // Make a POST request to the server after the local state is updated
-      fetch('https://u2canque-server.onrender.com/api/order/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(requestBody)
-      })
-      .then(response => {
-        console.log(response);
-        if (response.ok) {
-          localStorage.removeItem('shoppingCart');
+      if (shoppingCart) {
+        const requestBody = {
+          date: currentCartDate,
+          pickUpTime: selectedPickUpTime,
+          customer: customerInfo,
+          items: currentCartItems,
+          orderTotal: orderTotal
         }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+        // Make a POST request to the server after the local state is updated
+        fetch('https://u2canque-server.onrender.com/api/order/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(requestBody)
+        })
+        .then(response => {
+          console.log(response);
+          if (response.ok) {
+            localStorage.removeItem('shoppingCart');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
+
+      if (holidayShoppingCart) {
+        console.log(holidayShoppingCart)
+      }
+      
     }
   }, [loading]);
 
@@ -72,7 +92,7 @@ const OrderConfirmation = () => {
           <div className="text-white">Thank you for your order, {customerName}!</div>
           <br />
           <div>We look forward to seeing you at {selectedPickUpTime}</div>
-          <div>on <OrderDate orderDate={currentCartDate} dayOfWeek={dayOfWeek}/>.</div>
+          <div>on { !holidayOrder ? <OrderDate orderDate={currentCartDate} dayOfWeek={dayOfWeek}/> : currentCartDate }.</div>
           <br />
           <div>If you need to cancel or change your order, please contact the store:</div>
           <br />
@@ -80,7 +100,7 @@ const OrderConfirmation = () => {
             <div>Phone: (740) 236-7269</div>
             <div>Email: u2canque@gmail.com</div>
           </div>
-        </>
+        </> 
       }
     </>
   )

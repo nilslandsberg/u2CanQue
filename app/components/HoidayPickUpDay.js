@@ -7,14 +7,14 @@ import { useRouter } from 'next/navigation';
 
 const HolidayPickUpDay = ({ holiday, selectedPickUpDate, setSelectedPickUpDate }) => {
 
-  console.log(holiday)
+  
   
   // handler for selecting item options
   const handleOptionChange = (value) => {
       setSelectedPickUpDate(value)
     }
 
-  const pickUpOptions = [`Day Before ${holiday}`, `${holiday}`, `Day After ${holiday}`];
+  const pickUpOptions = [`the day before ${holiday}`, `${holiday}`, `the day after ${holiday}`];
   return (
         <div className="holiday-pickup-date-selector text-white">
           <label>Day to Pickup Order: </label>

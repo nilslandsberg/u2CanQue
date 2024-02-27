@@ -2,7 +2,7 @@ import React from 'react'
 import { sendOrder } from '../utils/send-order'
 import { useRouter } from 'next/navigation'
 
-const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, customerInformation, orderTotal }) => {
+const HolidayCheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, customerInformation, orderTotal, selectedPickUpDate }) => {
   const router = useRouter();
 
   const handleCheckOut = async () => {
@@ -32,6 +32,10 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
       return;
     }
 
+    if (!selectedPickUpDate) {
+      setSelectTimeMessage("You must select a date to pick up your order.");
+      return
+    }
     
     const order = {
       customer: customerInformation,
@@ -42,14 +46,14 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
    
     if (selectedTime && selectedTime !== null) {
       // Retrieve existing shoppingCart from localStorage
-      const existingCart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
+      const existingCart = JSON.parse(localStorage.getItem('holidayShoppingCart')) || {};
 
       // Update shoppingCart with customer information and order total
       existingCart.customer = customerInformation;
       existingCart.orderTotal = orderTotal;
 
       // Save the updated shoppingCart back to localStorage
-      localStorage.setItem('shoppingCart', JSON.stringify(existingCart));
+      localStorage.setItem('holidayShoppingCart', JSON.stringify(existingCart));
       // Send order to Clover
       const checkOutPage = await sendOrder(order);
       // Redirect user to Clover hosted checkout
@@ -70,4 +74,4 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
   )
 }
 
-export default CheckOutButton
+export default HolidayCheckOutButton

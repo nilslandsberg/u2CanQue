@@ -8,6 +8,7 @@ import CustomerInformation from './CustomerInformation';
 import HolidayReturnToMenuButton from './HolidayReturnToMenuButton';
 import { capitalizeFirstLetter } from '../utils/stringManipulation';
 import HolidayPickUpDay from './HoidayPickUpDay';
+import HolidayCheckOutButton from './HolidayCheckoutButton';
 
 const HolidayholidayShoppingCartContents = ({ holiday }) => {
   const [loading, setLoading] = useState(true);
@@ -167,8 +168,9 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
               {selectTimeMessage && <div className="text-red-500">{selectTimeMessage}</div>}
             </div>
             <div className="flex flex-row justify-end">
-              <CheckOutButton 
+              <HolidayCheckOutButton
                 setSelectTimeMessage={setSelectTimeMessage} 
+                selectedPickUpDate={selectedPickUpDate}
                 selectedTime={selectedPickUpTime}
                 date={selectedPickUpDate}
                 cartItems={currentCartItems} 

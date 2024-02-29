@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react'
 import OrderDate from './OrderDate';
 import { useRouter } from 'next/navigation';
+import { capitalizeFirstLetter } from '../utils/stringManipulation';
 
 const OrderConfirmation = () => {
   const [loading, setLoading] = useState(true);
@@ -15,14 +16,25 @@ const OrderConfirmation = () => {
   const [orderTotal, setOrderTotal] = useState();
   const [holidayOrder, setHolidayOrder] = useState(false);
   const [holiday, setHoliday] = useState();
+  const [standardOrder, setStandardOrder] = useState(false);
+  const [firstLoad, setFirstLoad] = useState(true);
 
   const router = useRouter();
 
-  const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-  const holidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
+  
 
   useEffect(() => {
-    
+    const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    const holidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
+  
+    // if (firstLoad) { // Check if it's the first load
+    //   if (!shoppingCart && !holidayShoppingCart) {
+    //     router.push('/');
+    //     setFirstLoad(false); // Set firstLoad to false after redirecting
+    //     return; // Exit the useEffect
+    //   }
+    // }
+  
     // Check if shoppingCart exists in localStorage and if it has items. Update local state accordingly.
     if (shoppingCart && shoppingCart.items && shoppingCart.items.length >= 0) {
       setCurrentCartDate(shoppingCart.date);
@@ -32,11 +44,15 @@ const OrderConfirmation = () => {
       setCustomerInfo(shoppingCart.customer);
       setCurrentCartItems(shoppingCart.items);
       setOrderTotal(shoppingCart.orderTotal);
+      setStandardOrder(true);
       setLoading(false); // Set loading to false once localStorage is accessed and state is updated
-      // If shoppingCart does not exist, check if holidayShoppingCart exists and has items. Update local state accordingly
+  
+      // Remove shoppingCart from localStorage after it's used
+      localStorage.removeItem('shoppingCart');
     } else if (holidayShoppingCart && holidayShoppingCart.items && holidayShoppingCart.items.length >= 0) {
+      const capitalizedHoliday = capitalizeFirstLetter(holidayShoppingCart.holiday)
       setHolidayOrder(true);
-      setHoliday(holidayShoppingCart.holiday);
+      setHoliday(capitalizedHoliday);
       setCurrentCartDate(holidayShoppingCart.date)
       setSelectedPickUpTime(holidayShoppingCart.pickUpTime);
       setCustomerName(holidayShoppingCart.customer.firstName);
@@ -44,21 +60,22 @@ const OrderConfirmation = () => {
       setCurrentCartItems(holidayShoppingCart.items);
       setOrderTotal(holidayShoppingCart.orderTotal);
       setLoading(false);
-    } else {
-      // if no shopping cart exists - push user to home page
-      router.push('/');
+  
+      // Remove holidayShoppingCart from localStorage after it's used
+      localStorage.removeItem('holidayShoppingCart');
     }
-
+  
     // Cleanup function to clear localStorage
     return () => {
       localStorage.removeItem('shoppingCart');
       localStorage.removeItem('holidayShoppingCart');
     };
   }, []);
+  
 
   useEffect(() => {
     if (!loading) {
-      if (shoppingCart) {
+      if (standardOrder) {
         const requestBody = {
           date: currentCartDate,
           pickUpTime: selectedPickUpTime,
@@ -85,7 +102,7 @@ const OrderConfirmation = () => {
         });
       }
 
-      if (holidayShoppingCart) {
+      if (holidayOrder) {
         
         const requestBody = {
           holiday: holiday,

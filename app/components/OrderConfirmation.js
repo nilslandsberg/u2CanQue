@@ -52,7 +52,7 @@ const OrderConfirmation = () => {
     // Cleanup function to clear localStorage
     return () => {
       localStorage.removeItem('shoppingCart');
-      localStorage.removeItme('holidayShoppingCart');
+      localStorage.removeItem('holidayShoppingCart');
     };
   }, []);
 

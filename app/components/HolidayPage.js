@@ -4,8 +4,10 @@ import React, { useEffect } from 'react'
 import EasterSpecials from './EasterSpecials'
 import OrderModal from './OrderModal'
 import { ToastContainer } from 'react-toastify'
+import ChristmasSpecials from './ChristmasSpecials';
 
 const HolidayPage = ({ holiday }) => {
+ 
   useEffect(() => {
     // create shoppingCart
     const holidayShoppingCart = {
@@ -26,6 +28,7 @@ const HolidayPage = ({ holiday }) => {
         <div className="relative flex flex-col items-center pt-[75px] min-h-screen bg-black">
           <div className="divide-y-2 divide-double divide-white w-full">
             {(holiday === "Easter") ? <EasterSpecials /> : <></>}
+            {(holiday === "Christmas") ? <ChristmasSpecials /> : <></>}
           </div>
         </div>
         <OrderModal />

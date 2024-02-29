@@ -27,7 +27,7 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
   });
 
   const capitalizedHoliday = capitalizeFirstLetter(holiday);
-
+  
   useEffect(() => {
     const holidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
 

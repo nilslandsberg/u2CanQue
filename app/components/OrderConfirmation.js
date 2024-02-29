@@ -18,11 +18,11 @@ const OrderConfirmation = () => {
 
   const router = useRouter();
 
-  const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
-  const holidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
+  
 
   useEffect(() => {
-    
+    const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
+    const holidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
     // Check if shoppingCart exists in localStorage and if it has items. Update local state accordingly.
     if (shoppingCart && shoppingCart.items && shoppingCart.items.length >= 0) {
       setCurrentCartDate(shoppingCart.date);

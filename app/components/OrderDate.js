@@ -2,7 +2,6 @@ import React from 'react'
 import { capitalizeFirstLetter } from '../utils/stringManipulation';
 
 const OrderDate = ({ orderDate, dayOfWeek }) => {
-  
   const date = new Date(orderDate);
   const months = [
     "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"

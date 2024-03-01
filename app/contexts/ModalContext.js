@@ -43,7 +43,6 @@ export const ModalProvider = ({ children }) => {
     price: (() => {
       // call price modifier functions if the item contains modifiers
       if (modalItem?.name === "BBQ Chicken Meal") {
-        console.log("Chicken price calculation")
         return chickenPriceModifiers(modalItemOptions);
       } else if (modalItem?.name === "10 Smoked Jumbo Chicken Wings") {
         return chickenWingPriceModifiers(modalItemOptions);

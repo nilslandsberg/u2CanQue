@@ -4,7 +4,7 @@ import { christmasDateCheck, easterDateCheck, saleEndMessage, thanksgivingDateCh
 const HolidayLink = ({ className }) => {
   const currentDate = new Date()
   const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
-
+ 
 
   const christmasSale = christmasDateCheck();
   

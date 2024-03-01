@@ -5,9 +5,10 @@ import EasterSpecials from './EasterSpecials'
 import OrderModal from './OrderModal'
 import { ToastContainer } from 'react-toastify'
 import ChristmasSpecials from './ChristmasSpecials';
+import { easterDateCheck } from '../utils/dateCheck';
 
 const HolidayPage = ({ holiday }) => {
- 
+  
   useEffect(() => {
     // create shoppingCart
     const holidayShoppingCart = {
@@ -17,7 +18,13 @@ const HolidayPage = ({ holiday }) => {
       items: [],
     }
 
-    // store shoppingCart in Local Storage if it doesn't exist yet
+    // check to see if shoppingCart exists in localStorage
+    if (localStorage.getItem('shoppingCart')) {
+      // if the shoppingCart exists, remove it from localStorage
+      localStorage.removeItem('shoppingCart');
+    }
+
+    // store holidayShoppingCart in Local Storage if it doesn't exist yet
     if (!localStorage.getItem('holidayShoppingCart')) {
       localStorage.setItem('holidayShoppingCart', JSON.stringify(holidayShoppingCart))
     }

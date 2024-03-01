@@ -22,6 +22,12 @@ const StartOrderButton = ({ selectedDate }) => {
     if (dayOfWeekNumber >= 1 && dayOfWeekNumber <= 5) {
       const dayOfWeek = daysOfWeek[dayOfWeekNumber];
 
+      // Check if holidayShoppingCart is in localStorage
+      if (localStorage.getItem('holidayShoppingCart')) {
+        // remove holidayShoppingCart from localStorage
+        localStorage.removeItem('holidayShoppingCart')
+      }
+      
       // create shoppingCart
       const shoppingCart = {
         date: selectedDate,

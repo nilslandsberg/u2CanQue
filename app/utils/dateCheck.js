@@ -1,4 +1,3 @@
-import React from 'react'
 import holidays from 'date-holidays';
 
 export const christmasDateCheck = () => {
@@ -40,14 +39,16 @@ function getFiveDaysPrior(utcDateString) {
   return utcDate;
 }
 
-export const easterDateCheck = (currentYear, currentDate) => {
+export const easterDateCheck = () => {
+  const currentDate = new Date("2024-03-03");
+  const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
+
   const hd = new holidays('US');
   const holiday = hd.getHolidays(currentYear)
   
   const holidayNameToFind = "Easter Sunday";
   const foundHoliday = findHolidayByName(holiday, holidayNameToFind)
   const easterDate = new Date(foundHoliday.date);
-  
   const easterSaleStart = getOneMonthPrior(easterDate);
   const easterSaleEnd = getFiveDaysPrior(easterDate);
 
@@ -79,3 +80,7 @@ export const thanksgivingDateCheck = (currentYear, currentDate) => {
 export const saleEndMessage = (saleEnd) => {
   `Available Through ${saleEnd.toLocaleDateString()}!`
 }
+
+export const months = [
+  "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+];

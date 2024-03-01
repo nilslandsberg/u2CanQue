@@ -40,7 +40,7 @@ function getFiveDaysPrior(utcDateString) {
 }
 
 export const easterDateCheck = () => {
-  const currentDate = new Date("2024-03-03");
+  const currentDate = new Date();
   const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
 
   const hd = new holidays('US');

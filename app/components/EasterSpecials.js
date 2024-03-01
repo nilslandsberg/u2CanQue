@@ -7,9 +7,14 @@ import { easterDateCheck, months } from '../utils/dateCheck';
 const EasterSpecials = () => {
   const easterSale = easterDateCheck();
   const isItEaster = easterSale.isItEaster
-  const easterSaleEnd = easterSale.easterSaleEnd
-  const easterMonth = months[easterSaleEnd.getMonth()];
-  const easterDay = easterSaleEnd.getDate();
+  let easterMonth;
+  let easterDay;
+
+  if (isItEaster) {
+    const easterSaleEnd = easterSale.easterSaleEnd;
+    easterMonth = months[easterSaleEnd.getMonth()];
+    easterDay = easterSaleEnd.getDate();
+  }
  
   return (
     <>

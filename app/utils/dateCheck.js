@@ -59,7 +59,10 @@ export const easterDateCheck = () => {
   }
 }
 
-export const thanksgivingDateCheck = (currentYear, currentDate) => {
+export const thanksgivingDateCheck = () => {
+  const currentDate = new Date();
+  const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
+
   const hd = new holidays('US');
   const holiday = hd.getHolidays(currentYear);
   

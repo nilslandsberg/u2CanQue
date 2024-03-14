@@ -10,7 +10,7 @@ const ChristmasSpecials = () => {
   
   return (
     <>
-      <div className="z-30 p-5 text-2xl bg-black text-white text-center" id="appetizers">
+      <div className="z-30 p-5 text-2xl bg-black text-white text-center">
         Christmas Specials Available Through December 20
       </div>
       {christmasSale ? renderMenuItems(christmasItems) : <>

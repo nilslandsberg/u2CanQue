@@ -8,18 +8,18 @@ const EasterSpecials = () => {
   const easterSale = easterDateCheck();
   const isItEaster = easterSale.isItEaster
   let easterMonth;
-  let easterDay;
+  let easterSaleOver;
 
   if (isItEaster) {
     const easterSaleEnd = easterSale.easterSaleEnd;
     easterMonth = months[easterSaleEnd.getMonth()];
-    easterDay = easterSaleEnd.getDate();
+    easterSaleOver = easterSaleEnd.getDate();
   }
  
   return (
     <>
-      <div className="z-30 p-5 text-2xl bg-black text-white text-center" id="appetizers">
-        Easter Specials Available Through {easterMonth} {easterDay}
+      <div className="z-30 p-5 text-2xl bg-black text-white text-center">
+        Easter Specials Available Through {easterMonth} {easterSaleOver}
       </div>
       {isItEaster ? renderMenuItems(easterItems) : <>
         <div className="text-2xl text-white text-center">

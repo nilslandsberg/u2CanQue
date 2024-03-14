@@ -6,6 +6,8 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
   const router = useRouter();
 
   const handleCheckOut = async () => {
+    const checkoutMessage = alert('You will now be forwarded to a secure payment site to process your order.\n\nAfter your payment is processed, DO NOT close the browser until the order confirmation page has loaded.')
+
     const lineItems = []
 
     const lineItem = (item) => {

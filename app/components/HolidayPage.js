@@ -29,6 +29,13 @@ const HolidayPage = ({ holiday }) => {
       localStorage.setItem('holidayShoppingCart', JSON.stringify(holidayShoppingCart))
     }
     
+    const existingHolidayShoppingCart = JSON.parse(localStorage.getItem('holidayShoppingCart'))
+
+    if (existingHolidayShoppingCart && existingHolidayShoppingCart.holiday !== holiday) {
+      existingHolidayShoppingCart.holiday = holiday
+      console.log(existingHolidayShoppingCart)
+      localStorage.setItem("holidayShoppingCart", JSON.stringify(existingHolidayShoppingCart));
+    }
   })
   return (
     <>

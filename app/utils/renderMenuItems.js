@@ -55,9 +55,15 @@ export const renderBulkBbq = (array) => {
           <div className="border-b-2 border-gray-300 mb-2"></div>
           <div className="flex-grow mb-2">{item.description}</div>
           <div className="flex flex-row items-center justify-between">
-            <div className="flex items-center">
-              <p className="text-orange-600 font-semibold pt-4">Price: ${item.pricePerPound} per pound</p>
-            </div>
+            {item.bulk ? 
+              <div className="flex items-center">
+                <p className="text-orange-600 font-semibold pt-4">Price: ${item.pricePerPound} per pound</p>
+              </div> : 
+              <div className="flex flex-col items-start ">
+                <p className="text-orange-600 font-semibold pt-4">Half-Pan ${item.price.halfPan}.00</p>
+                <p className="text-orange-600 font-semibold pt-4">Full-Pan ${item.price.fullPan}.00</p>
+              </div>
+            }
             <AddToOrderButton item={item} />
           </div>
         </div>

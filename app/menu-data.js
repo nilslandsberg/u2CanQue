@@ -196,6 +196,20 @@ export const bulkBbq = [
   },
   {
     bulk: true,
+    id: "6CT8PC4XZ44MJ",
+    name: "Pulled Chicken",
+    image: "/images/pulledChickenSandwich.jpeg",
+    description: "Experience the perfect harmony of smokiness, sweetness, and tang in our pulled chicken. Our expertly chosen seasonings and marinades infuse every bite with a symphony of flavors.  Perfect for making sandwiches or a variety of dishes.",
+    pricePerPound: "11.50",
+    price: {
+      onePound: "11.50",
+      threePounds: "34.50",
+      fivePounds: "57.50"
+    },
+    size: ["1lb (serves 3-4): $11.50", "3lbs (serves 9-12): $34.50", "5lbs (serves 15-20): $57.50"]
+  },
+  {
+    bulk: true,
     id: "JV8G84RMS5YFJ",
     name: "Beef Brisket",
     image: "/images/Brisket.jpeg",
@@ -207,6 +221,19 @@ export const bulkBbq = [
       fivePounds: "107.50"
     },
     size: ["1lb (serves 3-4): $21.50", "3lbs (serves 9-12): $55.50", "5lbs (serves 15-20): $107.50"]
+  },
+  {
+    bulk: false,
+    side: true,
+    id: "WF7A5AGNA",
+    name: "Woodfired Lasagna (Bulk)",
+    image: "/images/Lasagna.jpeg",
+    description: "Savor the irresistible layers of our Smoked Lasagna. Tender pasta sheets embrace a delightful blend of smoked meats, infused with the rich flavors of fire-roasted tomatoes, grilled bell peppers, and caramelized onions. Our unique touch extends to the smoked provolone, mozzarella, and even freshly shaved parmesan. Slow-cooked to perfection, this hearty dish will leave you craving more, setting it apart from the rest.",
+    price: {
+      halfPan: "65",
+      fullPan: "110"
+    },
+    size: ["Half-Pan (Serves 12-14): $45.00", "Full-Pan (Serves 24-28): $75.00"]
   }
 ]
 

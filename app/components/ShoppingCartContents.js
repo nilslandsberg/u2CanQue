@@ -59,8 +59,11 @@ const ShoppingCartContents = () => {
       setInitialRender(false);
       return;
     }
+    // Check if shoppingCart exists in localStorage
+    const shoppingCart = JSON.parse(localStorage.getItem('shoppingCart'));
 
-    if (currentCartItems.length >= 0) {
+    // if shoppingCart exists and currentCartItems is >=0 update cart
+    if (shoppingCart && currentCartItems.length >= 0) {
       const updatedCart = {
         date: currentCartDate,
         dayOfWeek: currentCartDayOfWeek,

@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from 'react';
 import RenderItemOptions from './RenderItemOptions';
-import CheckOutButton from './CheckOutButton';
 import { toast } from 'react-toastify';
 import CustomerInformation from './CustomerInformation';
 import HolidayReturnToMenuButton from './HolidayReturnToMenuButton';

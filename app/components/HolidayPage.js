@@ -6,6 +6,7 @@ import OrderModal from './OrderModal'
 import { ToastContainer } from 'react-toastify'
 import ChristmasSpecials from './ChristmasSpecials';
 import ThanksgivingSpecials from './ThanksgivingSpecials';
+import MemorialDaySpecials from './MemorialDaySpecials';
 
 const HolidayPage = ({ holiday }) => {
   
@@ -44,6 +45,7 @@ const HolidayPage = ({ holiday }) => {
             {(holiday === "Easter") ? <EasterSpecials /> : <></>}
             {(holiday === "Christmas") ? <ChristmasSpecials /> : <></>}
             {(holiday === "Thanksgiving") ? <ThanksgivingSpecials /> : <></>}
+            {(holiday === "Memorial Day") ? <MemorialDaySpecials /> : <></>}
           </div>
         </div>
         <OrderModal />

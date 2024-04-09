@@ -45,7 +45,7 @@ export const easterDateCheck = () => {
 
   const hd = new holidays('US');
   const holiday = hd.getHolidays(currentYear)
-  console.log(holiday)
+
   const holidayNameToFind = "Easter Sunday";
   const foundHoliday = findHolidayByName(holiday, holidayNameToFind)
   const easterDate = new Date(foundHoliday.date);
@@ -77,6 +77,27 @@ export const thanksgivingDateCheck = () => {
     return { isItThanksgiving: true, thanksgivingSaleEnd: thanksgivingSaleEnd }
   } else {
     return { isItThankgiving: false }
+  }
+}
+
+export const memorialDayDateCheck = () => {
+  const currentDate = new Date();
+  const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
+
+  const hd = new holidays('US');
+  const holiday = hd.getHolidays(currentYear);
+  
+  const holidayNameToFind = "Memorial Day"
+  const foundHoliday = findHolidayByName(holiday, holidayNameToFind);
+  const memorialDayDate = new Date(foundHoliday.date);
+
+  const memorialDaySaleStart = getOneMonthPrior(memorialDayDate);
+  const memorialDaySaleEnd = getFiveDaysPrior(memorialDayDate);
+
+  if (currentDate >= memorialDaySaleStart && currentDate <= memorialDaySaleEnd) {
+    return { isItMemorialDay: true, memorialDaySaleEnd: memorialDaySaleEnd }
+  } else {
+    return { isItMemorialDay: false }
   }
 }
 

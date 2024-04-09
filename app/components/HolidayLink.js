@@ -1,11 +1,7 @@
 import React from 'react'
-import { christmasDateCheck, easterDateCheck, saleEndMessage, thanksgivingDateCheck } from '../utils/dateCheck';
+import { christmasDateCheck, easterDateCheck, memorialDayDateCheck, saleEndMessage, thanksgivingDateCheck } from '../utils/dateCheck';
 
 const HolidayLink = ({ className }) => {
-  const currentDate = new Date()
-  const currentYear = currentDate.toLocaleDateString('en-US', { year: 'numeric'});
- 
-
   const christmasSale = christmasDateCheck();
   
   if (christmasSale) {
@@ -17,7 +13,7 @@ const HolidayLink = ({ className }) => {
     )
   } 
   
-  const easterSale = easterDateCheck(currentYear, currentDate);
+  const easterSale = easterDateCheck();
 
   if (easterSale.isItEaster) {
     return (
@@ -28,7 +24,7 @@ const HolidayLink = ({ className }) => {
     )
   }
   
-  const thanksgivingSale = thanksgivingDateCheck(currentYear, currentDate)
+  const thanksgivingSale = thanksgivingDateCheck()
 
   if (thanksgivingSale.isItThanksgiving) {
     return (
@@ -36,6 +32,17 @@ const HolidayLink = ({ className }) => {
         <a className={className} href="/order/thanksgiving">Thanksgiving Specials</a>
         <a className={className} href="/order/thanksgiving/cart">View Thanksgiving Cart</a>
       </>
+    )
+  }
+
+  const memorialDaySale = memorialDayDateCheck();
+
+  if (memorialDaySale.isItMemorialDay) {
+    return (
+      <>
+        <a className={className} href="/order/memorial-day">Memorial Day Specials</a>
+        <a className={className} href="/order/memorial-day/cart">View Memorial Day Cart</a>
+      </>     
     )
   }
 

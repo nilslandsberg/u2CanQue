@@ -393,3 +393,42 @@ export const easterItems = [
     size: ["4lbs : $100", "5lbs : $125", "6lbs : $150", "7lbs : $175", "8lbs : $200", "9lbs : $225", "10lbs : $250"]
   }
 ]
+
+export const memorialDayItems = [
+  {
+    holiday: true,
+    name: "Double Smoked Spiral Sliced Ham",
+    type: "Memorial Day",
+    price: "50.00",
+    description: "Indulge in the rich and savory flavors of our double smoked ham, the perfect centerpiece for your holiday feast. Crafted with care, our double smoked ham undergoes a meticulous smoking process that infuses it with layers of robust smokiness, complemented by delicate notes of sweetness.",
+    image: "/images/Double_Smoked_Ham.jpeg"
+  },
+  {
+    holiday: true,
+    name: "Smoked Turkey",
+    price: "75.00",
+    description: "Celebrate the season with the savory aroma and delectable taste of our smoked turkey, a quintessential holiday favorite that brings warmth and cheer to every gathering. Carefully prepared and smoked to perfection, our turkey embodies the essence of festive feasting and culinary delight.",
+    type: "Memorial Day",
+    image: "/images/Smoked_Turkey.jpeg"
+  },
+  {
+    holiday: true,
+    name: "Smoked Prime Rib",
+    bulk: true,
+    type: "Memorial Day",
+    image: "/images/Smoked-Prime-Rib-9.jpeg",
+    price: {
+      default: "25.00/pound (4 pound minimum)",
+      fourPounds: "100",
+      fivePounds: "125",
+      sixPounds: "150",
+      sevenPounds: "175",
+      eightPounds: "200",
+      ninePounds: "225",
+      tenPounds: "250"
+    }
+    ,
+    description: "Indulge in the epitome of holiday luxury with our smoked prime rib, a culinary masterpiece that transforms any gathering into a sumptuous celebration. Perfectly marbled and richly flavorful, our prime rib is expertly seasoned and slow-smoked to perfection, resulting in a succulent and tender roast that captivates the senses.",
+    size: ["4lbs : $100", "5lbs : $125", "6lbs : $150", "7lbs : $175", "8lbs : $200", "9lbs : $225", "10lbs : $250"]
+  }
+]

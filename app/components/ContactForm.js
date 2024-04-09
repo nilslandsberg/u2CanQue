@@ -4,12 +4,10 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { sendEmail } from '../utils/send-email';
 import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
 
 const ContactForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const [isSendingForm, setIsSendingForm] = useState(false);
-  const router = useRouter();
 
   const onSubmit = async (data) => {
 

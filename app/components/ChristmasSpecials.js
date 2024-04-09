@@ -10,14 +10,20 @@ const ChristmasSpecials = () => {
   
   return (
     <>
-      <div className="z-30 p-5 text-2xl bg-black text-white text-center">
-        Christmas Specials Available Through December 20
-      </div>
-      {christmasSale ? renderMenuItems(christmasItems) : <>
-        <div className="text-2xl text-white text-center">
-          <p>It is not quite time for our Christmas Sale</p>
-          <p>Please check back closer to the holiday!</p>
-        </div></>}
+      {christmasSale ?
+        <>
+          <div className="z-30 p-5 text-2xl bg-black text-white text-center">
+            Christmas Specials Available Through December 20
+          </div>
+          {renderMenuItems(christmasItems)}
+        </> :
+        <>
+          <div className="text-2xl text-white text-center pt-10">
+            <p>It is not quite time for our Christmas Sale</p>
+            <p>Please check back closer to the holiday!</p>
+          </div>
+        </>
+      }
     </>
   );
 };

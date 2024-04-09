@@ -18,14 +18,20 @@ const EasterSpecials = () => {
  
   return (
     <>
-      <div className="z-30 p-5 text-2xl bg-black text-white text-center">
-        Easter Specials Available Through {easterMonth} {easterSaleOver}
-      </div>
-      {isItEaster ? renderMenuItems(easterItems) : <>
-        <div className="text-2xl text-white text-center">
-          <p>It is not quite time for our Easter Sale</p>
-          <p>Please check back closer to the holiday!</p>
-        </div></>}
+      {isItEaster ? 
+        <>
+          <div className="z-30 p-5 text-2xl bg-black text-white text-center">
+            Easter Specials Available Through {easterMonth} {easterSaleOver}
+          </div>
+            {renderMenuItems(easterItems)}
+        </> : 
+        <>
+          <div className="text-2xl text-white text-center pt-10">
+            <p>It is not quite time for our Easter Sale</p>
+            <p>Please check back closer to the holiday!</p>
+          </div>
+        </>
+      }
     </>
   );
 };

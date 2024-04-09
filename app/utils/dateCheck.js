@@ -45,7 +45,7 @@ export const easterDateCheck = () => {
 
   const hd = new holidays('US');
   const holiday = hd.getHolidays(currentYear)
-  
+  console.log(holiday)
   const holidayNameToFind = "Easter Sunday";
   const foundHoliday = findHolidayByName(holiday, holidayNameToFind)
   const easterDate = new Date(foundHoliday.date);

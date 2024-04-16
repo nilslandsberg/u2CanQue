@@ -13,13 +13,14 @@ const OrderCalendar = () => {
     const dayOfWeek = date.getDay();
     const dayOfMonth = date.getDate();
     const month = date.getMonth();
+    const year = date.getFullYear();
     const currentDateTime = DateTime.now().setZone('America/New_York');
     const tomorrow = currentDateTime.plus({ days: 1 });
-    
+
     // Convert date to Luxon DateTime object
     const luxonDate = DateTime.fromJSDate(date);
    
-    // Now you can use luxonDate for comparisons
+    
   
     // Disable weekends
     if (dayOfWeek === 0 || dayOfWeek === 6) {
@@ -57,7 +58,12 @@ const OrderCalendar = () => {
           return true;
       }
     }
-  
+    
+    // Disable Specific Date
+    if (year === 2024 && month === 3 && dayOfMonth === 26) {
+      return true;
+    }
+
     return false;
   };
   

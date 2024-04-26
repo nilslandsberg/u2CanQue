@@ -233,7 +233,7 @@ export const bulkBbq = [
       halfPan: "65",
       fullPan: "110"
     },
-    size: ["Half-Pan (Serves 12-14): $45.00", "Full-Pan (Serves 24-28): $75.00"]
+    size: ["Half-Pan (Serves 12-14): $65.00", "Full-Pan (Serves 24-28): $110.00"]
   }
 ]
 

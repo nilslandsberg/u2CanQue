@@ -19,7 +19,7 @@ async function POST(request) {
   const mailOptions = {
     from: process.env.MY_EMAIL,
     to: process.env.MY_EMAIL,
-    // cc: email, (uncomment this line if you want to send a copy to the sender)
+
     subject: `Catering Request from ${name} (${email})`,
     text: cateringMessage,
   };

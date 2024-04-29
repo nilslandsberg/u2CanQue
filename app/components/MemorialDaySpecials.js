@@ -1,7 +1,7 @@
 import React from 'react';
-import { memorialDayItems } from '../menu-data';
+import { memorialDayItems, memorialDaySides } from '../menu-data';
 
-import { renderMenuItems } from '../utils/renderMenuItems';
+import { renderBulkBbq, renderMenuItems, renderSides } from '../utils/renderMenuItems';
 import { memorialDayDateCheck } from '../utils/dateCheck';
 
 const MemorialDaySpecials = () => {
@@ -20,8 +20,13 @@ const MemorialDaySpecials = () => {
         <>
           <div className="z-30 p-5 text-2xl bg-black text-white text-center">
             Memorial Day Specials Available Through May {memorialDaySaleOver}
+            <p>10% of sales will be donated to the Marietta VFW</p>
           </div>
           {renderMenuItems(memorialDayItems)}
+          <div className="z-30 bg-slate-600 p-5 text-2xl text-white text-center" id="appetizers">
+            Sides
+          </div>
+          {renderBulkBbq(memorialDaySides)}
         </> :
         <>
           <div className="text-2xl text-white text-center pt-10">

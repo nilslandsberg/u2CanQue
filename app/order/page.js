@@ -18,7 +18,6 @@ export default function Menu() {
           <p className="text-xl font-bold italic">Our menu changes daily.</p>
           <p className="text-xl font-bold italic"> Select a date on the calendar to explore our menu.</p>
           <br />
-          <p className="text-xl font-bold">Our to-go orders will not be available during the week of April 22-26th in order to prepare for the Marietta River City BBQ Competition.</p>
           <OrderCalendar />
         </div>
         {/* <video

@@ -1,3 +1,5 @@
+'use client'
+
 import AppetizerMenu from '@/app/components/AppetizerMenu';
 import BulkBbq from '@/app/components/BulkBbq';
 import LunchOptions from '@/app/components/LunchOptions';

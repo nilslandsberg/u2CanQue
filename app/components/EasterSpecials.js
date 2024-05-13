@@ -1,12 +1,29 @@
-import React from 'react';
-import { easterItems } from '../menu-data';
-
+import React, { useState, useEffect } from 'react';
 import { renderMenuItems } from '../utils/renderMenuItems';
 import { easterDateCheck, months } from '../utils/dateCheck';
 
 const EasterSpecials = () => {
+  const [easterItems, setEasterItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchHolidayItems = async () => {
+      try {
+        const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
+        const data = await response.json();
+        const easterItems = data.filter((item) => item.type === 'Easter');
+        setEasterItems(easterItems);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching Easter items:', error);
+      }
+    };
+
+    fetchHolidayItems();
+  }, []);
+
   const easterSale = easterDateCheck();
-  const isItEaster = easterSale.isItEaster
+  const isItEaster = easterSale.isItEaster;
   let easterMonth;
   let easterSaleOver;
 
@@ -15,23 +32,26 @@ const EasterSpecials = () => {
     easterMonth = months[easterSaleEnd.getMonth()];
     easterSaleOver = easterSaleEnd.getDate();
   }
- 
+
   return (
     <>
-      {isItEaster ? 
+      {isLoading ? (
+        <div className="text-2xl text-white text-center pt-10">
+          <p>Loading...</p>
+        </div>
+      ) : isItEaster ? (
         <>
           <div className="z-30 p-5 text-2xl bg-black text-white text-center">
             Easter Specials Available Through {easterMonth} {easterSaleOver}
           </div>
-            {renderMenuItems(easterItems)}
-        </> : 
-        <>
-          <div className="text-2xl text-white text-center pt-10">
-            <p>It is not quite time for our Easter Sale</p>
-            <p>Please check back closer to the holiday!</p>
-          </div>
+          {renderMenuItems(easterItems)}
         </>
-      }
+      ) : (
+        <div className="text-2xl text-white text-center pt-10">
+          <p>It is not quite time for our Easter Sale</p>
+          <p>Please check back closer to the holiday!</p>
+        </div>
+      )}
     </>
   );
 };

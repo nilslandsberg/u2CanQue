@@ -8,7 +8,7 @@ const BulkBbq = () => {
   useEffect(() => {
     const fetchBulkBbq = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/bulk-bbq');
+        const response = await fetch('https://u2canque-server.onrender.com/api/bulk-bbq');
         const data = await response.json();
         setBulkBbq(data);
       } catch (error) {
@@ -18,7 +18,7 @@ const BulkBbq = () => {
 
     const fetchSides = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/sides');
+        const response = await fetch('https://u2canque-server.onrender.com/api/sides');
         const data = await response.json();
         setSides(data);
       } catch (error) {

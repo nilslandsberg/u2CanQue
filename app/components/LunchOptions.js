@@ -6,7 +6,7 @@ const LunchOptions = ({ dayOfWeek }) => {
 
   const fetchLunchOptions = async () => {
     try {
-      const response = await fetch(`http://localhost:4000/api/lunch/${dayOfWeek}`);
+      const response = await fetch(`https://u2canque-server.onrender.com/api/lunch/${dayOfWeek}`);
       const data = await response.json();
       const sortedData = sortLunchData(data);
       setLunchOptions(sortedData);

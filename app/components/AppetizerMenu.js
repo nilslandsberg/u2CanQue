@@ -7,7 +7,7 @@ const AppetizerMenu = () => {
   useEffect(() => {
     const fetchAppetizers = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/appetizers/');
+        const response = await fetch('https://u2canque-server.onrender.com/api/appetizers/');
         const data = await response.json();
         setAppetizers(data);
       } catch (error) {

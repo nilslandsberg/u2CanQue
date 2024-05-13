@@ -41,7 +41,7 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
         lineItems: lineItems
       }
     }
-   
+  
     if (selectedTime && selectedTime !== null) {
       // Retrieve existing shoppingCart from localStorage
       const existingCart = JSON.parse(localStorage.getItem('shoppingCart')) || {};

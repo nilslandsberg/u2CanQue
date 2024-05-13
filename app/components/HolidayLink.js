@@ -1,5 +1,5 @@
 import React from 'react'
-import { christmasDateCheck, easterDateCheck, memorialDayDateCheck, saleEndMessage, thanksgivingDateCheck } from '../utils/dateCheck';
+import { christmasDateCheck, easterDateCheck, independenceDayDateCheck, memorialDayDateCheck, saleEndMessage, thanksgivingDateCheck } from '../utils/dateCheck';
 import { IoIosArrowDown } from "react-icons/io";
 import { capitalizeFirstLetter } from '../utils/stringManipulation';
 
@@ -28,6 +28,12 @@ const HolidayLink = ({ className }) => {
 
   if (memorialDaySale.isItMemorialDay) {
     holiday="memorial-day"
+  }
+
+  const independenceDaySale = independenceDayDateCheck();
+
+  if (independenceDaySale) {
+    holiday="independence-day"
   }
 
   return (

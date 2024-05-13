@@ -394,21 +394,22 @@ export const easterItems = [
   }
 ]
 
-export const memorialDayItems = [
+
+export const independenceDayItems = [
   {
     holiday: true,
     name: "5 Pounds of Pulled Pork & 5 Racks of Ribs",
-    type: "Memorial Day",
+    type: "Independence Day",
     price: "100.00",
-    description: "Memorial Day Special: Dive into 5lbs of tender pulled pork and 5 racks of savory ribs. Perfect for celebrating with friends and family. Order now!",
+    description: "Independence Day Special: Dive into 5lbs of tender pulled pork and 5 racks of savory ribs. Perfect for celebrating with friends and family. Order now!",
     image: "/images/Ribs&Pork.jpg"
   },
   {
     holiday: true,
     name: "5 pounds of Pulled Chicken & 5 Racks of Ribs",
     price: "75.00",
-    description: "Memorial Day Special: Dive into 5lbs of tender pulled chicken and 5 racks of savory ribs. Perfect for celebrating with friends and family. Order now!",
-    type: "Memorial Day",
+    description: "Independence Day Special: Dive into 5lbs of tender pulled chicken and 5 racks of savory ribs. Perfect for celebrating with friends and family. Order now!",
+    type: "Independence Day",
     image: "/images/Chicken&Ribs.jpg"
   },
   {
@@ -423,7 +424,7 @@ export const memorialDayItems = [
     holiday: true,
     name: "Smoked Prime Rib",
     bulk: true,
-    type: "Memorial Day",
+    type: "Independence Day",
     image: "/images/Smoked-Prime-Rib-9.jpeg",
     price: {
       default: "25.00/pound (4 pound minimum)",
@@ -441,10 +442,10 @@ export const memorialDayItems = [
   },
 ]
 
-export const memorialDaySides = [
+export const independenceDaySides = [
   {
     holiday: true,
-    type: "Memorial Day",
+    type: "Independence Day",
     side: true,
     name: "Smoked Mac-n-Cheese",
     image: "/images/MacNCheese.jpeg",
@@ -457,7 +458,7 @@ export const memorialDaySides = [
   },
   {
     holiday: true,
-    type: "Memorial Day",
+    type: "Independence Day",
     side: true,
     name: "Smoked Cowboy Beans",
     image: "/images/CowboyBeans.jpeg",
@@ -470,7 +471,7 @@ export const memorialDaySides = [
   },
   {
     holiday: true,
-    type: "Memorial Day",
+    type: "Independence Day",
     side: true,
     name: "Street Corn",
     image: "/images/StreetCorn.jpeg",

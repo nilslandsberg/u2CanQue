@@ -1,12 +1,26 @@
 "use client";
-
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { useModal } from '../contexts/ModalContext';
-import { modifiers } from '../menu-data';
 
 const BreadOptions = ({ index }) => {
-  const { setModalItemBread } = useModal();
-  const bread = modifiers.bread;
+  const { modalItem, setModalItemBread } = useModal();
+  const [modifiers, setModifiers] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchModifiers = async () => {
+    try {
+      const response = await fetch(`https://u2canque-server.onrender.com/api/modifiers`);
+      const data = await response.json();
+      setModifiers(data[0]);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching bread options:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchModifiers();
+  }, []);
 
   // handler for selecting item options
   const handleOptionChange = (value) => {
@@ -14,25 +28,31 @@ const BreadOptions = ({ index }) => {
   };
 
   return (
-    <div className="flex flex-row items-center">
-      <label className="mr-2">Bread: </label>
-        <div>
-          <select
-            id={bread[index]}
-            value={bread[index]}
-            onChange={(e) => handleOptionChange(e.target.value)}
-            className="mt-2 mb-2 bg-slate-600 text-white"
-          >
-            <option value="null">Select Bread</option>
-            {bread.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
+    <>
+      {isLoading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="flex flex-row items-center">
+          <label className="mr-2">Bread: </label>
+          <div>
+            <select
+              id={modifiers.bread[index]}
+              value={modifiers.bread[index]}
+              onChange={(e) => handleOptionChange(e.target.value)}
+              className="mt-2 mb-2 bg-slate-600 text-white"
+            >
+              <option value="null">Select Bread</option>
+              {modifiers.bread.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-    </div>
+      )}
+    </>
   );
-}
+};
 
-export default BreadOptions
+export default BreadOptions;

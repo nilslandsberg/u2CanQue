@@ -101,6 +101,25 @@ export const memorialDayDateCheck = () => {
   }
 }
 
+export const independenceDayDateCheck = () => {
+  const currentDate = new Date();
+  
+  const independenceDayStart = new Date();
+  independenceDayStart.setMonth(5);
+  independenceDayStart.setDate(4);
+
+  const independenceDayEnd = new Date();
+  independenceDayEnd.setMonth(5);
+  independenceDayEnd.setDate(29);
+
+  if (currentDate >= independenceDayStart && currentDate <= independenceDayEnd) {
+    return true;
+  } else {
+    return false;
+  }
+  
+}
+
 export const saleEndMessage = (saleEnd) => {
   `Available Through ${saleEnd.toLocaleDateString()}!`
 }

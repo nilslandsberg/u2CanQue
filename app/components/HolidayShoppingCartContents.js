@@ -77,7 +77,11 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
 
   if (loading) {
     // Return a loading indicator
-    return <div className="text-white">Loading...</div>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="w-16 h-16 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   // function to call toast message when item is removed from cart

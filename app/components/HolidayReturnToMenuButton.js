@@ -6,9 +6,10 @@ import { useRouter } from 'next/navigation';
 const HolidayReturnToMenuButton = ({ holiday }) => {
   const router = useRouter();
   const lowerCasedHoliday = holiday.toLowerCase();
+  const hyphenatedHoliday = lowerCasedHoliday.split(' ').join('-');
   
   const handleClick = () => {
-    router.push(`/order/${lowerCasedHoliday}`)
+    router.push(`/order/${hyphenatedHoliday}`)
   }
 
   return (

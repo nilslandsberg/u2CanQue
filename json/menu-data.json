@@ -24,7 +24,12 @@
       "image": "/images/ChickenWings.jpeg",
       "description": "Our signature Smoked Chicken Wings are tender, succulent, and perfectly smoked, resulting in a harmonious balance of smoky goodness and juicy tenderness. Our savory brine, combined with the smoking process, infuses the jumbo wings with rich, smoky essence, creating a mouthwatering experience with every bite. Wings can be finished with your choice of dry rub or sauce.",
       "price": "12.50",
-      "options": ["Sweet BBQ", "Spicy Apple Habanero", "Asian BBQ", "Hot Squeezed"]
+      "options": [
+        "Sweet BBQ",
+        "Spicy Apple Habanero",
+        "Asian BBQ",
+        "Hot Squeezed"
+      ]
     }
   ],
   "lunchOptions": [

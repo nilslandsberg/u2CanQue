@@ -12,15 +12,15 @@ export const ModalProvider = ({ children }) => {
   const [modalItemBread, setModalItemBread] = useState(null);
   const [modalItemSideOne, setModalItemSideOne] = useState(null);
   const [modalItemSideTwo, setModalItemSideTwo] = useState(null);
-  const [modalItemSize, setModalItemSize] = useState(null);
+  const [modalItemSize, setModalItemSize] = useState("");
   const [modalItemQuantity, setModalItemQuantity] = useState(1);
   const [modalMessage, setModalMessage] = useState("");
 
   const openModal = (item) => {
-    setModalItem(item)
+    setModalItem(item);
     setIsModalOpen(true);
   };
-
+  
   const closeModal = () => {
     setModalItem(null);
     setIsModalOpen(false);
@@ -28,7 +28,7 @@ export const ModalProvider = ({ children }) => {
     setModalItemBread(null);
     setModalItemSideOne(null);
     setModalItemSideTwo(null);
-    setModalItemSize(null);
+    setModalItemSize("");
     setModalMessage("");
     setModalItemQuantity(1);
   };

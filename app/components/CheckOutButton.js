@@ -6,7 +6,7 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
   const router = useRouter();
 
   const handleCheckOut = async () => {
-    const checkoutMessage = alert('You will now be forwarded to a secure payment site to process your order.\n\nAfter your payment is processed, DO NOT close the browser until the order confirmation page has loaded.')
+
 
     const lineItems = []
 
@@ -41,7 +41,7 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
         lineItems: lineItems
       }
     }
-   
+  
     if (selectedTime && selectedTime !== null) {
       // Retrieve existing shoppingCart from localStorage
       const existingCart = JSON.parse(localStorage.getItem('shoppingCart')) || {};
@@ -52,8 +52,11 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
 
       // Save the updated shoppingCart back to localStorage
       localStorage.setItem('shoppingCart', JSON.stringify(existingCart));
+      
       // Send order to Clover
       const checkOutPage = await sendOrder(order);
+      // Through an alert to the user
+      const checkoutMessage = alert('You will now be forwarded to a secure payment site to process your order.\n\nAfter your payment is processed, DO NOT close the browser until the order confirmation page has loaded.');
       // Redirect user to Clover hosted checkout
       router.push(checkOutPage)
       setSelectTimeMessage("");

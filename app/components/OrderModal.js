@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from 'react';
 import { useModal } from '../contexts/ModalContext';
 import ItemOrderOptions from './ItemOrderOptions';
 import BreadOptions from './BreadOptions';
@@ -11,6 +12,36 @@ import AddToCartButton from './AddToCartButton';
 const OrderModal = () => {
   const { modalItem, closeModal, isModalOpen, modalMessage } = useModal();
 
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    const handleEscapeKey = (event) => {
+      if (event.key === 'Escape') {
+        closeModal();
+      }
+    };
+  
+    const handleOutsideClick = (event) => {
+      if (
+        isModalOpen &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
+        closeModal();
+      }
+    };
+  
+    if (isModalOpen) {
+      document.addEventListener('keydown', handleEscapeKey);
+      document.addEventListener('mousedown', handleOutsideClick);
+    }
+  
+    return () => {
+      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  }, [isModalOpen, closeModal]);
+
   return (
     <>
       {isModalOpen ? (
@@ -19,7 +50,7 @@ const OrderModal = () => {
           <div
             className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none"
           >
-            <div className="relative w-auto my-6 mx-auto max-w-screen-md md:max-w-3xl sm:max-w-full">
+            <div className="relative w-auto my-6 mx-auto max-w-screen-md md:max-w-3xl sm:max-w-full" ref={modalRef}>
               {/*content*/}
               <div className="border-2 border-white rounded-lg shadow-lg relative flex flex-col w-full bg-black outline-none focus:outline-none text-white">
                 {/*header*/}

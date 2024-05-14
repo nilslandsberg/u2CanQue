@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { renderBulkBbq, renderMenuItems, renderSides } from '../utils/renderMenuItems';
-import { memorialDayDateCheck } from '../utils/dateCheck';
+import { independenceDayDateCheck } from '../utils/dateCheck';
 
-const MemorialDaySpecials = () => {
-  const [memorialDayItems, setMemorialDayItems] = useState([]);
-  const [memorialDaySides, setMemorialDaySides] = useState([]);
+const IndependenceDaySpecials = () => {
+  const [independenceDayItems, setIndependenceDayItems] = useState([]);
+  const [independenceDaySides, setIndependenceDaySides] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -12,28 +12,21 @@ const MemorialDaySpecials = () => {
       try {
         const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
         const data = await response.json();
-        const memorialDayItems = data.filter((item) => item.type === 'Memorial Day');
-        const memorialDaySides = memorialDayItems.filter((item) => item.side);
-        setMemorialDayItems(memorialDayItems.filter((item) => !item.side));
-        setMemorialDaySides(memorialDaySides);
+        const independenceDayItems = data.filter((item) => item.type === 'Independence Day');
+        const independenceDaySides = independenceDayItems.filter((item) => item.side);
+        setIndependenceDayItems(independenceDayItems.filter((item) => !item.side));
+        setIndependenceDaySides(independenceDaySides);
         setIsLoading(false);
       } catch (error) {
-        console.error('Error fetching Memorial Day items:', error);
+        console.error('Error fetching Independence Day items:', error);
       }
     };
 
     fetchHolidayItems();
   }, []);
 
-  // Check to see if the Memorial Day Sale is happening
-  const memorialDaySale = memorialDayDateCheck();
-  const isItMemorialDay = memorialDaySale.isItMemorialDay;
-  let memorialDaySaleOver;
-
-  if (isItMemorialDay) {
-    const memorialDaySaleEnd = memorialDaySale.memorialDaySaleEnd;
-    memorialDaySaleOver = memorialDaySaleEnd.getDate();
-  }
+  // Check to see if the Independence Day Sale is happening
+  const independenceDaySale = independenceDayDateCheck();
 
   return (
     <>
@@ -41,21 +34,21 @@ const MemorialDaySpecials = () => {
         <div className="flex items-center justify-center h-screen">
           <div className="w-16 h-16 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
         </div>
-      ) : isItMemorialDay ? (
+      ) : independenceDaySale ? (
         <>
           <div className="z-30 p-5 text-2xl bg-black text-white text-center">
-            Memorial Day Specials Available Through May {memorialDaySaleOver}
+            Independence Day Specials Available Through June 29
             <p>10% of sales will be donated to the Marietta VFW</p>
           </div>
-          {renderMenuItems(memorialDayItems)}
+          {renderMenuItems(independenceDayItems)}
           <div className="z-30 bg-slate-600 p-5 text-2xl text-white text-center" id="appetizers">
             Sides
           </div>
-          {renderBulkBbq(memorialDaySides)}
+          {renderBulkBbq(independenceDaySides)}
         </>
       ) : (
         <div className="text-2xl text-white text-center pt-10">
-          <p>It is not quite time for our Memorial Day Sale</p>
+          <p>It is not quite time for our Independence Day Sale</p>
           <p>Please check back closer to the holiday!</p>
         </div>
       )}
@@ -63,4 +56,4 @@ const MemorialDaySpecials = () => {
   );
 };
 
-export default MemorialDaySpecials;
+export default IndependenceDaySpecials;

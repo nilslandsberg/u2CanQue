@@ -1,36 +1,49 @@
-"use client";
-
-import React, { useEffect } from 'react';
-import { mondayLunch, tuesdayLunch, wednesdayLunch, thursdayLunch, fridayLunch } from '../menu-data';
+import React, { useState, useEffect } from 'react';
 import { renderMenuItems } from '../utils/renderMenuItems';
-import { useRouter } from 'next/navigation';
 
+const LunchOptions = ({ dayOfWeek }) => {
+  const [lunchOptions, setLunchOptions] = useState([]);
 
-const LunchOptions = (day) => {
-  const router = useRouter()
-  const { dayOfWeek } = day
+  const fetchLunchOptions = async () => {
+    try {
+      const response = await fetch(`https://u2canque-server.onrender.com/api/lunch/${dayOfWeek}`);
+      const data = await response.json();
+      const sortedData = sortLunchData(data);
+      setLunchOptions(sortedData);
+    } catch (error) {
+      console.error('Error fetching lunch options:', error);
+    }
+  };
 
   useEffect(() => {
-    const storedDayOfWeek = typeof localStorage !== 'undefined' ?
-      JSON.parse(localStorage.getItem('shoppingCart'))?.dayOfWeek : null;
-    if (storedDayOfWeek !== dayOfWeek) {
-      router.push(`${storedDayOfWeek}`)
-    }
-  }, []);
-  
-  const dayToLunchOptions = {
-    monday: mondayLunch,
-    tuesday: tuesdayLunch,
-    wednesday: wednesdayLunch,
-    thursday: thursdayLunch,
-    friday: fridayLunch
-  }
+    fetchLunchOptions();
+  }, [dayOfWeek]);
 
-  const lunchOptions = dayToLunchOptions[dayOfWeek] || []
-  
+  // Function to sort the lunch data
+  const sortLunchData = (lunchData) => {
+    // Define the desired order for specific items
+    const desiredOrder = ['BBQ Chicken Meal', 'Texas Bold (and beanless) Chili'];
+
+    // Sort the data based on the desired order
+    return lunchData.sort((a, b) => {
+      const aIndex = desiredOrder.indexOf(a.name);
+      const bIndex = desiredOrder.indexOf(b.name);
+
+      // If the item is in the desiredOrder array, sort it based on its index
+      if (aIndex !== -1 && bIndex !== -1) {
+        return aIndex - bIndex;
+      }
+
+      // If the item is not in the desiredOrder array, sort it alphabetically by name
+      if (a.name < b.name) return -1;
+      if (a.name > b.name) return 1;
+      return 0;
+    });
+  };
+
   return (
     <>
-      <div className="z-30 p-5 text-2xl text-white  bg-slate-600 text-center" id="lunch-options">
+      <div className="z-30 p-5 text-2xl text-white bg-slate-600 text-center" id="lunch-options">
         Lunch Options
       </div>
       {renderMenuItems(lunchOptions)}

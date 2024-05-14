@@ -22,10 +22,8 @@ const AddToCartButton = () => {
       setModalMessage("Please select all options before adding to the cart.");
       return;
     }
-    console.log("modalItem.size: ", modalItem.size)
-    console.log("modalItemToCart.size: ", modalItemToCart.size)
-    console.log(Object.keys(modalItemToCart.size))
-    if (modalItem.size && (modalItemToCart.size === 'undefined' || modalItemToCart.size.trim() === "")) {
+    
+    if (modalItem.size && modalItemToCart.size === "") {
       setModalMessage("Please select a size before adding to the cart");
       return;
     }

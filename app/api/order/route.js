@@ -2,8 +2,8 @@ const { NextResponse } = require('next/server');
 import axios from 'axios';
 
 async function POST(request) {
-
     const order = await request.json();
+    
   try {
     
     const bearerToken = process.env.BEARER_TOKEN;

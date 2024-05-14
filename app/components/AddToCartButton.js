@@ -23,7 +23,7 @@ const AddToCartButton = () => {
       return;
     }
     
-    if (modalItem.size && modalItemToCart.size === "") {
+    if (modalItem.size && (modalItem.size.length > 0 && modalItemToCart.size === "")) {
       setModalMessage("Please select a size before adding to the cart");
       return;
     }

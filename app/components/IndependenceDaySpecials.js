@@ -13,8 +13,8 @@ const IndependenceDaySpecials = () => {
         const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
         const data = await response.json();
         const independenceDayItems = data.filter((item) => item.type === 'Independence Day');
-        const independenceDaySides = independenceDayItems.filter((item) => item.bulk);
-        setIndependenceDayItems(independenceDayItems.filter((item) => !item.bulk));
+        const independenceDaySides = independenceDayItems.filter((item) => item.side);
+        setIndependenceDayItems(independenceDayItems.filter((item) => !item.side));
         setIndependenceDaySides(independenceDaySides);
         setIsLoading(false);
       } catch (error) {

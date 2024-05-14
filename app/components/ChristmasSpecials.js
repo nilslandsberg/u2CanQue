@@ -28,8 +28,8 @@ const ChristmasSpecials = () => {
   return (
     <>
       {isLoading ? (
-        <div className="text-2xl text-white text-center pt-10">
-          <p>Loading...</p>
+        <div className="flex items-center justify-center h-screen">
+          <div className="w-16 h-16 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
         </div>
       ) : christmasSale ? (
         <>

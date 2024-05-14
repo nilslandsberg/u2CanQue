@@ -30,7 +30,9 @@ const BreadOptions = ({ index }) => {
   return (
     <>
       {isLoading ? (
-        <p>Loading...</p>
+        <div className="flex items-center justify-center h-screen">
+          <div className="w-16 h-16 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
+        </div>
       ) : (
         <div className="flex flex-row items-center">
           <label className="mr-2">Bread: </label>

@@ -13,8 +13,8 @@ const MemorialDaySpecials = () => {
         const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
         const data = await response.json();
         const memorialDayItems = data.filter((item) => item.type === 'Memorial Day');
-        const memorialDaySides = memorialDayItems.filter((item) => item.bulk);
-        setMemorialDayItems(memorialDayItems.filter((item) => !item.bulk));
+        const memorialDaySides = memorialDayItems.filter((item) => item.side);
+        setMemorialDayItems(memorialDayItems.filter((item) => !item.side));
         setMemorialDaySides(memorialDaySides);
         setIsLoading(false);
       } catch (error) {

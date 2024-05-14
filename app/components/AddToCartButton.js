@@ -8,8 +8,7 @@ const AddToCartButton = () => {
   const { modalItemToCart, modalItem, setModalMessage, closeModal } = useModal();
   
   const successMessage = (item) => toast.success(`${item} Added to Cart`);
-  console.log("modalItem.options: ", modalItem.options);
-  console.log("modalItemToCart.options: ", modalItemToCart.options);
+
 
   const handleAddToCart = () => {
     // Edge Cases to make sure user is not able to add item to cart without making selections in the dropdown menus
@@ -23,11 +22,15 @@ const AddToCartButton = () => {
       setModalMessage("Please select all options before adding to the cart.");
       return;
     }
-
-    if (modalItem.size && (!modalItemToCart.size || Object.keys(modalItemToCart.size).length === 0 || Object.values(modalItemToCart.size).some(value => value === "null"))) {
+    console.log("modalItem.size: ", modalItem.size)
+    console.log("modalItemToCart.size: ", modalItemToCart.size)
+    console.log(Object.keys(modalItemToCart.size))
+    if (modalItem.size && (modalItemToCart.size === 'undefined' || modalItemToCart.size.trim() === "")) {
       setModalMessage("Please select a size before adding to the cart");
       return;
     }
+    
+    
 
     if (modalItem.bread && (!modalItemToCart.bread || Object.keys(modalItemToCart.bread).length === 0 || Object.values(modalItemToCart.bread).some(value => value === "null"))) {
       setModalMessage("Please select a bread option before adding to the cart.");

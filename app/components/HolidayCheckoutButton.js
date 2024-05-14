@@ -6,7 +6,6 @@ const HolidayCheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, 
   const router = useRouter();
 
   const handleCheckOut = async () => {
-    const checkoutMessage = alert('You will now be forwarded to a secure payment site to process your order.\n\nAfter your payment is processed, DO NOT close the browser until the order confirmation page has loaded.')
     
     const lineItems = []
 
@@ -58,6 +57,8 @@ const HolidayCheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, 
       localStorage.setItem('holidayShoppingCart', JSON.stringify(existingCart));
       // Send order to Clover
       const checkOutPage = await sendOrder(order);
+      // Through an alert to the user
+      const checkoutMessage = alert('You will now be forwarded to a secure payment site to process your order.\n\nAfter your payment is processed, DO NOT close the browser until the order confirmation page has loaded.')
       // Redirect user to Clover hosted checkout
       router.push(checkOutPage)
       setSelectTimeMessage("");

@@ -13,6 +13,16 @@ const nextConfig = {
     });
     return config;
   },
+  
+  // accept any URL for image src
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+  },
 }
 
 module.exports = nextConfig

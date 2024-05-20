@@ -9,56 +9,58 @@ const AddToCartButton = () => {
   
   const successMessage = (item) => toast.success(`${item} Added to Cart`);
 
+  const areAllArraysEmpty = (options) => {
+    return options && Object.values(options).every(array => Array.isArray(array) && array.length === 0);
+  };
 
   const handleAddToCart = () => {
-    // Edge Cases to make sure user is not able to add item to cart without making selections in the dropdown menus
+    console.log(modalItem);
     
-    if (modalItem.options && (!modalItemToCart.options || Object.keys(modalItemToCart.options).length === 0 || Object.values(modalItemToCart.options).some(value => value === "null"))) {
-      setModalMessage("Please select options before adding to the cart.");
-      return;
+    if (modalItem.options) {
+      if (!areAllArraysEmpty(modalItem.options)) {
+        const optionsToCheck = Object.keys(modalItem.options).filter(key => modalItem.options[key].length > 0);
+
+        for (let option of optionsToCheck) {
+          if (!modalItemToCart.options || !modalItemToCart.options[option] || modalItemToCart.options[option] === "null") {
+            setModalMessage(`Please select a ${option} option before adding to the cart.`);
+            return;
+          }
+        }
+
+        if (optionsToCheck.length > 1 && Object.keys(modalItemToCart.options).length < optionsToCheck.length) {
+          setModalMessage("Please select all options before adding to the cart.");
+          return;
+        }
+      }
     }
 
-    if ((modalItem.options && Object.keys(modalItem.options).length >= 2) && Object.keys(modalItemToCart.options).length === 1) {
-      setModalMessage("Please select all options before adding to the cart.");
-      return;
-    }
-    
     if (modalItem.size && (modalItem.size.length > 0 && modalItemToCart.size === "")) {
       setModalMessage("Please select a size before adding to the cart");
       return;
     }
-    
-    
 
     if (modalItem.bread && (!modalItemToCart.bread || Object.keys(modalItemToCart.bread).length === 0 || Object.values(modalItemToCart.bread).some(value => value === "null"))) {
       setModalMessage("Please select a bread option before adding to the cart.");
       return;
     }
-    
-    if ((modalItem.oneSide && (!modalItemToCart.sideOne || modalItemToCart.sideOne === "null")) || (modalItem.twoSides && (!modalItemToCart.sideOne || modalItemToCart.sideOne === "null" || !modalItemToCart.sideTwo || modalItemToCart.sideTwo === "null"))) {
+
+    if ((modalItem.oneSide && (!modalItemToCart.sideOne || modalItemToCart.sideOne === "null")) || 
+        (modalItem.twoSides && (!modalItemToCart.sideOne || modalItemToCart.sideOne === "null" || !modalItemToCart.sideTwo || modalItemToCart.sideTwo === "null"))) {
       setModalMessage("Please select your side(s) before adding to the cart.");
       return;
-    }  
+    }
 
     if (modalItem.holiday) {
-      const currentCart = JSON.parse(localStorage.getItem('holidayShoppingCart'));
-
-      currentCart.items = currentCart.items || [];
+      const currentCart = JSON.parse(localStorage.getItem('holidayShoppingCart')) || { items: [] };
 
       currentCart.items.push(modalItemToCart);
 
       localStorage.setItem('holidayShoppingCart', JSON.stringify(currentCart));
     } else {
-      // Access the shopping cart in local storage
-      const currentCart = JSON.parse(localStorage.getItem('shoppingCart'));
+      const currentCart = JSON.parse(localStorage.getItem('shoppingCart')) || { items: [] };
 
-      // Initialize "items" as an empty array if it doesn't exist
-      currentCart.items = currentCart.items || [];
-
-      // Add the item to the cart
       currentCart.items.push(modalItemToCart);
 
-      // Save the updated cart to local storage
       localStorage.setItem('shoppingCart', JSON.stringify(currentCart));
     }
 
@@ -66,8 +68,7 @@ const AddToCartButton = () => {
     setModalMessage('');
     closeModal();
     successMessage(modalItem.name);
-  }
-
+  };
 
   return (
     <div>

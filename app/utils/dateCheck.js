@@ -34,7 +34,7 @@ function getOneMonthPrior(utcDateString) {
 function getFiveDaysPrior(utcDateString) {
   const utcDate = new Date(utcDateString);
   // set the utcDate five days prior to the utcDateString provided
-  utcDate.setUTCDate(utcDate.getUTCDate() -5);
+  utcDate.setUTCDate(utcDate.getUTCDate() -2);
   // return updated utcDate
   return utcDate;
 }

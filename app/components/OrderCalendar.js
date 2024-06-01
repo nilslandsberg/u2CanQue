@@ -60,7 +60,7 @@ const OrderCalendar = () => {
     }
     
     // Disable Specific Date
-    if (year === 2024 && month === 4 && dayOfMonth === 21){
+    if (year === 2024 && month === 5 && (dayOfMonth === 10 || dayOfMonth === 11 || dayOfMonth === 12 || dayOfMonth === 13 || dayOfMonth === 14){
       return true;
     }
 

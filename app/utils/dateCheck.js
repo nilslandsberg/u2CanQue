@@ -9,7 +9,7 @@ export const christmasDateCheck = () => {
 
   const christmasEnd = new Date();
   christmasEnd.setMonth(11);
-  christmasEnd.setDate(20);
+  christmasEnd.setDate(23);
 
   if (currentDate >= christmasStart && currentDate <= christmasEnd) {
     return true;
@@ -109,8 +109,8 @@ export const independenceDayDateCheck = () => {
   independenceDayStart.setDate(4);
 
   const independenceDayEnd = new Date();
-  independenceDayEnd.setMonth(5);
-  independenceDayEnd.setDate(29);
+  independenceDayEnd.setMonth(6);
+  independenceDayEnd.setDate(2);
 
   if (currentDate >= independenceDayStart && currentDate <= independenceDayEnd) {
     return true;

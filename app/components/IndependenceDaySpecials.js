@@ -6,7 +6,7 @@ import { independenceDayItems, independenceDaySides } from '../menu-data';
 const IndependenceDaySpecials = () => {
   // const [independenceDayItems, setIndependenceDayItems] = useState([]);
   // const [independenceDaySides, setIndependenceDaySides] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   // useEffect(() => {
   //   const fetchHolidayItems = async () => {

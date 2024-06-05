@@ -95,10 +95,18 @@ export const renderSides = (array) => {
         <div className="flex-grow mb-2">{item.description}</div>
         <div className="flex flex-row items-end justify-between">
           <div className="flex flex-col items-start ">
-            <p className="text-orange-600 font-semibold pt-4">Pint ${item.price.pint}.00</p>
-            <p className="text-orange-600 font-semibold pt-4">Quart ${item.price.quart}.00</p>
-            <p className="text-orange-600 font-semibold pt-4">Half-Pan ${item.price.halfPan}.00</p>
-            <p className="text-orange-600 font-semibold pt-4">Full-Pan ${item.price.fullPan}.00</p>
+            <p className="text-orange-600 font-semibold pt-4">
+              Pint {parseFloat(item.price.pint).toFixed(2)}
+            </p>
+            <p className="text-orange-600 font-semibold pt-4">
+              Quart {parseFloat(item.price.quart).toFixed(2)}
+            </p>
+            <p className="text-orange-600 font-semibold pt-4">
+              Half-Pan {parseFloat(item.price.halfPan).toFixed(2)}
+            </p>
+            <p className="text-orange-600 font-semibold pt-4">
+              Full-Pan {parseFloat(item.price.fullPan).toFixed(2)}
+            </p>
           </div>
           <AddToOrderButton item={item} />
         </div>

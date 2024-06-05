@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { renderMenuItems } from '../utils/renderMenuItems';
 import { christmasDateCheck } from '../utils/dateCheck';
+import { filterHolidaysByType } from '../utils/filterHolidayTypes';
 
 const ChristmasSpecials = () => {
   const [christmasItems, setChristmasItems] = useState([]);
@@ -11,7 +12,7 @@ const ChristmasSpecials = () => {
       try {
         const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
         const data = await response.json();
-        const christmasItems = data.filter((item) => item.type === 'Christmas');
+        const christmasItems = filterHolidaysByType(data, 'Christmas');
         setChristmasItems(christmasItems);
         setIsLoading(false);
       } catch (error) {

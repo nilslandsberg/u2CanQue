@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { renderBulkBbq, renderMenuItems, renderSides } from '../utils/renderMenuItems';
 import { independenceDayDateCheck } from '../utils/dateCheck';
+import { filterHolidaysByType } from '../utils/filterHolidayTypes';
 
 const IndependenceDaySpecials = () => {
   const [independenceDayItems, setIndependenceDayItems] = useState([]);
@@ -12,7 +13,7 @@ const IndependenceDaySpecials = () => {
       try {
         const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
         const data = await response.json();
-        const independenceDayItems = data.filter((item) => item.type === 'Independence Day');
+        const independenceDayItems = filterHolidaysByType(data, 'Independence Day');
         const independenceDaySides = independenceDayItems.filter((item) => item.side);
         setIndependenceDayItems(independenceDayItems.filter((item) => !item.side));
         setIndependenceDaySides(independenceDaySides);

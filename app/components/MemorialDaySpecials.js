@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { renderBulkBbq, renderMenuItems, renderSides } from '../utils/renderMenuItems';
 import { memorialDayDateCheck } from '../utils/dateCheck';
+import { filterHolidaysByType } from '../utils/filterHolidayTypes';
 
 const MemorialDaySpecials = () => {
   const [memorialDayItems, setMemorialDayItems] = useState([]);
@@ -12,7 +13,7 @@ const MemorialDaySpecials = () => {
       try {
         const response = await fetch('https://u2canque-server.onrender.com/api/holiday-items');
         const data = await response.json();
-        const memorialDayItems = data.filter((item) => item.type === 'Memorial Day');
+        const memorialDayItems = filterHolidaysByType(data, 'Memorial Day');
         const memorialDaySides = memorialDayItems.filter((item) => item.side);
         setMemorialDayItems(memorialDayItems.filter((item) => !item.side));
         setMemorialDaySides(memorialDaySides);

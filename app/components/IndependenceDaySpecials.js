@@ -38,7 +38,7 @@ const IndependenceDaySpecials = () => {
       ) : independenceDaySale ? (
         <>
           <div className="z-30 p-5 text-2xl bg-black text-white text-center">
-            Independence Day Specials Available Through June 29
+            Independence Day Specials Available Through July 2nd.
             <p>10% of sales will be donated to the Marietta VFW</p>
           </div>
           {renderMenuItems(independenceDayItems)}

@@ -6,7 +6,7 @@ import { filterHolidaysByType } from '../utils/filterHolidayTypes';
 const IndependenceDaySpecials = () => {
   const [independenceDayItems, setIndependenceDayItems] = useState([]);
   const [independenceDaySides, setIndependenceDaySides] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchHolidayItems = async () => {

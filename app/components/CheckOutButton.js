@@ -14,7 +14,7 @@ const CheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, custome
       return {
         name: item.name,
         unitQty: item.quantity,
-        price: item.price
+        price: parseInt(item.price.replace(".", ""))
       }
     }
 

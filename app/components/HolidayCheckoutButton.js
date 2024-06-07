@@ -13,7 +13,7 @@ const HolidayCheckOutButton = ({ selectedTime, setSelectTimeMessage, cartItems, 
       return {
         name: item.name,
         unitQty: item.quantity,
-        price: item.total
+        price: parseInt(item.price.replace(".", ""))
       }
     }
 

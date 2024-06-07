@@ -61,8 +61,8 @@ export const renderBulkBbq = (array) => {
               </div>
             ) : (
               <div className="flex flex-col items-start ">
-                <p className="text-orange-600 font-semibold pt-4">Half-Pan ${item.price.halfPan}.00</p>
-                <p className="text-orange-600 font-semibold pt-4">Full-Pan ${item.price.fullPan}.00</p>
+                <p className="text-orange-600 font-semibold pt-4">Half-Pan ${parseFloat(item.price.halfPan).toFixed(2)}</p>
+                <p className="text-orange-600 font-semibold pt-4">Full-Pan ${parseFloat(item.price.fullPan).toFixed(2)}</p>
               </div>
             )}
             <AddToOrderButton item={item} />

@@ -27,6 +27,8 @@ export const sizePriceCalculator = (selection, price) => {
   // Isolate the size from the selection string
   const isolatedSize = selection.split(" ")[0];
   switch (isolatedSize) {
+    case "Default":
+      return price.default;
     case "Pint":
       return price.pint;
     case "Quart":

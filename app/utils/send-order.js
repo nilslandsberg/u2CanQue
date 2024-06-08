@@ -1,4 +1,5 @@
 export function sendOrder(order) {
+  console.log(order)
   const apiEndpoint = '/api/order';
   const requestBody = JSON.stringify(order)
 

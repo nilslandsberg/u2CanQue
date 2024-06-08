@@ -23,11 +23,21 @@ export const renderMenuItems = (array) => {
         <div className="border-b-2 border-gray-300 mb-2"></div>
         <div className="flex-grow mb-2">{item.description}</div>
         <div className="flex flex-row items-center justify-between">
-          <div className="flex items-center">
-            <p className="text-orange-600 font-semibold pt-4">Price: ${typeof item.price === 'object' ? item.price.default : item.price}</p>
-          </div>
-          <AddToOrderButton item={item}/>
+        <div className="flex flex-col items-start">
+          <p className="text-orange-600 font-semibold pt-4">
+            Price: ${
+              typeof item.price === 'object'
+                ? (`${parseFloat(item.pricePerPound).toFixed(2)} per pound` || item.price.default)
+                : parseFloat(item.price).toFixed(2)
+            }
+          </p>
+          {item.holiday && item.name === "Smoked Prime Rib" && (
+            <p className="text-orange-600 font-semibold pt-4">(4 pound minimum order)</p>
+          )}
         </div>
+
+        <AddToOrderButton item={item} />
+      </div>
       </div>
     ))}
   </div>
@@ -57,12 +67,16 @@ export const renderBulkBbq = (array) => {
           <div className="flex flex-row items-center justify-between">
             {item.pricePerPound ? (
               <div className="flex items-center">
-                <p className="text-orange-600 font-semibold pt-4">Price: ${item.pricePerPound} per pound</p>
+                <p className="text-orange-600 font-semibold pt-4">Price: ${parseFloat(item.pricePerPound).toFixed(2)} per pound</p>
               </div>
-            ) : (
-              <div className="flex flex-col items-start ">
+            ) : item.price && item.price.halfPan && item.price.fullPan ? (
+              <div className="flex flex-col items-start">
                 <p className="text-orange-600 font-semibold pt-4">Half-Pan ${parseFloat(item.price.halfPan).toFixed(2)}</p>
                 <p className="text-orange-600 font-semibold pt-4">Full-Pan ${parseFloat(item.price.fullPan).toFixed(2)}</p>
+              </div>
+            ) : (
+              <div className="flex items-center">
+                <p className="text-orange-600 font-semibold pt-4">Price: ${parseFloat(item.price).toFixed(2)}</p>
               </div>
             )}
             <AddToOrderButton item={item} />

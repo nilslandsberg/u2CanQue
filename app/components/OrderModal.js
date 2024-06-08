@@ -69,7 +69,7 @@ const OrderModal = () => {
                     )}
                     {modalItem.bread && (<BreadOptions />)}
                     {(modalItem.twoSides || modalItem.oneSide) && (<SidesOptions />)}
-                    {(modalItem.side || modalItem.bulk || modalItem.holiday) && (<SideOrderSizeSelection />)}
+                    {(modalItem.side || modalItem.bulk) && (<SideOrderSizeSelection />)}
                   </div>
                 </div>
                 <ItemQuantity />

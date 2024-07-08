@@ -60,9 +60,9 @@ const OrderCalendar = () => {
     }
     
     // Disable Specific Date
-      if (year === 2024 && month === 6 && (dayOfMonth === 3 || dayOfMonth === 4 || dayOfMonth === 5)){
-          return true;
-      }
+      // if (year === 2024 && month === 6 && (dayOfMonth === 3 || dayOfMonth === 4 || dayOfMonth === 5)){
+          // return true;
+      // }
 
     return false;
   };

@@ -8,6 +8,7 @@ import ChristmasSpecials from './ChristmasSpecials';
 import ThanksgivingSpecials from './ThanksgivingSpecials';
 import MemorialDaySpecials from './MemorialDaySpecials';
 import IndependenceDaySpecials from './IndependenceDaySpecials';
+import RibsFlashSale from './RibsFlashSale';
 
 const HolidayPage = ({ holiday }) => {
   
@@ -48,6 +49,7 @@ const HolidayPage = ({ holiday }) => {
             {(holiday === "Thanksgiving") ? <ThanksgivingSpecials /> : <></>}
             {(holiday === "Memorial Day") ? <MemorialDaySpecials /> : <></>}
             {(holiday === "Independence Day") ? <IndependenceDaySpecials /> : <></>}
+            {(holiday === "Ribs Flash Sale") ? <RibsFlashSale /> : <></>}     
           </div>
         </div>
         <OrderModal />

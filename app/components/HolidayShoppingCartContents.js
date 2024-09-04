@@ -8,6 +8,7 @@ import HolidayReturnToMenuButton from './HolidayReturnToMenuButton';
 import { capitalizeFirstLetter } from '../utils/stringManipulation';
 import HolidayPickUpDay from './HoidayPickUpDay';
 import HolidayCheckOutButton from './HolidayCheckoutButton';
+import { isItRibsTime } from '../utils/dateCheck';
 
 const HolidayholidayShoppingCartContents = ({ holiday }) => {
   const [loading, setLoading] = useState(true);
@@ -106,7 +107,9 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
   }
   // times array for food pickup
   const times = ["10:00am", "10:15am", "10:30am", "10:45am", "11:00am", "11:15am", "11:30am", "11:45am", "12:00pm", "12:15pm", "12:30pm", "12:45pm", "1:00pm", "1:15pm", "1:30pm", "1:45pm", "2:00pm", "2:15pm", "2:30pm", "2:45pm"]
-
+  const ribTimes = [...times, "3:00pm", "3:15pm", "3:30pm", "3:45pm", "4:00pm", "4:15pm", "4:30pm", "4:45pm", "5:00pm"];
+  
+  const ribsFlashSale = isItRibsTime();
   return (
     <>
       <div className="text-white flex flex-col lg:w-1/2 md:w-1/3 px-2">
@@ -159,7 +162,11 @@ const HolidayholidayShoppingCartContents = ({ holiday }) => {
               className="mt-2 mb-2 bg-slate-600 text-white"
             >
               <option value="">Select Pickup Time</option>
-              {times.map((option) => (
+              {ribsFlashSale ? ribTimes.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              )) :times.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>

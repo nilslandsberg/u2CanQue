@@ -120,6 +120,24 @@ export const independenceDayDateCheck = () => {
   
 }
 
+export const isItRibsTime = () => {
+  const currentDate = new Date();
+  const ribsFlashSaleStart = new Date();
+  ribsFlashSaleStart.setMonth(8);
+  ribsFlashSaleStart.setDate(3);
+
+  const ribsFlashSaleEnd = new Date();
+  ribsFlashSaleEnd.setMonth(8);
+  ribsFlashSaleEnd.setDate(6);
+  ribsFlashSaleEnd.setHours(17, 30, 0);
+
+  if (currentDate >= ribsFlashSaleStart && currentDate <= ribsFlashSaleEnd) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
 export const saleEndMessage = (saleEnd) => {
   `Available Through ${saleEnd.toLocaleDateString()}!`
 }

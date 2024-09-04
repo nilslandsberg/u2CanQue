@@ -1,5 +1,5 @@
 import React from 'react'
-import { christmasDateCheck, easterDateCheck, independenceDayDateCheck, memorialDayDateCheck, saleEndMessage, thanksgivingDateCheck } from '../utils/dateCheck';
+import { christmasDateCheck, easterDateCheck, independenceDayDateCheck, memorialDayDateCheck, thanksgivingDateCheck, isItRibsTime } from '../utils/dateCheck';
 import { IoIosArrowDown } from "react-icons/io";
 import { capitalizeFirstLetter } from '../utils/stringManipulation';
 
@@ -36,12 +36,18 @@ const HolidayLink = ({ className }) => {
     holiday="independence-day"
   }
 
+  const ribsFlashSale = isItRibsTime();
+
+  if (ribsFlashSale) {
+    holiday="ribs-flash-sale"
+  }
+
   return (
     <>
       {holiday && (
         <div className={`relative group px-2 py-3 transition-all ${className ? className : ""}`}>
           <div className="flex cursor-pointer items-center gap-2 group-hover:text-gray-400">
-            <span>Holiday Orders</span>
+            <span>Special Orders</span>
             <IoIosArrowDown className="rotate-180 transition-all group-hover:rotate-0" />
           </div>
           <div className="absolute left-0 top-10 hidden w-auto flex-col gap-1 rounded-xl bg-white py-3 shadow-md transition-all group-hover:flex text-black">

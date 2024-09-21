@@ -18,7 +18,6 @@ export default function Menu() {
           <p className="text-xl font-bold italic">Our menu changes daily.</p>
           <p className="text-xl font-bold italic"> Select a date on the calendar to explore our menu.</p>
           <br />
-          <p className="font-semibold">Lunch orders will be unavailable September 3rd - 13th. Be on the lookout for a rib sale this Friday and Saturday!</p>
           <OrderCalendar />
         </div>
         {/* <video

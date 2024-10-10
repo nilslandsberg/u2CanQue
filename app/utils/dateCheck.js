@@ -4,8 +4,8 @@ export const christmasDateCheck = () => {
   const currentDate = new Date();
 
   const christmasStart = new Date();
-  christmasStart.setMonth(10);
-  christmasStart.setDate(27);
+  christmasStart.setMonth(11);
+  christmasStart.setDate(1);
 
   const christmasEnd = new Date();
   christmasEnd.setMonth(11);
@@ -70,7 +70,10 @@ export const thanksgivingDateCheck = () => {
   const foundHoliday = findHolidayByName(holiday, holidayNameToFind);
   const thanksgivingDate = new Date(foundHoliday.date);
 
-  const thanksgivingSaleStart = getOneMonthPrior(thanksgivingDate);
+  const thanksgivingSaleStart = new Date();
+  thanksgivingSaleStart.setMonth(10);
+  thanksgivingSaleStart.setDate(1);
+  
   const thanksgivingSaleEnd = getFiveDaysPrior(thanksgivingDate);
 
   if (currentDate >= thanksgivingSaleStart && currentDate <= thanksgivingSaleEnd) {

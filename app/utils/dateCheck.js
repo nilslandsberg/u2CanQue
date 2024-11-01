@@ -6,6 +6,7 @@ export const christmasDateCheck = () => {
   const christmasStart = new Date();
   christmasStart.setMonth(11);
   christmasStart.setDate(1);
+  christmasStart.setHours(0, 0, 0, 0); // Remove the time part
 
   const christmasEnd = new Date();
   christmasEnd.setMonth(11);
@@ -73,9 +74,11 @@ export const thanksgivingDateCheck = () => {
   const thanksgivingSaleStart = new Date();
   thanksgivingSaleStart.setMonth(10);
   thanksgivingSaleStart.setDate(1);
-  
-  const thanksgivingSaleEnd = getFiveDaysPrior(thanksgivingDate);
+  thanksgivingSaleStart.setHours(0, 0, 0, 0); // Remove the time part
 
+  const thanksgivingSaleEnd = getFiveDaysPrior(thanksgivingDate);
+  console.log("thanksgivingSaleStart: ", thanksgivingSaleStart);
+  console.log("thanksgivingSaleEnd: ", thanksgivingSaleEnd);
   if (currentDate >= thanksgivingSaleStart && currentDate <= thanksgivingSaleEnd) {
     return { isItThanksgiving: true, thanksgivingSaleEnd: thanksgivingSaleEnd }
   } else {

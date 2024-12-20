@@ -59,10 +59,14 @@ const OrderCalendar = () => {
       }
     }
     
-    // Disable Specific Date
-    // if (year === 2024 && month === 9 && (dayOfMonth === 7 || dayOfMonth === 8 || dayOfMonth === 9 || dayOfMonth === 10 || dayOfMonth === 14 || dayOfMonth === 15 || dayOfMonth === 16 || dayOfMonth === 17 || dayOfMonth === 18)) {
-    //     return true;
-    // }
+    Disable Specific Date
+    if (year === 2024 && month === 11 && (dayOfMonth === 23 || dayOfMonth === 24 || dayOfMonth === 26 || dayOfMonth === 27 || dayOfMonth === 30 || dayOfMonth === 31 )) {
+        return true;
+    }
+
+    if (year === 2025 && month === 0 && (dayOfMonth === 1 || dayOfMonth === 2 || dayOfMonth === 3 || dayOfMonth === 6 || dayOfMonth === 7 || dayOfMonth === 8 || dayOfMonth === 9 || dayOfMonth === 10)) {
+      return true;
+    }
 
     return false;
   };

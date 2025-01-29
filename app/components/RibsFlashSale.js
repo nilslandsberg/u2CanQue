@@ -34,7 +34,7 @@ const RibsFlashSale = () => {
       ) : ribsFlashSale ? (
         <>
           <div className="z-30 p-5 text-2xl bg-black text-white text-center">
-            Ribs Flash Sale! Order Now for Pickup on September 6th or September 7th.  Sale Ends on September 6th!
+            Super Bowl Ribs Flash Sale! Order Now for Pickup on Super Bowl Sunday! Sale Ends on February 8th!
           </div>
           {renderMenuItems(ribsFlashSaleItems)}
         </>

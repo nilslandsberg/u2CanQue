@@ -129,12 +129,12 @@ export const independenceDayDateCheck = () => {
 export const isItRibsTime = () => {
   const currentDate = new Date();
   const ribsFlashSaleStart = new Date();
-  ribsFlashSaleStart.setMonth(8);
-  ribsFlashSaleStart.setDate(3);
+  ribsFlashSaleStart.setMonth(0);
+  ribsFlashSaleStart.setDate(27);
 
   const ribsFlashSaleEnd = new Date();
-  ribsFlashSaleEnd.setMonth(8);
-  ribsFlashSaleEnd.setDate(6);
+  ribsFlashSaleEnd.setMonth(1);
+  ribsFlashSaleEnd.setDate(8);
   ribsFlashSaleEnd.setHours(17, 30, 0);
 
   if (currentDate >= ribsFlashSaleStart && currentDate <= ribsFlashSaleEnd) {

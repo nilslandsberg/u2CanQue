@@ -12,7 +12,7 @@ const HolidayPickUpDay = ({ holiday, selectedPickUpDate, setSelectedPickUpDate }
   const pickUpOptions = [`the day before ${holiday}`, `${holiday}`, `the day after ${holiday}`];
   
   const ribsSale = isItRibsTime();
-  let ribsFlashSalePickUpOptions = ['Super Bowl Sunday!];
+  let ribsFlashSalePickUpOptions = ['Super Bowl Sunday!'];
   const currentDate = new Date();
   
   const fridaySaleEnd = new Date('2024-09-05T00:00:00');

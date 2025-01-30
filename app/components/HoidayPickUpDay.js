@@ -12,17 +12,17 @@ const HolidayPickUpDay = ({ holiday, selectedPickUpDate, setSelectedPickUpDate }
   const pickUpOptions = [`the day before ${holiday}`, `${holiday}`, `the day after ${holiday}`];
   
   const ribsSale = isItRibsTime();
-  let ribsFlashSalePickUpOptions = [];
+  let ribsFlashSalePickUpOptions = ['Super Bowl Sunday!];
   const currentDate = new Date();
   
   const fridaySaleEnd = new Date('2024-09-05T00:00:00');
   fridaySaleEnd.setHours(17, 30, 0);
 
-  if (currentDate < fridaySaleEnd) {
+  // if (currentDate < fridaySaleEnd) {
     // ribsFlashSalePickUpOptions = ['Friday, September 6th', 'Saturday, September 7th'];
   // } else { 
-    ribsFlashSalePickUpOptions = ['Suoer Bowl Sunday!'];
-  }
+    // ribsFlashSalePickUpOptions = ['Suoer Bowl Sunday!'];
+  // }
 
   return (
     <div className="holiday-pickup-date-selector text-white">

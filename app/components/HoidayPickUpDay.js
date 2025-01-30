@@ -19,9 +19,9 @@ const HolidayPickUpDay = ({ holiday, selectedPickUpDate, setSelectedPickUpDate }
   fridaySaleEnd.setHours(17, 30, 0);
 
   if (currentDate < fridaySaleEnd) {
-    ribsFlashSalePickUpOptions = ['Friday, September 6th', 'Saturday, September 7th'];
-  } else { 
-    ribsFlashSalePickUpOptions = ['Saturday, September 7th'];
+    // ribsFlashSalePickUpOptions = ['Friday, September 6th', 'Saturday, September 7th'];
+  // } else { 
+    ribsFlashSalePickUpOptions = ['Suoer Bowl Sunday!'];
   }
 
   return (

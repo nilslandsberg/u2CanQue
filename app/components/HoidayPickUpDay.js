@@ -9,7 +9,7 @@ const HolidayPickUpDay = ({ holiday, selectedPickUpDate, setSelectedPickUpDate }
     setSelectedPickUpDate(value);
   };
 
-  const pickUpOptions = [`the day before ${holiday}`, `${holiday}`, `the day after ${holiday}`];
+  const pickUpOptions = [`${holiday}`];
   
   const ribsSale = isItRibsTime();
   let ribsFlashSalePickUpOptions = ['Super Bowl Sunday!'];

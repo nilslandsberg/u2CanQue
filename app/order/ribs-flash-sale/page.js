@@ -1,9 +1,11 @@
 import React from 'react'
 import HolidayPage from '@/app/components/HolidayPage'
+import NotFound from '@/app/components/NotFound'
 
 const page = () => {
   return (
-    <HolidayPage holiday={"Ribs Flash Sale"} />
+    <NotFound />
+    // <HolidayPage holiday={"Ribs Flash Sale"} />
   )
 }
 

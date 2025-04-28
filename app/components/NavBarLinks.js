@@ -11,9 +11,9 @@ function NavBarLinks() {
       <div className="items-center space-x-5 justify-between md:flex hidden">
         <a className=" hover:text-gray-400" href="/#about">About Us</a>
         <a className=" hover:text-gray-400" href="/catering">Catering</a>
-        <HolidayLink />
-        <a className="hover:text-gray-400" href="/order/cart">View Cart</a>
-        <OrderOnlineButton />
+        {/* <HolidayLink /> */}
+        {/* <a className="hover:text-gray-400" href="/order/cart">View Cart</a> */}
+        {/* <OrderOnlineButton /> */}
       </div>
     </>
   )
